@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdArrowForward } from 'react-icons/md';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import girl5 from '../../assets/images/Yogaa.png'
+import girl5 from '../../assets/images/yogaa.png'
 import 'swiper/css'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
