@@ -1,58 +1,58 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-// Normal imports
-import Home from "../Pages/User/Home";
-import AboutUs from "../Pages/User/AboutUs";
-import Yoga from "../Pages/User/Yoga";
-import Meditation from "../Pages/User/Meditation";
-import Courses from "../Pages/User/Courses";
-import Gallery from "../Pages/User/Gallery";
-import Blogs from "../Pages/User/Blog";
-import Contact from "../Pages/User/Contact";
-import BeginnerYoga from "../Pages/User/BeginnerYoga";
+
+// Lazy imports for user pages
+const Home = lazy(() => import("../Pages/User/Home"));
+const AboutUs = lazy(() => import("../Pages/User/AboutUs"));
+const Yoga = lazy(() => import("../Pages/User/Yoga"));
+const Meditation = lazy(() => import("../Pages/User/Meditation"));
+const Courses = lazy(() => import("../Pages/User/Courses"));
+const Gallery = lazy(() => import("../Pages/User/Gallery"));
+const Blogs = lazy(() => import("../Pages/User/Blog"));
+const Contact = lazy(() => import("../Pages/User/Contact"));
+const BeginnerYoga = lazy(() => import("../Pages/User/BeginnerYoga"));
+const BlogPage = lazy(() => import("../Pages/User/BlogPage"));
+
+// Lazy imports for admin pages
+const Login = lazy(() => import("../Pages/Admin/Login"));
+const Dashboard = lazy(() => import("../Pages/Admin/Dashboard"));
+const BlogForm = lazy(() => import("../Pages/Admin/AdminBlog"));
+const BlogList = lazy(() => import("../Pages/Admin/BlogList"));
+const CourseForm = lazy(() => import("../Pages/Admin/AdminCourse"));
+
+// Utils imports (keep these as normal imports)
 import AdminPublicRoutes from "../utils/AdminPublicRoutes";
 import AdminPrivateRoutes from "../utils/AdminPrivateRoutes";
-import BlogPage from "../Pages/User/BlogPage";
-import Login from "../Pages/Admin/Login";
-import Dashboard from "../Pages/Admin/Dashboard";
-import BlogForm from "../Pages/Admin/AdminBlog";
-import BlogList from "../Pages/Admin/BlogList";
-import CourseForm from "../Pages/Admin/AdminCourse";
 
 export const MainRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<AboutUs />} />
-      <Route path="/yoga" element={<Yoga />} />
-      <Route path="/meditation" element={<Meditation />} />
-      <Route path="/courses" element={<Courses />} />
-      <Route path="/gallery" element={<Gallery />} />
-      <Route path="/blogs" element={<Blogs />} />
-      <Route path="/contact" element={<Contact />} />
-      {/* <Route path="/beginner_yoga" element={<BeginnerYoga />} /> */}
-      {/* <Route path="/blog_page" element={<BlogPage />} /> */}
-      <Route path="/course/:id" element={<BeginnerYoga />} />
-      <Route path="/blog/:id" element={<BlogPage />} />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        {/* User routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/yoga" element={<Yoga />} />
+        <Route path="/meditation" element={<Meditation />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/course/:id" element={<BeginnerYoga />} />
+        <Route path="/blog/:id" element={<BlogPage />} />
 
+        {/* Admin public routes */}
+        <Route element={<AdminPublicRoutes />}>
+          <Route path="/admin" element={<Login />} />
+        </Route>
 
-
-
-      <Route element={<AdminPublicRoutes />}>
-            <Route path="/admin" element={<Login />} />
-          </Route>
-          {/* admin privte routes */}
-          <Route element={<AdminPrivateRoutes />}>
-            <Route path="/admin/dashboard" element={<Dashboard />} />
-           <Route path="/admin/blog" element={<BlogForm />} />
-            <Route path="/admin/bloglist" element={<BlogList />} />
-            <Route path="/admin/course" element={<CourseForm />} />
-
-           {/* <Route path="/admin/bloglist/edit/:id" element={<BlogEdit />} />  */}
-          </Route>
-
-          {/* <Route path="*" element={<NotFound />} /> */}
-
-    </Routes>
+        {/* Admin private routes */}
+        <Route element={<AdminPrivateRoutes />}>
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/blog" element={<BlogForm />} />
+          <Route path="/admin/bloglist" element={<BlogList />} />
+          <Route path="/admin/course" element={<CourseForm />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
