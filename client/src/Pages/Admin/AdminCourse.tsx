@@ -5,7 +5,7 @@ import 'react-quill/dist/quill.snow.css';
 import EditorToolbar, {
   modules,
   formats,
-} from "../../components/Admin/EditorToolbar";
+} from "../../Components/Admin/EditorToolbar";
 import { postForm } from '../../api/req';
 import Sidebar from '../../Components/Admin/Sidebar';
 
