@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  min-width: 100%;
+}
+
+/* Hide scrollbar for webkit browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueBold.otf") format("opentype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueLight.otf") format("opentype");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueMedium.otf") format("opentype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueRegular.otf") format("opentype");
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueSemiBold.otf") format("opentype");
+    font-weight: 600;
+  }
+  /* GalanoGrotesqueThin.otf */
+
+  @font-face {
+    font-family: "Galano";
+    src: url("/fonts/GalanoGrotesqueThin.otf") format("opentype");
+    font-weight: 100;
+
+  }
+
+  @font-face {
+    font-family: "Chalet";
+    src: url("/fonts/Chalet LondonNineteenEighty.otf") format("opentype");
+    /* font-weight: 100; */
+
+  }
+}
