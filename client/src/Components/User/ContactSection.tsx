@@ -7,7 +7,7 @@ import { GrMapLocation } from "react-icons/gr";
 function ContactSection() {
   return (
     <div>
-        <div className="relative w-full h-[60vh]  bg-gradient-to-r from-white via-emerald-100 to-emerald-100 flex items-center justify-center">
+        <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
             <div className="relative z-10 text-center">
             <h1 className="text-5xl font-semibold text-black mb-6 uppercase">contact us</h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 p-3">

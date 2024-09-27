@@ -58,7 +58,7 @@ function BeginnerYogaSection() {
 
         <div className="relative w-full h-[90vh] bg-cover bg-center" style={{ backgroundImage: `url(${url}/api/uploads/${course.cardImage})` }}>
             {/* Overlay to control the gradient and transparency */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-emerald-200 to-emerald-100 opacity-80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] opacity-80"></div>
 
             {/* Navbar */}
             <nav className="relative z-20 bg-transparent p3-4">
