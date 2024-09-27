@@ -5,6 +5,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import logo from '../../assets/images/IMG_2842.png'
 import Contact from './Contact';
 import { getdata } from '../../api/req';
+import { url } from '../../api/url';
 
 
 
@@ -43,7 +44,7 @@ function BlogPageSection() {
             {/* Image */}
             <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
               <img
-                src={`http://localhost:3000/api/uploads/${content.image}`}
+                src={`${url}/uploads/${content.image}`}
                 alt={content.heading}
                 className="w-full h-full object-cover aspect-video"
               />
@@ -62,7 +63,7 @@ function BlogPageSection() {
   console.log(blog,"blogblogblogblog")
   return (
     <div>
-        <div className="relative w-full h-[90vh] bg-cover bg-center" style={{ backgroundImage: `url(http://localhost:3000/api/uploads/${blog.cardImg})` }}>
+        <div className="relative w-full h-[90vh] bg-cover bg-center" style={{ backgroundImage: `url(${url}/uploads/${blog.cardImg})` }}>
             {/* Overlay to control the gradient and transparency */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-emerald-200 to-emerald-100 opacity-80"></div>
 

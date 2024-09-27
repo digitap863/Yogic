@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
  import Contact from './Contact';
 import { getdata } from '../../api/req';
+import { url } from '../../api/url';
 
 function BlogSection() {
   const [blogs, setBlogs] = useState([]);
@@ -68,7 +69,7 @@ function BlogSection() {
         {blogs.slice(0, isMobile  ? 3 : blogs.length).map((post:any, index) => (
           <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-green-500">
             <img 
-             src={`http://localhost:3000/api/uploads/${post.cardImg}`}
+             src={`${url}/uploads/${post.cardImg}`}
               alt={post.title} 
               className="w-full aspect-square rounded-3xl object-cover"
             />

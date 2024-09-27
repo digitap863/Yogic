@@ -19,6 +19,8 @@ const Dashboard = lazy(() => import("../Pages/Admin/Dashboard"));
 const BlogForm = lazy(() => import("../Pages/Admin/AdminBlog"));
 const BlogList = lazy(() => import("../Pages/Admin/BlogList"));
 const CourseForm = lazy(() => import("../Pages/Admin/AdminCourse"));
+const CourseList = lazy(() => import("../Pages/Admin/CourseList"));
+
 
 // Utils imports (keep these as normal imports)
 import AdminPublicRoutes from "../utils/AdminPublicRoutes";
@@ -51,6 +53,8 @@ export const MainRouter = () => {
           <Route path="/admin/blog" element={<BlogForm />} />
           <Route path="/admin/bloglist" element={<BlogList />} />
           <Route path="/admin/course" element={<CourseForm />} />
+          <Route path="/admin/courselist" element={<CourseList />} />
+
         </Route>
       </Routes>
     </Suspense>

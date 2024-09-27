@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { url } from '../../api/url';
+import {url} from '../../api/url';
 
 const BlogEditModal = ({ blog, onSave, onClose }) => {
   const [formData, setFormData] = useState({

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import Rectangle from '../../assets/images/Rectangle 8.png'; // Ensure this path is correct
 import Layout from './Layout';
 import girl from '../../assets/images/BeginnerYoga.png'
 import girl1 from '../../assets/images/BeginnerYoga2.png'
@@ -12,6 +11,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import logo from '../../assets/images/IMG_2842.png'
 import { GoDotFill } from "react-icons/go";
 import { getdata } from '../../api/req';
+import { url } from '../../api/url';
 
 
 function BeginnerYogaSection() {
@@ -56,7 +56,7 @@ function BeginnerYogaSection() {
     <div>
                  
 
-        <div className="relative w-full h-[90vh] bg-cover bg-center" style={{ backgroundImage: `url(http://localhost:3000/api/uploads/${course.cardImage})` }}>
+        <div className="relative w-full h-[90vh] bg-cover bg-center" style={{ backgroundImage: `url(${url}/api/uploads/${course.cardImage})` }}>
             {/* Overlay to control the gradient and transparency */}
             <div className="absolute inset-0 bg-gradient-to-r from-white via-emerald-200 to-emerald-100 opacity-80"></div>
 

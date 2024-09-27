@@ -12,6 +12,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { MdWbSunny } from "react-icons/md";
 import Contact from "./Contact";
 import { getdata } from "../../api/req";
+import { url } from "../../api/url";
 
 function CourseSection() {
   const navigate = useNavigate();
@@ -220,7 +221,7 @@ function CourseSection() {
               onClick = {() =>handleCourseClick(style._id)}
               className="relative rounded-[50px] overflow-hidden shadow-md">
                 <img
-                  src={`http://localhost:3000/api/uploads/${style.cardImage}`}
+                  src={`${url}/uploads/${style.cardImage}`}
                   alt={style.heading}
                   className="w-full h-full object-cover aspect-square"
                 />

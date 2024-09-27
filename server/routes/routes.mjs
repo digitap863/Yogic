@@ -1,5 +1,5 @@
 import express from 'express';
-import {  adminLogin, createBlog, createCourse, deleteBlog, getBlog, getCourses, singleBlog, singleCourse, updateBlog } from '../controllers/controllers.mjs';
+import {  adminLogin, createBlog, createCourse, deleteBlog, deleteCourse, getBlog, getCourses, singleBlog, singleCourse, updateBlog, updateCourse } from '../controllers/controllers.mjs';
 import { upload } from '../helpers/multer.mjs';
 import { authMiddleware } from '../middleware/authMiddleware.mjs';
 
@@ -33,6 +33,11 @@ router.post("/add-course", authMiddleware,upload.fields([
 ]), createCourse)
 router.get("/courses", getCourses)
 router.get("/course/:id", singleCourse)
+router.delete("/course/:id", authMiddleware, deleteCourse)
+router.put("/course/:id",authMiddleware, upload.fields([
+    { name: 'cardImg', maxCount: 1 },
+]), updateCourse);
+
 
 
 

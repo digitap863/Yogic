@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { deleteData, getdata, putForm } from '../../api/req'
 import BlogEditModal from './BlogEditModal';
-import { url } from '../../api/url'
+import  {url}  from '../../api/url'
 import Sidebar from '../../Components/Admin/Sidebar';
 
 

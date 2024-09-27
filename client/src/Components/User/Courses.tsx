@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdArrowForward } from 'react-icons/md';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import girl5 from '../../assets/images/yogaa.png'
@@ -7,37 +7,35 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { getdata } from '../../api/req';
+import { url } from '../../api/url';
+import {Button} from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
 
 
 
-const courses = [
-  {
-    title: 'BEGINNER YOGA SERIES',
-    description: 'Enhance Flexibility And Reduce Stress With Stretch & Flow Yoga. Expert-Led Classes For All Levels. Embrace Balance Today!',
-    image: girl5, 
-  },
-  {
-    title: 'MEDITATIONS FOR BEGINNERS',
-    description: 'Enhance Flexibility And Reduce Stress With Stretch & Flow Yoga. Expert-Led Classes For All Levels. Embrace Balance Today!',
-    image: girl5,
-  },
-  {
-    title: 'YOGA FOR STRESS RELIEF',
-    description: 'Enhance Flexibility And Reduce Stress With Stretch & Flow Yoga. Expert-Led Classes For All Levels. Embrace Balance Today!',
-    image: girl5,
-  },
-  {
-    title: 'ADVANCED YOGA SERIES',
-    description: 'Deepen Your Practice With Advanced Yoga Poses. Expert-Led Classes To Boost Strength And Flexibility!',
-    image: girl5,
-  },
-];
+
 
 function CourseSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const navigate = useNavigate();
 
-  const currentCourse = courses[currentIndex];
+  const [data,setData] = useState([])
+
+    const getCourse = async () => {
+        const response = await getdata("/courses")
+        setData(response.data.data)
+    }
+    useEffect(() => {
+        getCourse()
+    }, []);
+
+    const handleCourseClick = (courseId) => {
+      navigate(`/course/${courseId}`); // Replace with your route
+    };
+
+    console.log(data,"datadatadatadatadata")
+
 
 
   return (
@@ -45,12 +43,11 @@ function CourseSection() {
       <h2 className="text-4xl font-bold mb-8 text-black text-center font-galano">OUR COURSES</h2>
 
       {/* Course Cards Section */}
-      {/* <div className="relative"> */}
       <div className=" bg-white flex justify-center items-center px-6 sm:px-12 ">
       <div className="w-full max-w-7xl py-1 ">
         <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
+          spaceBetween={20}
           slidesPerView={1}  // You can adjust this for responsiveness
           breakpoints={{
             640: {
@@ -74,17 +71,20 @@ function CourseSection() {
           onSwiper={(swiper) => console.log(swiper)}
         >
           {/* Map through courses and display each in a slide */}
-          {courses.map((course, index) => (
+          {data.map((course:any, index) => (
             <SwiperSlide key={index}>
-              <div className="min-w-[300px] bg-gray-100 rounded-2xl relative overflow-hidden ">
+              <div 
+              onClick = {() =>handleCourseClick(course._id)}
+              className="min-w-[300px] bg-gray-100 rounded-3xl relative overflow-hidden ">
                 <img
-                  src={course.image}
-                  alt={course.title}
-                  className=" "
+                  src={`${url}/uploads/${course.cardImage}`}
+                  // src={`${url}/uploads/${content.image}`}
+                  alt={course.heading}
+                  className="aspect-[4/3]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-green-200 to-transparent opacity-70 rounded-2xl "></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#64BA75]  via-white to-transparent opacity-70 rounded-3xl "></div>
                 <div className="absolute bottom-4 left-4 right-4 text-black p-3">
-                  <h3 className="font-semibold text-3xl mb-2 pr-5 font-Montserrat">{course.title}</h3>
+                  <h3 className="font-semibold text-2xl mb-2 pr-5 font-Montserrat">{course.heading}</h3>
                   <p className="text-sm font-Montserrat">{course.description}</p>
                 </div>
               </div>
@@ -98,10 +98,13 @@ function CourseSection() {
 
       {/* Navigation and View All Button */}
       <div className="flex justify-between items-center  md:px-10 mt-8">
-        <button className="bg-white border border-green-500 text-green-500 px-6 py-3 rounded-full flex items-center font-galano">
+        <Button  
+         variant="ghost"
+        onClick={() => navigate('/courses')}
+         className="bg-white border border-green-500 text-green-500 px-6 py-6 rounded-full flex items-center font-galano">
           View All Courses <MdArrowForward className="ml-2" />
-        </button>
-
+        </Button>
+       
         <div className="flex space-x-4">
           <button  className="bg-white p-2 rounded-full  slidePrev-btn">
             <IoIosArrowBack className="text-2xl text-green-500" />
