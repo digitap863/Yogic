@@ -13,14 +13,14 @@ function Layout1({ image, benefits }) {
             </div>
           </div>
           {/* Text section taking 2/3 width */}
-          <div className="md:w-2/3 md:pl-0 pr-20">
-            <ul className="space-y-6">
+          <div className="md:w-2/3 md:pl-0 pr-10">
+            <ul className="space-y-6 pl-7">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex">
-                  <IoMdArrowDropright className="mt-1 mr-2 w-14 h-6 pl-5" />                  
-                  <div>
+                  <IoMdArrowDropright className="mt-1 mr-2 w-14 h-6 " />                  
+                  <div className=''>
                     <h3 className="font-semibold text-lg font-galano">{benefit.heading}</h3>
-                    <p className="text-gray-600 md:pr-20 md:mr-20 font-galano">{benefit.description}</p>
+                    <p className="text-gray-600 md:pr-20 md:mr-20 font-galano ">{benefit.description}</p>
                   </div>
                 </li>
               ))}

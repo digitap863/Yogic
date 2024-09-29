@@ -149,7 +149,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       heading="Transform Mind, Body, Soul with Yogicblis"
       description="Begin your journey towards inner peace with us, and discover how even small moments of mindfulness can lead to significant changes in your daily life. At Yogicblis, we provide a variety of classes tailored to every experience level, whether you're a beginner stepping onto the mat for the first time or an advanced practitioner seeking to enhance your practice. Our approach combines time-honored yogic traditions with contemporary methods, guiding you to develop physical strength, mental clarity, and spiritual growth."
       ctaText="View Courses"
-      ctaLink="#courses"
+      ctaLink="/courses"
       />
 
       <section className="bg-white py-20">
@@ -210,12 +210,13 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
 
       <div className=" md:hidden mt-6 text-center">
         {!showMore && (
-          <button
-            className="bg-white text-green-500 py-2 px-4 rounded-full text-lg hover:bg-green-700 transition duration-300 border border-green-500"
+         <Button 
+          size='lg'
+            className="bg-white text-green-500 py-2 px-10 rounded-full text-lg hover:bg-green-700 transition duration-300 border border-green-500"
             onClick={handleShowMore}
           >
-            View All
-          </button>
+             View All <FaArrowRight className="" />
+             </Button>
         )}
       </div>
 <div className='hidden md:block  '>
@@ -246,16 +247,17 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       {/* "Show Less" button after layouts are visible */}
       {showMore && (
         <div className="mt-6 text-center">
-          <button
-            className="bg-white text-green-500 py-2 px-4 rounded-full text-lg hover:bg-green-700 transition duration-300 border border-green-500"
+          <Button
+            className="bg-white text-green-500 py-2 px-8 rounded-full text-lg hover:bg-green-700 transition duration-300 border border-green-500"
             onClick={handleShowMore}
           >
             Show Less
-          </button>
+          </Button>
         </div>
       )}
 
-    <div className="bg-white pt-10 md:p-20 md:ml-20 px-6">
+<div className="container mx-auto flex justify-center">
+    <div className="bg-white pt-10  md:mx-20 px-6 md:px-16">
       <h1 className="text-3xl font-bold mb-6 font-galano ">TYPES OF YOGA</h1>
       <p className="mb-6 font-galano font-normal text-base text-gray-500">
         Yoga encompasses a diverse range of techniques and practices, each with its unique focus and benefits. There are numerous types of
@@ -278,8 +280,8 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end pl-10  pr-4 py-6 text-white">
-            <h3 className="text-xl font-semibold mb-2 font-galano">{style.name} :</h3>
-            <p className="text-sm font-thin font-galano ">{style.description}</p>
+            <h3 className="lg:text-xl font-semibold mb-2 font-galano text-lg">{style.name} :</h3>
+            <p className="md:text-sm font-thin font-galano text-xs line-clamp-3">{style.description}</p>
           </div>
         </div>
       ))}
@@ -295,9 +297,10 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         </div>
       )}
     </div>
+    </div>
 
 
-    <div className="my-20 max-w-7xl mx-auto flex justify-center">
+    <div className="my-20 max-w-6xl mx-auto flex justify-center">
     <img
     src={swami2}
     alt="Swami Vivekananda"

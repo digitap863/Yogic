@@ -19,7 +19,7 @@ const YogaSection = () => {
             <div className="container mx-auto bg-white">
                 <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
                     {/* Mobile View */}
-                    <div className="block md:hidden text-center">
+                    <div className="block md:hidden text-left">
                         <h2 className="text-3xl font-semibold text-gray-800 mb-6 font-galano">
                             Our Passion for Yoga, Your Path to Wellness
                         </h2>
@@ -41,12 +41,12 @@ const YogaSection = () => {
                             your journey to balance, strength, and inner peace. Join us and
                             discover how yoga can enrich your life.
                         </p>
-                        <a
-                            href="#"
-                            className="inline-flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-galano"
-                        >
+                        <Button 
+                            size= 'sm'
+                            onClick={() => navigate(`/about`)}
+                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
                             Learn More <FaArrowRight className="" />
-                        </a>
+                        </Button>
                     </div>
 
                     {/* Desktop View */}

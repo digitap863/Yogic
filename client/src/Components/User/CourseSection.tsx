@@ -134,7 +134,7 @@ function CourseSection() {
         <div className="flex flex-row md:space-x-4  mb-4">
           <button
             onClick={() => setSelectedClass("yoga")}
-            className={`m-1 px-8 py-4 rounded-full font-galano  ${
+            className={`m-1 lg:px-8 px-7 py-4 rounded-full font-galano  ${
               selectedClass === "yoga"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -144,7 +144,7 @@ function CourseSection() {
           </button>
           <button
             onClick={() => setSelectedClass("meditation")}
-            className={`m-1 px-8 py-4 rounded-full font-galano  ${
+            className={`m-1 lg:px-8 px-3 py-4 rounded-full font-galano  ${
               selectedClass === "meditation"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -154,7 +154,8 @@ function CourseSection() {
           </button>
         </div>
       </div>
-
+      
+      <div className="container mx-auto flex justify-left ">
       <div className="bg-white pt-10 md:p-20 md:ml-20 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {loading
@@ -197,6 +198,7 @@ function CourseSection() {
           )}
         </div>
       </div>
+      </div>
 
       <div className="mt-8 py-4 bg-gray-100 overflow-hidden">
                 <div className="animate-marquee whitespace-nowrap flex items-center">
@@ -223,7 +225,7 @@ function CourseSection() {
                 The Essential Role of Yoga in Modern Life
               </h2>
               <img src={girl7} alt="girl" className="rounded-lg mb-6" />
-              <p className="text-gray-600 mb-6 uppercase font-galano">
+              <p className="text-gray-600 mb-6 font-galano">
                 In today’s fast-paced world, yoga is more important than ever.
                 Amidst the constant demands of modern life—whether it's the
                 pressure of work, the distractions of digital media, or the

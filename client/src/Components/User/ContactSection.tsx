@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaArrowRight } from 'react-icons/fa';
 import { IoLocationOutline, IoMailOutline, IoCallOutline } from 'react-icons/io5';
 import { GrMapLocation } from "react-icons/gr";
+import { Button } from '@nextui-org/react';
 
 
 function ContactSection() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const data = await response.json();
+        console.log(data); // Now you can see the response data
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData(); // Call the async function
+  }, []);
+
+
+
   return (
     <div>
         <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
@@ -25,7 +42,7 @@ function ContactSection() {
         {/* Address Section */}
         <div className="mb-8">
           <div className="flex items-center">
-            <div className="bg-[#64BA75] rounded-full p-4 mr-4">
+            <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <GrMapLocation className="text-white text-3xl" />
             </div>
             <div>
@@ -41,7 +58,7 @@ function ContactSection() {
         {/* Email Section */}
         <div className="mb-8">
           <div className="flex items-center">
-            <div className="bg-[#64BA75] rounded-full p-4 mr-4">
+            <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <IoMailOutline className="text-white text-3xl" />
             </div>
             <div>
@@ -54,7 +71,7 @@ function ContactSection() {
         {/* Contact Section */}
         <div className="mb-8">
           <div className="flex items-center">
-            <div className="bg-[#64BA75] rounded-full p-4 mr-4">
+            <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <IoCallOutline className="text-white text-3xl" />
             </div>
             <div>
@@ -101,13 +118,14 @@ function ContactSection() {
           />
         </div>
         <div className="flex justify-center">
-          <a
-            href="#"
-            className="inline-flex items-center px-8 py-3 bg-[#64BA75] text-white rounded-[50px] hover:bg-white hover:text-[#64BA75] transition border border-green-500"
-          >
-            Submit <FaArrowRight className="ml-2" />
-          </a>
+        <Button 
+          size='lg'
+          // onClick={}
+          className='bg-[#64BA75] inline-flex items-center px-10 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
+            Submit <FaArrowRight className="mb-0.5" />
+          </Button>
         </div>
+       
       </form>
     </div>
   </div>

@@ -7,7 +7,7 @@ function Layout2({ image, benefits }) {
       <div className="container mx-auto py-8 flex justify-center">
       <div className="flex flex-col-reverse md:flex-row items-center bg-white lg:max-w-6xl">
         <div className="md:w-2/3 md:pl-8">
-          <ul className="space-y-6 md:pr-20 md:mr-10 md:pl-20 ml-8">
+          <ul className="space-y-6 md:pr-20 md:mr-10 md:pl-20 ml-8 pr-10">
             {benefits.map((benefit, index) => (
               <li key={index} className="flex bg-white">
                 <IoMdArrowDropright className="mt-1 mr-2 w-14 h-6" />                  

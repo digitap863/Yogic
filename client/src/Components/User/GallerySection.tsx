@@ -127,7 +127,7 @@ function GallerySection() {
         <div className="flex flex-col  md:flex-row md:space-x-4 md:mb-10 mb-4">
           <button
             onClick={() => setSelectedClass('yoga')}
-            className={`m-1 px-8 py-4 rounded-full font-galano ${
+            className={`m-1 lg:px-8 px-7 py-4 rounded-full font-galano ${
               selectedClass === "yoga"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -137,7 +137,7 @@ function GallerySection() {
           </button>
           <button
             onClick={() => setSelectedClass('meditation')}
-            className={`m-1 px-8 py-4 rounded-full font-galano  ${
+            className={`m-1lg:px-8 px-3 py-4 rounded-full font-galano  ${
               selectedClass === "meditation"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -148,6 +148,7 @@ function GallerySection() {
         </div>
 
         {/* Conditionally Render Images */}
+        <div className="container mx-auto flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 ">
         {filteredCourses
           .slice(0,isMobile? (loadFullYoga || loadFullMeditation ? filteredCourses.length : 2)
@@ -180,6 +181,7 @@ function GallerySection() {
             </button>
           )}
 
+        </div>
         </div>
       </div>
 

@@ -52,7 +52,7 @@ const TestimonialSlider = () => {
       <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={30}
-          slidesPerView={4}
+          slidesPerView={1}
           navigation={{
             prevEl: '.slidePrev-btn',
             nextEl: '.slideNext-btn'

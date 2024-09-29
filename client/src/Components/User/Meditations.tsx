@@ -127,12 +127,12 @@ function Meditations() {
         ctaLink="/courses"
         />
   
-        <section className="bg-white py-20">
+        <section className="bg-white lg:py-20 py-10">
               <div className="container mx-auto bg-white">
                   <div className="flex flex-col md:flex-row items-left justify-between px-6 md:px-16 bg-white">
                       {/* Mobile View */}
                       <div className="block md:hidden text-left">
-                          <h2 className=" font-galano text-xl font-bold text-gray-800 mb-6">
+                          <h2 className=" font-galano text-2xl font-bold text-gray-800 mb-6">
                           Why meditation is important in today’s world? 
                           </h2>
                           <img
@@ -174,7 +174,7 @@ function Meditations() {
     <div className="flex flex-col md:flex-row items-center justify-between bg-white mb-12 border border-gray-300 rounded-[50px] md:p-10 max-w-7xl mx-auto mt-8 p-4 m-2 ">
       {/* Text Section */}
       <div className="md:w-2/3 ">
-        <h2 className=" text-2xl md:text-2xl font-bold mb-4 font-galano">
+        <h2 className=" text-2xl md:text-2xl font-bold mb-4 font-galano pt-2">
           What Meditation is Not:
         </h2>
         <div className="md:w-1/3 mt-8 md:mt-0  flex justify-center items-center  lg:hidden ">
@@ -184,15 +184,15 @@ function Meditations() {
           className="w-3/4 max-w-xs md:max-w-sm rounded-lg object-cover"
         />
       </div>
-        <ul className="list-disc pl-5 space-y-4 text-sm md:text-base font-galano">
+        <ul className="list-disc pl-5 space-y-4 text-sm md:text-base font-galano pt-8 text-gray-500">
           <li>
-            <span className="font-semibold">Not About Stopping Thoughts:</span> A common misconception is that meditation is about completely stopping thoughts. Instead, it’s about changing your relationship with thoughts—observing them without getting attached or carried away.
+            <span className="font-semibold text-gray-700">Not About Stopping Thoughts:</span> A common misconception is that meditation is about completely stopping thoughts. Instead, it’s about changing your relationship with thoughts—observing them without getting attached or carried away.
           </li>
           <li>
-            <span className="font-semibold">Not a Quick Fix:</span> Meditation is a practice that requires patience and consistency. The benefits often accumulate over time, rather than being immediate.
+            <span className="font-semibold text-gray-700">Not a Quick Fix:</span> Meditation is a practice that requires patience and consistency. The benefits often accumulate over time, rather than being immediate.
           </li>
           <li>
-            <span className="font-semibold">Not Limited to One Form:</span> Meditation comes in many forms and can be practiced in various ways, from seated meditation to walking meditation, from mindfulness to mantra repetition. There’s no one-size-fits-all approach.
+            <span className="font-semibold text-gray-700">Not Limited to One Form:</span> Meditation comes in many forms and can be practiced in various ways, from seated meditation to walking meditation, from mindfulness to mantra repetition. There’s no one-size-fits-all approach.
           </li>
         </ul>
       </div>
@@ -206,8 +206,11 @@ function Meditations() {
       </div>
     </div>
     </div>
-  
+    <div className="container mx-auto flex justify-left py-8">
+    <div className=" lg:max-w-6xl">
       <p className='font-bold md:text-4xl md:pl-20 md:ml-20 uppercase text-2xl ml-4 font-galano'>Benefits of meditation</p>
+      </div>
+      </div>
   
         <Layout1
         image={girl1}
@@ -233,7 +236,8 @@ function Meditations() {
         image={girl5}
         benefits={yogaBenefits5}
       />
-  
+   <div className="container mx-auto flex justify-left ">
+   
       <div className="bg-white pt-10 md:p-20 md:ml-20 p-4">
         <h1 className="text-3xl font-bold mb-6 font-galano">TYPES OF MEDITATION</h1>
         <p className="mb-6 font-galano">
@@ -244,10 +248,13 @@ function Meditations() {
         {yogaStyles.slice(0, isMobile  ? 3 : yogaStyles.length)
           .map((style, index) => (
           <div key={index} className="relative rounded-[50px] overflow-hidden shadow-md">
+          <div className="relative w-full h-full">
             <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
-              <h3 className="text-xl font-semibold mb-2 font-galano">{style.name}</h3>
-              <p className="text-sm font-galano">{style.description}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end  pl-10 pr-4 py-6 text-white">
+              <h3 className="lg:text-xl font-semibold mb-2 font-galano text-lg">{style.name}</h3>
+              <p className="md:text-sm font-thin font-galano text-xs">{style.description}</p>
             </div>
           </div>
         ))}
@@ -264,15 +271,14 @@ function Meditations() {
         </div>
       )}
       </div>
-  
-  
-      <div className="my-20 max-w-4xl mx-auto flex justify-center">
-      <img
-      src={swami3}
-      alt="Swami Vivekananda"
-      className="w-full h-auto object-cover"
-      />
-      </div>
+  </div>
+      <div className="my-20 max-w-7xl mx-auto flex justify-center">
+    <img
+    src={swami3}
+    alt="Swami Vivekananda"
+    className="w-full h-auto object-cover rounded-lg shadow-lg m-1"
+    />
+    </div>
 
       
   
