@@ -18,18 +18,62 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  content1: {
-    type: String,
-    required: true
+   content1: {
+      heading:{
+          type:String,
+          required:true
+      },
+      image:{
+          type:String,
+          required:true
+      },
+      Description:{
+          type:String,
+          required:true
+      }
   },
   content2: {
-    type: String,
-    required: true
+      heading:{
+          type:String,
+          required:true
+      },
+      image:{
+          type:String,
+          required:true
+      },
+      Description:{
+          type:String,
+          required:true
+      }
   },
   content3: {
-    type: String,
-    required: true
+      heading:{
+          type:String,
+          required:true
+      },
+      image:{
+          type:String,
+          required:true
+      },
+      Description:{
+          type:String,
+          required:true
+      }
   },
+  content4: {
+      heading:{
+          type:String,
+          required:true
+      },
+      image:{
+          type:String,
+          required:true
+      },
+      Description:{
+          type:String,
+          required:true
+      }
+  }
 }, { timestamps: true });
 
 export const CourseModel = mongoose.model("Course", courseSchema);

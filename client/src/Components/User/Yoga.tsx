@@ -12,7 +12,7 @@ const Yoga = () => {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto  py-12 px-4">
       {/* Left section with text */}
-      <div className="lg:w-2/5 text-center lg:text-left space-y-6">
+      <div className="lg:w-2/5 text-center lg:text-left space-y-6 self-start">
         <h2 className="text-4xl font-bold pb-2">
           <span className="block font-galano">Discovering Your True <br className='hidden md:block'/> Self</span>
           {/* <span className="block font-galano"></span> */}
@@ -35,7 +35,7 @@ const Yoga = () => {
       </div>
 
       {/* Right section with images */}
-      <div className="lg:w-3/5 flex justify-center items-start ">
+      <div className="lg:w-3/5 flex justify-center items-start self-start">
           <div className='flex justify-center items-center'>
           <img
             className="rounded-xl object-cover w-11/12 h-full"
@@ -44,7 +44,7 @@ const Yoga = () => {
           />
           </div>
 
-          <div className="lg:w-1/3 flex flex-col space-y-4 justify-center lg:justify-end m-2 py-2">
+          <div className="lg:w-1/3 flex flex-col space-y-6 justify-center lg:justify-end ">
             <img
               className="lg:rounded-2xl rounded-[50px] object-cover w-full h-24 lg:h-32"
               src={Pose1}
@@ -63,7 +63,7 @@ const Yoga = () => {
           </div>
       </div>
 
-      <div className="lg:hidden space-y-4 text-left p-2">
+      <div className="lg:hidden space-y-4 text-left  self-start">
   <div className="flex items-center space-x-4">
     <img
       className=""
@@ -79,7 +79,7 @@ const Yoga = () => {
   <button className="bg-[#64BA75] inline-flex items-center font-Epilogue text-white px-6 py-2 rounded-full hover:bg-green-600 transition">
     Learn More<FaArrowRight className="ml-2" />
   </button>
-</div>
+      </div>
 
      
     </section>

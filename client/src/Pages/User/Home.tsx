@@ -1,6 +1,5 @@
 import React from 'react'
 import Banner from '../../Components/User/Banner'
-import Navbar from '../../Components/User/Navbar'
 import YogaSection from '../../Components/User/Yogasection'
 import CourseSection from '../../Components/User/Courses'
 import Yoga from '../../Components/User/Yoga'
@@ -44,12 +43,12 @@ function Home() {
         <CourseSection />
         <Yoga />
         <FAQSection faqData={faqData} />
-        <div className="w-full flex flex-col items-center bg-white pb-10 justify-center">
-            <div className="mt-8 max-w-4xl">
+        <div className=" flex flex-col items-center bg-white pb-10 justify-center">
+            <div className="w-full px-4 mx-auto flex pb-10  ">
             <img
               src={swami} 
               alt="Swami Vivekananda"
-              className="w-full h-auto object-cover rounded-lg shadow-lg"
+              className=" object-cover rounded-lg shadow-lg aspect mx-auto"
             />
             </div>
         </div>

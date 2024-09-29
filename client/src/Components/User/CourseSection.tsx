@@ -13,6 +13,7 @@ import { MdWbSunny } from "react-icons/md";
 import Contact from "./Contact";
 import { getdata } from "../../api/req";
 import { url } from "../../api/url";
+import { Button } from "@nextui-org/react";
 
 function CourseSection() {
   const navigate = useNavigate();
@@ -49,59 +50,6 @@ function CourseSection() {
     setIsMobile(window.innerWidth < 768);
   };
 
-  const meditationStyles = [
-    {
-      name: "Beginner Meditation Series",
-      image: girl2,
-    },
-    {
-      name: "Beginner Meditation Series",
-      image: girl3,
-    },
-    {
-      name: "Beginner Meditation Series",
-      image: girl4,
-    },
-    {
-      name: "Beginner Meditation Series",
-      image: girl5,
-    },
-    {
-      name: "Beginner Meditation Series",
-      image: girl5,
-    },
-    {
-      name: "Beginner Meditation Series",
-      image: girl5,
-    },
-  ];
-
-  const YogaStyles = [
-    {
-      name: "Beginner Yoga Series",
-      image: girl2,
-    },
-    {
-      name: "Beginner Yoga Series",
-      image: girl3,
-    },
-    {
-      name: "Beginner Yoga Series",
-      image: girl4,
-    },
-    {
-      name: "Beginner Yoga Series",
-      image: girl5,
-    },
-    {
-      name: "Beginner Yoga Series",
-      image: girl5,
-    },
-    {
-      name: "Beginner Yoga Series",
-      image: girl5,
-    },
-  ];
 
   const items = Array(10).fill({
     icon: <MdWbSunny className="inline-block text-green-500 mx-2" />,
@@ -159,18 +107,18 @@ function CourseSection() {
       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-semibold text-black mb-6">COURSES</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <h1 className="text-5xl font-semibold text-black mb-6 font-galano">COURSES</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
             At Yogic, we believe in the transformative power of yoga to enhance
             your well-being. Our dedicated instructors create a welcoming space
             where you can explore and deepen your practice.
           </p>
-          <button
-            onClick={() => navigate(`/contact`)}
-            className="text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors"
-          >
-            Contact Us →
-          </button>
+          <Button 
+          size='lg'
+          onClick={() => navigate(`/contact`)}
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
+            Contact Us <FaArrowRight className="" />
+          </Button>
         </div>
       </div>
 
@@ -186,7 +134,7 @@ function CourseSection() {
         <div className="flex flex-row md:space-x-4  mb-4">
           <button
             onClick={() => setSelectedClass("yoga")}
-            className={`m-1 px-8 py-4 rounded-full  ${
+            className={`m-1 px-8 py-4 rounded-full font-galano  ${
               selectedClass === "yoga"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -196,7 +144,7 @@ function CourseSection() {
           </button>
           <button
             onClick={() => setSelectedClass("meditation")}
-            className={`m-1 px-8 py-4 rounded-full  ${
+            className={`m-1 px-8 py-4 rounded-full font-galano  ${
               selectedClass === "meditation"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -225,8 +173,8 @@ function CourseSection() {
                   alt={style.heading}
                   className="w-full h-full object-cover aspect-square"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
-                  <h3 className="text-xl font-semibold mb-2">{style.heading}</h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-4 text-white">
+                  <h3 className="text-xl font-semibold md:mb-8 pl-6 font-galano">{style.heading}</h3>
                 </div>
               </div>
             ))}
@@ -251,31 +199,31 @@ function CourseSection() {
       </div>
 
       <div className="mt-8 py-4 bg-gray-100 overflow-hidden">
-        <div className="animate-marquee whitespace-nowrap flex items-center">
-          {/* Loop over the array to generate icons and text */}
-          {items.map((_, index) => (
-            <React.Fragment key={index}>
-              <span className="mx-2 text-green-500">
-                <MdWbSunny className="inline-block" />
-              </span>
-              <span className="mx-4 text-green-600">
-                Mindful Movement with Yogic
-              </span>
-            </React.Fragment>
-          ))}
+                <div className="animate-marquee whitespace-nowrap flex items-center">
+                        {/* Loop over the array to generate icons and text */}
+                        {items.map((_, index) => (
+                            <React.Fragment key={index}>
+                                <span className="mx-2 text-green-500">
+                                    <MdWbSunny className="inline-block" />
+                                </span>
+                                <span className="mx-4 text-green-600">
+                                    Mindful Movement with Yogic
+                                </span>
+                            </React.Fragment>
+                        ))}
+                </div>
         </div>
-      </div>
 
       <section className="bg-white py-20">
         <div className="container mx-auto bg-white">
           <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
             {/* Mobile View */}
             <div className="block md:hidden text-left">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6 uppercase">
                 The Essential Role of Yoga in Modern Life
               </h2>
               <img src={girl7} alt="girl" className="rounded-lg mb-6" />
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 uppercase font-galano">
                 In today’s fast-paced world, yoga is more important than ever.
                 Amidst the constant demands of modern life—whether it's the
                 pressure of work, the distractions of digital media, or the
@@ -297,10 +245,10 @@ function CourseSection() {
             {/* Desktop View */}
             <div className="hidden md:flex md:flex-row items-center justify-between  pl-10">
               <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-2 self-start">
-                <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                <h2 className="text-4xl font-bold text-gray-800 mb-6 uppercase font-galano">
                   The Essential Role of Yoga in Modern Life
                 </h2>
-                <p className="text-gray-600 mb-6 pl-2 pr-10 ">
+                <p className="text-gray-600 mb-6 pl-2 pr-10 font-galano ">
                   In today’s fast-paced world, yoga is more important than ever.
                   Amidst the constant demands of modern life—whether it's the
                   pressure of work, the distractions of digital media, or the

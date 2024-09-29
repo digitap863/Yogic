@@ -99,7 +99,7 @@ const createBlog = async (req, res) => {
         });
 
         await newBlog.save();
-        res.status(201).json({ message: 'Blog added successfully' });
+        res.status(201).json({ message: 'Blog added successfully' , success:true});
     } catch (error) {
         res.status(500).json({ message: 'Failed to add blog', error });
     }
@@ -259,7 +259,7 @@ const updateBlog = async (req, res) => {
           return res.status(404).json({ message: 'Blog not found' });
         }
     
-        res.status(200).json({ message: 'Blog updated successfully', blog: updatedBlog });
+        res.status(200).json({ success: true, message: 'Blog updated successfully', blog: updatedBlog });
       } catch (error) {
         console.error('Error updating blog:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -270,29 +270,47 @@ const createCourse = async (req, res) => {
     console.log(req.body)
     console.log(req.files)
     try {
-      const { courseType, heading, description, content1, content2, content3 } = req.body;
+      const { courseType, heading, description,content1Heading,
+        content1Description,
+        content2Heading,
+        content2Description,
+        content3Heading,
+        content3Description,
+        content4Heading,
+        content4Description
+} = req.body;
   
-    //   req.files.cardImg[0].filename,
-      // Access the uploaded image
-      const cardImage = req.files['cardImage'] ? req.files['cardImage'][0].filename : null;
-      console.log(cardImage)
-  
-      if (!cardImage) {
-        return res.status(400).json({ message: 'Image is required.' });
-      }
   
       const newCourse = new CourseModel({
         courseType,
         heading,
         description,
-        cardImage, 
-        content1,
-        content2,
-        content3
+        cardImage : req.files.cardImage[0].filename, 
+        content1: {
+            heading: content1Heading,
+            image: req.files.content1Image[0].filename,
+            Description: content1Description,
+        },
+        content2: {
+            heading: content2Heading,
+            image: req.files.content2Image[0].filename,
+            Description: content2Description,
+        },
+        content3: {
+            heading: content3Heading,
+            image: req.files.content3Image[0].filename,
+            Description: content3Description,
+        },
+        content4: {
+            heading: content4Heading,
+            image: req.files.content4Image[0].filename,
+            Description: content4Description,
+        }
+
       });
   
       await newCourse.save();
-      res.status(201).json({ message: 'Course created successfully!' });
+      res.status(201).json({ message: 'Course created successfully!' ,success: true });
     } catch (error) {
         console.error('error in creating coures',error);
       res.status(500).json({ message: 'Error creating course', error });
@@ -301,7 +319,9 @@ const createCourse = async (req, res) => {
 
   const getCourses = async (req, res) => {
     try {
-        const Courses = await CourseModel.find({})
+        console.log("i am here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        const Courses = await CourseModel.find()
+        console.log(Courses,"CoursesCoursesCoursesCoursesCoursesCoursesCourses")
         return res.status(200).send({ data: Courses, success: true })
     } catch (error) {
         console.log(error.message)
@@ -328,11 +348,32 @@ const deleteCourse = async (req, res) => {
         if (!data) {
             return res.status(404).send({ message: "data not found" });
         }
-        const cardImg = data.cardImage
+        const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image, data.content3.image, data.content4.image];
+
+        // Directory path where images are stored
         const directoryPath = path.join(__dirname, '../uploads');
 
-        const filePaths = path.join(directoryPath, cardImg)
-        await deleteFile(filePaths).then(() => CourseModel.findOneAndDelete({ _id: id }))
+        // Helper function to check if file exists and delete it
+        const deleteIfExists = async (image) => {
+            if (image) {
+                const filePath = path.join(directoryPath, image);
+                if (fs.existsSync(filePath)) {
+                    try {
+                        const result = await deleteFile(filePath);
+                        console.log(result);
+                    } catch (err) {
+                        console.error(err);
+                    }
+                } else {
+                    console.log(`File not found: ${filePath}, skipping...`);
+                }
+            }
+        };
+
+        // Iterate through the images and delete if they exist
+        await Promise.all(imagesToDelete.map(deleteIfExists));
+
+        await  CourseModel.findOneAndDelete({ _id: id })
         res.status(200).send({ success: true, message: "Deleted Successfully" });
     } catch (error) {
         console.log(error);
@@ -347,7 +388,7 @@ const updateCourse = async (req, res) => {
 
         const existingBlog = await CourseModel.findById(id);
         if (!existingBlog) {
-            return res.status(404).json({ message: 'Blog not found' });
+            return res.status(404).json({ message: 'Course not found' });
         }
 
 
@@ -356,9 +397,14 @@ const updateCourse = async (req, res) => {
             courseType,
            heading,
            description,
-           content1, 
-            content2, 
-            content3, 
+      'content1.heading': content1Heading, 
+      'content1.Description': content1Description, 
+      'content2.heading': content2Heading, 
+      'content2.Description': content2Description, 
+      'content3.heading': content3Heading, 
+      'content3.Description': content3Description, 
+      'content4.heading': content4Heading, 
+      'content4.Description': content4Description 
         } = req.body;
     
         // Prepare the updated data object
@@ -366,16 +412,45 @@ const updateCourse = async (req, res) => {
           courseType,
           heading,
           description,
-          content1,
-          content2,
-          content3,
+          content1: {
+            heading: content1Heading,
+            Description: content1Description,
+            image: existingBlog.content1.image 
+          },
+          content2: {
+            heading: content2Heading,
+            Description: content2Description,
+            image: existingBlog.content2.image
+          },
+          content3: {
+            heading: content3Heading,
+            Description: content3Description,
+            image: existingBlog.content3.image
+          },
+          content4: {
+            heading: content4Heading,
+            Description: content4Description,
+            image: existingBlog.content4.image
+          },
           cardImage: existingBlog.cardImage
         };
     
-        // Handle image uploads if any new images are uploaded
         if (req.files?.cardImage) {
-          updatedData.cardImage = req.files.cardImage[0].filename;
-        }
+            updatedData.cardImage = req.files.cardImage[0].filename;
+          }
+          if (req.files?.content1Image) {
+            updatedData.content1.image = req.files.content1Image[0].filename;
+          }
+          if (req.files?.content2Image) {
+            updatedData.content2.image = req.files.content2Image[0].filename;
+          }
+          if (req.files?.content3Image) {
+            updatedData.content3.image = req.files.content3Image[0].filename;
+          }
+          if (req.files?.content4Image) {
+            updatedData.content4.image = req.files.content4Image[0].filename;
+          }
+  
             
         // Find the blog by ID and update it
         console.log(id,"idididididididididididid")
@@ -387,14 +462,12 @@ const updateCourse = async (req, res) => {
         if (!updatedCourse) {
           return res.status(404).json({ message: 'Course not found' });
         }
-    
-        res.status(200).json({ message: 'Course updated successfully', course: updatedCourse });
+        res.status(200).json({  success: true, message: 'Course updated successfully', course: updatedCourse });
       } catch (error) {
         console.error('Error updating blog:', error);
         res.status(500).json({ message: 'Internal server error' });
       }
 };
-
 
 export {
     adminLogin,
@@ -408,5 +481,4 @@ export {
     singleCourse,
     updateCourse,
     deleteCourse
-   
 }

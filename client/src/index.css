@@ -6,14 +6,14 @@
 @tailwind utilities;
 
 @keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
   display: flex;
-  animation: marquee 20s linear infinite;
-  min-width: 100%;
+  animation: marquee 25s linear infinite;
+  width:  max-content;
 }
 
 /* Hide scrollbar for webkit browsers */
@@ -25,6 +25,26 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+.swiper-pagination-bullet {
+  background-color: #d1d5db; /* bg-gray-300 */
+  opacity: 0.75;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000; /* bg-black */
+  opacity: 1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000; /* text-black */
+  opacity: 0.75;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  opacity: 1;
 }
 
 @layer base {

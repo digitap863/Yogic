@@ -1,5 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+import { FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,8 +13,8 @@ const Footer = () => {
           
           {/* Learn More Section */}
           <div>
-            <h3 className="font-semibold mb-4">Learn More</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4 font-galano">Learn More</h3>
+            <ul className="space-y-2 font-galano font-light text-sm">
               {['Home', 'About Us', 'Yoga', 'Meditation', 'Courses', 'Gallery', 'Blog', 'Contact'].map((item) => (
                 <li key={item}><a href="#" className="hover:underline">{item}</a></li>
               ))}
@@ -20,8 +23,8 @@ const Footer = () => {
 
           {/* Yoga Courses Section */}
           <div>
-            <h3 className="font-semibold mb-4">Yoga Courses</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4 font-galano">Yoga Courses</h3>
+            <ul className="space-y-2 font-galano font-light text-sm">
               {['Beginner Yoga Series', 'Yoga For Stress Relief', 'Yoga For Flexibility', 'Morning Yoga Routine', 'Yoga For Seniors', 'Yoga For Perimenopausal', 'And Menopausal Women'].map((item) => (
                 <li key={item}><a href="#" className="hover:underline">{item}</a></li>
               ))}
@@ -30,8 +33,8 @@ const Footer = () => {
 
           {/* Meditation Courses Section */}
           <div>
-            <h3 className="font-semibold mb-4">Meditation Courses</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4 font-galano">Meditation Courses</h3>
+            <ul className="space-y-2 font-galano font-light text-sm">
               {['Meditations for beginners', 'Intermediate', 'Advanced', 'Spiritual Coaching', 'Meditations for kids', 'Meditations for teens', 'Meditation for adults', 'Chakra healing program'].map((item) => (
                 <li key={item}><a href="#" className="hover:underline">{item}</a></li>
               ))}
@@ -40,8 +43,8 @@ const Footer = () => {
 
           {/* Contact Us Section */}
           <div>
-            <h3 className="font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2">
+            <h3 className="font-semibold mb-4 font-galano">Contact Us</h3>
+            <ul className="space-y-2 font-galano font-light text-sm">
               <li>Mobile Number</li>
               <li>E-mail</li>
             </ul>
@@ -49,12 +52,13 @@ const Footer = () => {
 
           {/* Social Media Section */}
           <div>
-            <h3 className="font-semibold mb-4">Social</h3>
+            <h3 className="font-semibold mb-4 font-galano">Social</h3>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-gray-200"><Facebook size={24} /></a>
+              <FaFacebookF className='hover:text-gray-200'size={24} />
               <a href="#" className="hover:text-gray-200"><Instagram size={24} /></a>
-              <a href="#" className="hover:text-gray-200"><Twitter size={24} /></a>
-              <a href="#" className="hover:text-gray-200"><Youtube size={24} /></a>
+              <FaXTwitter className='hover:text-gray-200'size={24} />
+              <FaYoutube className='hover:text-gray-200'size={24} />
+
             </div>
           </div>
         </div>

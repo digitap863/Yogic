@@ -1,9 +1,11 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import {Button} from "@nextui-org/react";
+
 
 function Contact() {
   return (
-    <div className="min-h-screen bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-10 ">
+    <div className=" bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-8 ">
       <div className="flex flex-col md:flex-row md:items-center bg-white py-10 max-w-6xl">
         {/* Left Section */}
         <div className="md:w-1/2  md:text-left  bg-white md:mr-20 md:px-12 self-start">
@@ -33,44 +35,44 @@ function Contact() {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  "
               />
             </div>
             <div>
               <input
                 type="email"
                 placeholder="E-mail"
-                className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
               />
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Course"
-                className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
               />
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Pick a day"
-                className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
               />
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Country"
-                className="w-full px-4 py-3 sm:py-4 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
               />
             </div>
-            <div className="flex justify-center">
-              <a
-                href="#"
-                className="inline-flex items-center px-8 sm:px-10 py-3 bg-white text-[#64BA75] rounded-full hover:bg-green-600 hover:text-white transition border border-green-500"
+            <div className="flex justify-center pt-4">
+              <Button
+               size='lg'
+                className="inline-flex items-center px-8 sm:px-8   bg-white text-[#64BA75] rounded-full hover:bg-[#64BA75] hover:text-white transition  border-2 border-[#64BA75] font-Epilogue"
               >
-                Book a class <FaArrowRight className="ml-2" />
-              </a>
+                Book a Class <FaArrowRight  />
+              </Button>
             </div>
           </form>
         </div>

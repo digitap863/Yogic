@@ -20,6 +20,8 @@ import Layout1 from './Layout1';
 import Layout2 from './Layout2';
 import Contact from './Contact';
 import {isMobile} from 'react-device-detect'
+import { Button } from '@nextui-org/react';
+import { FaArrowRight } from 'react-icons/fa';
 function YogaPart() {
   const navigate = useNavigate();
   const [showMore, setShowMore] = useState(false);
@@ -126,19 +128,19 @@ function YogaPart() {
 console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
   return (
     <div>
-      <div className="relative w-full h-[60vh]  bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
+      <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-semibold text-black mb-6">YOGA</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">yoga</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           We believe in a holistic approach to wellness, integrating mind, body, and spirit through traditional yogic practices.
           </p>
-          <button
-            onClick={() => navigate(`/contact`)}
-            className="text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors"
-          >
-            Contact Us →
-          </button>
+          <Button 
+          size='lg'
+          onClick={() => navigate(`/contact`)}
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
+            Contact Us <FaArrowRight className="" />
+          </Button>
         </div>
       </div>
       
@@ -253,26 +255,31 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         </div>
       )}
 
-    <div className="bg-white pt-10 md:p-20 md:ml-20">
-      <h1 className="text-3xl font-bold mb-6">TYPES OF YOGA</h1>
-      <p className="mb-6">
+    <div className="bg-white pt-10 md:p-20 md:ml-20 px-6">
+      <h1 className="text-3xl font-bold mb-6 font-galano ">TYPES OF YOGA</h1>
+      <p className="mb-6 font-galano font-normal text-base text-gray-500">
         Yoga encompasses a diverse range of techniques and practices, each with its unique focus and benefits. There are numerous types of
         yoga, each varying across different traditions, styles, and schools of thought. Here are some of the major types of yoga.
       </p>
-      <h2 className="text-xl font-semibold mb-4 hidden md:block ">Yoga has four streams:</h2>
-      <ul className="list-disc pl-10 mb-6 hidden md:block ">
+      <h2 className="text-xl font-regular mb-4 hidden md:block font-galano ">Yoga has four streams:</h2>
+      <ul className="list-disc pl-10 mb-6 hidden md:block text-gray-700">
         {yogaStreams.map((stream, index) => (
-          <li  key={index}><b>{stream.name}:</b> {stream.description}</li>
+          <li  key={index} className='mb-2'>
+            <b>{stream.name}:</b> {stream.description}
+          </li>
         ))}
       </ul>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {yogaStyles.slice(0, isMobile ? 3 : yogaStyles.length)
           .map((style, index) => (
         <div key={index} className="relative rounded-[50px] overflow-hidden shadow-md">
-          <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
-            <h3 className="text-xl font-semibold mb-2">{style.name}</h3>
-            <p className="text-sm">{style.description}</p>
+          <div className="relative w-full h-full">
+            <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end pl-10  pr-4 py-6 text-white">
+            <h3 className="text-xl font-semibold mb-2 font-galano">{style.name} :</h3>
+            <p className="text-sm font-thin font-galano ">{style.description}</p>
           </div>
         </div>
       ))}
@@ -290,7 +297,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
     </div>
 
 
-    <div className="my-20 max-w-4xl mx-auto flex justify-center">
+    <div className="my-20 max-w-7xl mx-auto flex justify-center">
     <img
     src={swami2}
     alt="Swami Vivekananda"
@@ -309,11 +316,11 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
 
         {/* Right side: Text Content */}
         <div className="md:w-1/2">
-          <p className="text-lg text-gray-700 mb-6 md:pr-20 md:mr-10">
+          <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10">
             At YogicBliss, we guide you to joy and purpose through diverse yoga styles and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
           </p>
 
-          <ul className="text-lg text-gray-700 space-y-2 md:pr-20 md:mr-10">
+          <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10">
             <li className="flex items-start">
               <span className="text-green-500 mr-2">➤</span>
               Practical answers to questions about why we are here, how to live more joyous lives, understanding our purpose, and how to improve our lives.

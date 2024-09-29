@@ -1,10 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { MdWbSunny } from "react-icons/md";
 import girl from '../../assets/images/Mask group.png'
 import girl1 from '../../assets/images/Mask group1.png'
 import girl2 from '../../assets/images/Mask group2.png'
-import { Disclosure } from "@headlessui/react";
+import {  Disclosure } from "@headlessui/react";
 import { IoMdArrowDropright } from "react-icons/io";
 import yoga_girl from '../../assets/images/yoga.png';
 import CourseSection from '../User/Courses';
@@ -16,6 +15,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { FaArrowRight } from 'react-icons/fa';
+import { Button } from '@nextui-org/react';
 
 
 
@@ -70,30 +71,30 @@ const yogaData = [
   ];
 
   const yogaTeachers = [
-    { name: "Elisa Willson", image: "/api/placeholder/400/300" },
-    { name: "Elisa Willson", image: "/api/placeholder/400/300" },
-    { name: "Elisa Willson", image: "/api/placeholder/400/300" },
-    { name: "Elisa Willson", image: "/api/placeholder/400/300" },
-    { name: "Elisa Willson", image: "/api/placeholder/400/300" },
+    { name: "Elisa Willson", image: yoga_girl },
+    { name: "Elisa Willson", image: yoga_girl },
+    { name: "Elisa Willson", image: yoga_girl },
+    { name: "Elisa Willson", image: yoga_girl },
+    { name: "Elisa Willson", image: yoga_girl },
 
   ];
 
 
   return (
     <div>
-      <div className="relative w-full h-[60vh]  bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
+     <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-semibold text-black mb-6">ABOUT US</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+          <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">ABOUT US</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           At Yogic, we believe in the transformative power of yoga to enhance your well-being. Our dedicated instructors create a welcoming space where you can explore and deepen your practice.
           </p>
-          <button
-            onClick={() => navigate(`/contact`)}
-            className="text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors"
-          >
-            Contact Us →
-          </button>
+          <Button 
+          size='lg'
+          onClick={() => navigate(`/contact`)}
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
+            Contact Us <FaArrowRight className="" />
+          </Button>
         </div>
       </div>
       
@@ -101,15 +102,10 @@ const yogaData = [
 
       <Layout
       image= {girl}
-      heading="Our Passion for Yoga, Your Path to Wellness"
-      description="At Yogic, we believe in the transformative power of yoga to
-                            enhance your well-being. Our dedicated instructors create a
-                            welcoming space where you can explore and deepen your practice.
-                            Whether you're a beginner or seasoned yogi, we’re here to support
-                            your journey to balance, strength, and inner peace. Join us and
-                            discover how yoga can enrich your life."
-      ctaText="Learn More"
-      ctaLink="/girl"
+      heading="Yogicbliss: Your Path to Inner Harmony"
+      description="In today’s hectic world, achieving tranquility and focus can feel like an elusive goal. At Yogicbliss, we see meditation not just as a practice, but as a powerful tool for cultivating a harmonious and mindful life. Whether you're just beginning your meditation journey or seeking to enhance your existing practice, our resources are crafted to support you every step of the way. Through guided sessions and expert insights, we empower you to unlock the peace within. Embrace a life of balance, clarity, and deeper connection with Yogicbliss."
+      ctaText="View Course"
+      ctaLink="/courses"
     />
 
       <CourseSection />
@@ -142,12 +138,14 @@ const yogaData = [
         ))}
       </ul>
     </div>
-        <div className=" flex justify-center">  
+        <div className=" flex justify-center sticky">  
+          <div>
             <img
-              className=" w-auto h-auto object-cover"
+              className=" w-auto h-auto object-cover "
               src={girl1}
               alt="Yoga Pose 3"
             />
+            </div>
         </div>
       </div>
      {/* meditation section */}

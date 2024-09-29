@@ -15,8 +15,7 @@ function ContactSection() {
             </p>
             </div>
        </div>
-
-       <div className="min-h-screen bg-white flex justify-center items-center w-full px-6 py-10">
+       <div className=" bg-white flex justify-center items-center w-full px-6 py-14">
   <div className="flex flex-col md:flex-row bg-white py-10 max-w-6xl w-full">
     
     {/* Left Column */}
@@ -78,27 +77,27 @@ function ContactSection() {
           <input
             type="text"
             placeholder="Name"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
         </div>
         <div>
           <input
             type="email"
             placeholder="E-mail"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
         </div>
         <div>
           <input
             type="text"
             placeholder="Phone Number"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
         </div>
         <div>
           <textarea
             placeholder="Your Message"
-            className="w-full h-28 px-4 py-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full h-28 px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
         </div>
         <div className="flex justify-center">

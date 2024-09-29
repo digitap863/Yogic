@@ -30,12 +30,20 @@ router.put("/blog/:id",authMiddleware, upload.fields([
 
 router.post("/add-course", authMiddleware,upload.fields([
     { name: 'cardImage', maxCount: 1 },
+    { name: 'content1Image', maxCount: 1 },
+    { name: 'content2Image', maxCount: 1 },
+    { name: 'content3Image', maxCount: 1 },
+    { name: 'content4Image', maxCount: 1 }
 ]), createCourse)
 router.get("/courses", getCourses)
 router.get("/course/:id", singleCourse)
 router.delete("/course/:id", authMiddleware, deleteCourse)
 router.put("/course/:id",authMiddleware, upload.fields([
-    { name: 'cardImg', maxCount: 1 },
+    { name: 'cardImage', maxCount: 1 },
+    { name: 'content1Image', maxCount: 1 },
+    { name: 'content2Image', maxCount: 1 },
+    { name: 'content3Image', maxCount: 1 },
+    { name: 'content4Image', maxCount: 1 }
 ]), updateCourse);
 
 

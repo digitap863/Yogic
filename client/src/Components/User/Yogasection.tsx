@@ -3,6 +3,8 @@ import yogagirl from '../../assets/images/pikaso_embed.png';
 import yogagirl2 from '../../assets/images/pikaso_edit.png';
 import { MdWbSunny } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
+import {Button} from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
 
 
 const YogaSection = () => {
@@ -10,6 +12,7 @@ const YogaSection = () => {
         icon: <MdWbSunny className="inline-block text-green-500 mx-2" />,
         text: 'Mindful Movement with Yogic',
     });
+    const navigate = useNavigate()
 
     return (
         <section className="bg-white py-20">
@@ -42,7 +45,7 @@ const YogaSection = () => {
                             href="#"
                             className="inline-flex items-center px-6 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-galano"
                         >
-                            Learn More <FaArrowRight className="ml-2" />
+                            Learn More <FaArrowRight className="" />
                         </a>
                     </div>
 
@@ -74,12 +77,12 @@ const YogaSection = () => {
                                 your journey to balance, strength, and inner peace. Join us and
                                 discover how yoga can enrich your life.
                             </p>
-                            <a
-                                href="#"
-                                className="inline-flex items-center px-6 py-4 bg-[#64BA75] text-white rounded-3xl hover:bg-green-600 transition font-galano"
-                            >
-                                Learn More <FaArrowRight className="ml-2" />
-                            </a>
+                            <Button 
+                            size='lg'
+                            onClick={() => navigate(`/about`)}
+                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
+                            Learn More <FaArrowRight className="" />
+                        </Button>
                         </div>
                     </div>
                 </div>
@@ -88,7 +91,7 @@ const YogaSection = () => {
               
                 
             </div>
-            <div className="mt-8 py-4 bg-gray-100 overflow-hidden">
+            <div className="mt-20 py-4 bg-gray-100 overflow-hidden">
                     <div className="animate-marquee whitespace-nowrap flex items-center">
                         {/* Loop over the array to generate icons and text */}
                         {items.map((_, index) => (
