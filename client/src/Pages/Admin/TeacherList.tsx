@@ -54,12 +54,12 @@ const TeacherList = () => {
             <Sidebar />
             <div className='px-8 pt-8 sm:ml-64'>
                 <div className=" min-w-[60%] h-full">
-                  <div className="container mx-auto py-2  ">
+                  <div className="container mx-auto py-2     ">
                     <h2 className="text-3xl font-semibold mb-6 text-center">List of Teachers</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
                       {teachers.map((teacher:any) => (
-                        <div key={teacher._id} className="bg-white max-w-[230px] px-6  pt-6 rounded-lg shadow-md ">
-                          <img src={`${url}/uploads/${teacher.Image}`} alt={teacher.Name} className="w-[90%] h-[60%] object-cover rounded-md mb-4"/>
+                        <div key={teacher._id} className="bg-white max-w-[230px] px-6 justify-center pt-6 rounded-lg shadow-md ">
+                          <img src={`${url}/uploads/${teacher.Image}`} alt={teacher.Name} className="w-full h-[60%] object-cover rounded-md mb-4 aspect-square"/>
                           <div className="flex items-center justify-between ">
                               <div>
                                 <h3 className="text-xl font-semibold">{teacher.Name}</h3>
