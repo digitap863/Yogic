@@ -6,6 +6,8 @@ import logo from '../../assets/images/IMG_2842.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import {Button} from "@nextui-org/react";
+import {motion} from 'framer-motion'
+
 
 
 
@@ -14,10 +16,46 @@ function Banner() {
   const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+   // Animation variants for the button
+   const buttonVariants = {
+    initial: {
+      y: 0,
+      opacity: 1,
+    },
+    hover: {
+      y: -10,  // Move the button upwards slightly on hover
+      transition: {
+        duration: 0.5,
+      },
+    },
+    exit: {
+      y: -300,  // Move the button upwards more when navigating away
+      opacity: 0.5,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  // Animation variants for the page
+  const pageVariants = {
+    hidden: { opacity: 0, y: "-100vh" },  // Start from above the screen
+    visible: { opacity: 1, y: "0vh" },  // Move down to the original position
+    exit: { opacity: 0, y: "100vh" ,  transition: { delay: 0.2 }},  // Move down out of the screen
+  };
+
   return (
     <>
       {/* Banner section with Navbar inside */}
-      <div className='xl:h-[110vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'>
+      <motion.div 
+      className='xl:h-[110vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      
+      initial="hidden"
+      animate="visible"
+      exit={{}}
+      variants={pageVariants}
+      transition={{ duration: 0.8 }}
+      >
         {/* Navbar */}
         <nav className="w-full absolute top-0 left-0 bg-transparent px-2 z-10">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
@@ -68,14 +106,21 @@ function Banner() {
         {/* Banner content */}
         <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
           <img src={girl} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <motion.div
+            variants={buttonVariants}
+            initial="initial"
+            whileHover="hover"
+            exit="exit"
+          >
           <Button 
           size='lg'
           onClick={() => navigate(`/about`)}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Learn More <FaArrowRight className="" />
           </Button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

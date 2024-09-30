@@ -52,17 +52,23 @@ const YogaSection = () => {
                     {/* Desktop View */}
                     <div className="hidden md:flex md:flex-row items-center justify-between">
                         {/* Yoga Images */}
+                        {/* </div> */}
                         <div className="md:w-1/2 flex flex-col space-y-6 px-16 mx-6">
+                        <div data-aos="fade-right">
                             <img
                                 src={yogagirl}
                                 alt="Yoga Pose 1"
                                 className="rounded-lg"
                             />
+                            </div>
+                            <div data-aos="fade-right">
                             <img
                                 src={yogagirl2}
                                 alt="Yoga Pose 2"
                                 className="rounded-lg"
                             />
+                            </div>
+
                         </div>
 
                         <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-18 self-start">

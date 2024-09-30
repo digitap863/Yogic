@@ -1,5 +1,5 @@
 import express from 'express';
-import {  adminLogin, createBlog, createCourse, deleteBlog, deleteCourse, getBlog, getCourses, singleBlog, singleCourse, updateBlog, updateCourse } from '../controllers/controllers.mjs';
+import {  adminLogin, createBlog, createCourse, createTeacher, deleteBlog, deleteCourse, deleteTeacher, getBlog, getCourses, getTeachers, singleBlog, singleCourse, updateBlog, updateCourse } from '../controllers/controllers.mjs';
 import { upload } from '../helpers/multer.mjs';
 import { authMiddleware } from '../middleware/authMiddleware.mjs';
 
@@ -45,6 +45,12 @@ router.put("/course/:id",authMiddleware, upload.fields([
     { name: 'content3Image', maxCount: 1 },
     { name: 'content4Image', maxCount: 1 }
 ]), updateCourse);
+
+router.post('/add-teacher',authMiddleware,upload.fields([
+    { name: 'Image', maxCount: 1 }]),
+    createTeacher);
+router.get('/teachers', getTeachers);
+router.delete("/teacher/:id", authMiddleware, deleteTeacher)
 
 
 

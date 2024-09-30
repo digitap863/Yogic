@@ -30,6 +30,16 @@ const sidebarData = [
         label: "Course Listing",
         icon: <FaNewspaper size={25} />,
         link: "/admin/courselist"
+    },
+    {
+        label: "Add Teacher",
+        icon: <FaNewspaper size={25} />,
+        link: "/admin/teacher"
+    },
+    {
+        label: "Teacher Listing",
+        icon: <FaNewspaper size={25} />,
+        link: "/admin/teacherlist"
     }
 
 ];

@@ -1,5 +1,10 @@
-import React, { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import React, { lazy, Suspense, useEffect } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import {AnimatePresence} from 'framer-motion'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 
 // Lazy imports for user pages
 const Home = lazy(() => import("../Pages/User/Home"));
@@ -20,6 +25,9 @@ const BlogForm = lazy(() => import("../Pages/Admin/AdminBlog"));
 const BlogList = lazy(() => import("../Pages/Admin/BlogList"));
 const CourseForm = lazy(() => import("../Pages/Admin/AdminCourse"));
 const CourseList = lazy(() => import("../Pages/Admin/CourseList"));
+const TeacherForm = lazy(() => import("../Pages/Admin/AdminTeacher"));
+const TeacherList = lazy(() => import("../Pages/Admin/TeacherList"));
+
 
 
 // Utils imports (keep these as normal imports)
@@ -27,11 +35,26 @@ import AdminPublicRoutes from "../utils/AdminPublicRoutes";
 import AdminPrivateRoutes from "../utils/AdminPrivateRoutes";
 
 export const MainRouter = () => {
+
+  useEffect(() => {
+    AOS.init({
+      // once: true,
+      // disable: "phone",
+      duration: 1000,
+      easing: "ease-out-cubic",
+      delay: 100
+    });
+    AOS.refresh();
+  }, []);
+
+  const location = useLocation()
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Routes>
+      <AnimatePresence mode='wait'>
+      <Routes location={location} key={location.pathname}>
         {/* User routes */}
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<AboutUs />} />
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/meditation" element={<Meditation />} />
@@ -54,9 +77,12 @@ export const MainRouter = () => {
           <Route path="/admin/bloglist" element={<BlogList />} />
           <Route path="/admin/course" element={<CourseForm />} />
           <Route path="/admin/courselist" element={<CourseList />} />
+          <Route path="/admin/teacher" element={<TeacherForm />} />
+          <Route path="/admin/teacherlist" element={<TeacherList />} />
 
         </Route>
       </Routes>
+      </AnimatePresence>
     </Suspense>
   );
 };

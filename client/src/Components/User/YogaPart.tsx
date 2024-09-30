@@ -128,6 +128,7 @@ function YogaPart() {
 console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
   return (
     <div>
+      <div data-aos="fade-right">
       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
@@ -142,6 +143,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
             Contact Us <FaArrowRight className="" />
           </Button>
         </div>
+      </div>
       </div>
       
       <Layout
@@ -181,11 +183,13 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
                             </p>
                         </div>
                         <div className="md:w-1/2 flex flex-col space-y-6 px-16 mx-6 pt-2">
+                        <div data-aos="fade-up">
                             <img
                                 src={boy}
                                 alt="girl"
                                 className="rounded-lg"
                             />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -274,6 +278,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {yogaStyles.slice(0, isMobile ? 3 : yogaStyles.length)
           .map((style, index) => (
+            <div data-aos="zoom-in">
         <div key={index} className="relative rounded-[50px] overflow-hidden shadow-md">
           <div className="relative w-full h-full">
             <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
@@ -283,6 +288,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
             <h3 className="lg:text-xl font-semibold mb-2 font-galano text-lg">{style.name} :</h3>
             <p className="md:text-sm font-thin font-galano text-xs line-clamp-3">{style.description}</p>
           </div>
+        </div>
         </div>
       ))}
     </div>
@@ -314,7 +320,10 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Left side: Image Section */}
         <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+        <div data-aos="fade-right">
+
             <img src={girl0} alt="Yoga Image 1" />
+            </div>
         </div>
 
         {/* Right side: Text Content */}

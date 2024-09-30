@@ -107,6 +107,7 @@ function GallerySection() {
 
   return (
     <div>
+      <div data-aos="fade-right">
        <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
@@ -121,6 +122,7 @@ function GallerySection() {
             Contact Us <FaArrowRight className="" />
           </Button>
         </div>
+      </div>
       </div>
 
       <div className="flex flex-col items-center py-10">

@@ -38,11 +38,13 @@ function Layout({ image, heading, description, ctaText, ctaLink }) {
                     {/* Desktop View */}
                     <div className="hidden md:flex md:flex-row items-center justify-start pb-20 ">
                         <div className="md:w-1/2  pr-16 ">
+                        <div data-aos="fade-right">
                             <img
                                 src={image}
                                 alt="girl"
                                 className="rounded-lg aspect-[17/12]"
                             />
+                            </div>
                         </div>
 
                         <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-20 self-start">

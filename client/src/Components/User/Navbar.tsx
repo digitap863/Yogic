@@ -10,11 +10,7 @@ const Navbar: React.FC = () => {
 
 
   const isActive = (path: string) => {
-      console.log(location.pathname,"location.pathnamelocation.pathnamelocation.pathname")
-      console.log(path,"pathpathpathpathpathpathpathpathpathpath")
-      console.log(location.pathname === path)
     return location.pathname === path};
-  console.log(isActive,"isActiveisActiveisActiveisActiveisActiveisActiveisActive")
 
 
   return (

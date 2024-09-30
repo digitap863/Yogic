@@ -21,7 +21,9 @@ function Layout2({ image, benefits }) {
         </div>
         <div className="md:w-1/3 mb-6 md:mb-0 bg-white flex justify-center">
           <div className="rounded-3xl overflow-hidden">
+          <div data-aos="fade-left">
             <img src={image} alt="Yoga practice" className="max-w-full h-auto object-cover" />
+            </div>
           </div>
         </div>
       </div>

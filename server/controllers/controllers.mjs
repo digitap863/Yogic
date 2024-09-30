@@ -6,6 +6,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { CourseModel } from "../model/courseModel.mjs";
+import { TeacherModel } from "../model/TeacherModel.mjs";
+
 
 // Convert import.meta.url to a filename
 const __filename = fileURLToPath(import.meta.url);
@@ -469,6 +471,85 @@ const updateCourse = async (req, res) => {
       }
 };
 
+const createTeacher = async (req, res) => {
+    console.log(req.body)
+    console.log(req.files)
+    try {
+        const { Name, TeacherType} = req.body;
+
+            // Check if the file exists before trying to access it
+    if (!req.files || !req.files.Image || req.files.Image.length === 0) {
+        return res.status(400).json({ message: 'No image uploaded' });
+      }
+  
+  
+        const teacher = new TeacherModel({
+        Name,
+        TeacherType,
+        Image : req.files.Image[0].filename, 
+      });
+  
+      await teacher.save();
+      res.status(201).json({ message: 'Teacher Added successfully!' ,success: true });
+    } catch (error) {
+        console.error('error in creating coures',error);
+      res.status(500).json({ message: 'Error creating Teacher', error });
+    }
+  };
+
+ const getTeachers = async (req, res) => {
+    try {
+        console.log("i am here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+      const teachers = await TeacherModel.find();
+      console.log(teachers,"teachersteachersteachersteachers")
+      return res.status(200).send({ data: teachers, success: true })
+    } catch (error) {
+      res.status(500).json({ message: 'Error retrieving teachers', error });
+    }
+  };
+
+  const deleteTeacher = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const data = await TeacherModel.findById({ _id: id });
+        if (!data) {
+            return res.status(404).send({ message: "Teacher not found" });
+        }
+        const imagesToDelete = [data.Image];
+
+        // Directory path where images are stored
+        const directoryPath = path.join(__dirname, '../uploads');
+
+        // Helper function to check if file exists and delete it
+        const deleteIfExists = async (image) => {
+            if (image) {
+                const filePath = path.join(directoryPath, image);
+                if (fs.existsSync(filePath)) {
+                    try {
+                        const result = await deleteFile(filePath);
+                        console.log(result);
+                    } catch (err) {
+                        console.error(err);
+                    }
+                } else {
+                    console.log(`File not found: ${filePath}, skipping...`);
+                }
+            }
+        };
+
+        // Iterate through the images and delete if they exist
+        await Promise.all(imagesToDelete.map(deleteIfExists));
+
+        await TeacherModel.findOneAndDelete({ _id: id });
+
+        res.status(200).send({ success: true, message: "Deleted Successfully" });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ message: error.message, success: false });
+    }
+}
+
+
 export {
     adminLogin,
     createBlog,
@@ -480,5 +561,8 @@ export {
     getCourses,
     singleCourse,
     updateCourse,
-    deleteCourse
+    deleteCourse,
+    createTeacher,
+    getTeachers,
+    deleteTeacher
 }

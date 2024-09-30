@@ -104,6 +104,7 @@ function CourseSection() {
   
   return (
     <div>
+      <div data-aos="fade-right">
       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
@@ -120,6 +121,7 @@ function CourseSection() {
             Contact Us <FaArrowRight className="" />
           </Button>
         </div>
+      </div>
       </div>
 
       <Layout
@@ -269,7 +271,10 @@ function CourseSection() {
                 </p>
               </div>
               <div className="md:w-1/2 flex flex-col space-y-6 px-16 mx-6 pt-2">
+              <div data-aos="fade-left">
+
                 <img src={girl7} alt="girl" className="rounded-lg" />
+                </div>
               </div>
             </div>
           </div>

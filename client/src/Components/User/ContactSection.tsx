@@ -24,6 +24,7 @@ function ContactSection() {
 
   return (
     <div>
+      <div data-aos="fade-right">
         <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
             <div className="relative z-10 text-center">
             <h1 className="text-5xl font-semibold text-black mb-6 uppercase">contact us</h1>
@@ -31,6 +32,7 @@ function ContactSection() {
                 At YogicBlis, we’re here to support your journey to wellness and inner peace. Whether you have questions about our classes, need assistance with your membership, or just want to learn more about our offerings, we’d love to hear from you!
             </p>
             </div>
+       </div>
        </div>
        <div className=" bg-white flex justify-center items-center w-full px-6 py-14">
   <div className="flex flex-col md:flex-row bg-white py-10 max-w-6xl w-full">

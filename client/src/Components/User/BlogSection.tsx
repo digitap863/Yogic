@@ -48,7 +48,7 @@ function BlogSection() {
 
   return (
     <div>
-
+<div data-aos="fade-right">
 <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
@@ -64,17 +64,21 @@ function BlogSection() {
           </Button>
         </div>
       </div>
+      </div>
 
 
        <div className="container mx-auto md:px-20 md:py-20 px-6 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
         {blogs.slice(0, isMobile  ? 3 : blogs.length).map((post:any, index) => (
+          <div data-aos="zoom-in">
           <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-green-500  pb-20 relative">
+            
             <img 
              src={`${url}/uploads/${post.cardImg}`}
               alt={post.title} 
               className="w-full aspect-[18/12] rounded-3xl object-cover"
             />
+            
             <div className="px-4 pt-4 relative ">
               <h3 className="font-bold text-xl mb-2">{post.title}</h3>
               <p className="text-gray-600 text-sm  line-clamp-2">{post.summary}</p>
@@ -87,6 +91,7 @@ function BlogSection() {
               className="text-[#64BA75] absolute bottom-5 left-1/2 translate-x-[-50%] border border-[#64BA75] rounded-3xl px-8 py-2 text-sm hover:bg-[#64BA75] hover:text-white transition duration-300">
                 Read More
               </button>
+          </div>
           </div>
         ))}
       </div>

@@ -103,6 +103,7 @@ function Meditations() {
   
     return (
       <div>
+        <div data-aos="fade-right">
        <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
@@ -117,6 +118,7 @@ function Meditations() {
             Contact Us <FaArrowRight className="" />
           </Button>
         </div>
+      </div>
       </div>
         
         <Layout
@@ -156,11 +158,13 @@ function Meditations() {
                               </p>
                           </div>
                           <div className="md:w-1/2 flex flex-col space-y-6 px-16 mx-6 pt-2">
+                          <div data-aos="fade-up">
                               <img
                                   src={boy}
                                   alt="girl"
-                                  className="rounded-lg"
+                                  className="rounded-lg "
                               />
+                              </div>
                           </div>
                       </div>
                   </div>
@@ -197,12 +201,15 @@ function Meditations() {
         </ul>
       </div>
       {/* Image Section */}
-      <div className="md:w-1/3 mt-8 md:mt-0 justify-end lg:block hidden">
+      <div className="md:w-1/3 mt-8 md:mt-0 justify-end lg:block hidden">           
+       <div data-aos="fade-left">
+
         <img
           src={girl11}
           alt="Meditation Image"
-          className="w-3/4 max-w-xs md:max-w-sm rounded-lg object-cover"
+          className="w-3/4 max-w-xs md:max-w-sm rounded-lg object-cover mx-auto"
         />
+        </div>
       </div>
     </div>
     </div>
@@ -247,6 +254,7 @@ function Meditations() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {yogaStyles.slice(0, isMobile  ? 3 : yogaStyles.length)
           .map((style, index) => (
+            <div data-aos="zoom-in">
           <div key={index} className="relative rounded-[50px] overflow-hidden shadow-md">
           <div className="relative w-full h-full">
             <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
@@ -256,6 +264,7 @@ function Meditations() {
               <h3 className="lg:text-xl font-semibold mb-2 font-galano text-lg">{style.name}</h3>
               <p className="md:text-sm font-thin font-galano text-xs">{style.description}</p>
             </div>
+          </div>
           </div>
         ))}
       </div>
@@ -288,10 +297,11 @@ function Meditations() {
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
           {/* Left side: Image Section */}
           <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
-            {/* <div className="grid grid-rows-3 gap-4"> */}
+          <div data-aos="fade-right">
+
               <img src={girl0} alt="Yoga Image 1" />
              
-            {/* </div> */}
+            </div>
           </div>
   
           {/* Right side: Text Content */}
