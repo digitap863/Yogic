@@ -100,7 +100,7 @@ function BlogPageSection() {
               } items-center mb-12 space-y-6 md:space-y-0 md:space-x-12 py-4 px-2`}
             >
               {/* Image */}
-              <div className="md:hidden w-full rounded-2xl overflow-hidden shadow-lg">
+              <div className="md:hidden w-full rounded-2xl overflow-hidden ">
                 <img
                   src={`${url}/uploads/${content.image}`}
                   alt={content.heading}
@@ -131,7 +131,7 @@ function BlogPageSection() {
             } items-center mb-12 space-y-6 md:space-y-0 md:space-x-10 py-4 px-2`}
           >
             {/* Image */}
-            <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
+            <div className="md:w-1/2 rounded-xl overflow-hidden">
               <img
                 src={`${url}/uploads/${content.image}`}
                 alt={content.heading}

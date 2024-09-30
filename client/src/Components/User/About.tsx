@@ -286,7 +286,7 @@ const yogaData = [
 }
 
 const YogaTeacherCard = ({ name, image ,type }) => (
-    <div className="rounded-[50px]  overflow-hidden shadow-lg">
+    <div className="rounded-[50px]  overflow-hidden ">
       <img src={`${url}/uploads/${image}`} alt={name} className="w-full h-64 object-cover aspect-square" />
      
 
