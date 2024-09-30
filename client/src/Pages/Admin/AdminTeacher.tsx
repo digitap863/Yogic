@@ -4,9 +4,11 @@ import React from 'react';
 import { postForm } from '../../api/req';
 import toast from 'react-hot-toast';
 import Sidebar from '../../Components/Admin/Sidebar';
+import { useNavigate } from 'react-router-dom';
 
 
 const AdminTeacher = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     Name: '',
     TeacherType: 'YogaTeacher',
@@ -36,6 +38,7 @@ const AdminTeacher = () => {
       const response = await postForm('/add-teacher', teacherData);
       if (response.data.success) {
         toast.success(response.data.message);
+        navigate(`/admin/teacherlist`)
       } else {
         toast.error(response.data.message);
       }

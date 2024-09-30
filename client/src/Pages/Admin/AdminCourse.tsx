@@ -3,8 +3,10 @@ import axios from 'axios';
 import { postForm } from '../../api/req';
 import Sidebar from '../../Components/Admin/Sidebar';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const CourseForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     courseType: '',
     heading: '',
@@ -66,10 +68,12 @@ const CourseForm = () => {
     
 
     try {
-        console.log(courseData)
+        console.log(courseData,"?????????????????????????????????????????????????????????????????")
         const response = await postForm('/add-course', courseData);
         if (response.data.success) {
           toast.success(response.data.message);
+          navigate('/admin/courselist');
+
         } else {
           toast.error(response.data.message);
         }
