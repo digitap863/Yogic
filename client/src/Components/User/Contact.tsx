@@ -1,9 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import {Button} from "@nextui-org/react";
+import { getdata } from "../../api/req";
 
 
 function Contact() {
+  const [countries, setCountries] = useState([]); // Holds the list of country names
+  const [selectedCountry, setSelectedCountry] = useState(""); // Holds the selected country
+  const [courses , setCourse] = useState([])
+  const [selectedCourse, setSelectedCourse] = useState(""); // Holds the selected country
+
+
+
+  
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all');
+        const data = await response.json();
+        const countryNames = data.map(country => country.name.common); // Extracting only the common names
+        setCountries(countryNames); 
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    const fetchCourses = async () => {
+      try {
+        const response = await getdata('/courses');
+        const courseHeadings = response.data.data.map(x =>x.heading)
+        setCourse(courseHeadings);
+      } catch (error) {
+        console.error('Error fetching Courses:', error);
+      }
+    };
+
+
+  useEffect(() => {
+    fetchData();
+    fetchCourses();
+  }, []);
+  
+  console.log(countries,"countriescountriescountries")
+  console.log(courses,"coursescoursescoursescourses")
+
   return (
     <div className=" bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-8 ">
       <div className="flex flex-col md:flex-row md:items-center bg-white py-10 max-w-6xl">
@@ -35,41 +74,55 @@ function Contact() {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  "
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  font-galano"
               />
             </div>
             <div>
               <input
                 type="email"
                 placeholder="E-mail"
-                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none font-galano"
               />
             </div>
             <div>
-              <input
-                type="text"
-                placeholder="Course"
-                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
-              />
+            <select
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-500 focus:outline-none pr-10 font-galano" 
+                value={selectedCourse}
+                onChange={(e) => setSelectedCourse(e.target.value)} // Set selected country
+              >
+                <option value="" >Select a Course</option>
+                {courses.map((courses, index) => (
+                  <option key={index} value={courses} className="text-gray-700">
+                    {courses}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
               <input
                 type="text"
                 placeholder="Pick a day"
-                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none font-galano"
               />
             </div>
             <div>
-              <input
-                type="text"
-                placeholder="Country"
-                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
-              />
+            <select
+                className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-500 focus:outline-none pr-10 font-galano"
+                value={selectedCountry}
+                onChange={(e) => setSelectedCountry(e.target.value)} // Set selected country
+              >
+                <option value="">Select a country</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country} className="text-gray-700">
+                    {country}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="flex justify-center pt-4">
               <Button
                size='lg'
-                className="inline-flex items-center px-8 sm:px-8   bg-white text-[#64BA75] rounded-full hover:bg-[#64BA75] hover:text-white transition  border-2 border-[#64BA75] font-Epilogue"
+                className="inline-flex items-center px-8 py-6 sm:px-8 bg-white text-[#64BA75] rounded-full hover:bg-[#64BA75] hover:text-white transition  border-2 border-[#64BA75] font-Epilogue"
               >
                 Book a Class <FaArrowRight  />
               </Button>

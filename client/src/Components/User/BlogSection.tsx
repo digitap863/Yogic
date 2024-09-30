@@ -5,6 +5,7 @@ import { getdata } from '../../api/req';
 import { url } from '../../api/url';
 import { Button } from '@nextui-org/react';
 import { FaArrowRight } from 'react-icons/fa';
+import { MdArrowForward } from 'react-icons/md';
 
 function BlogSection() {
   const [blogs, setBlogs] = useState([]);
@@ -48,21 +49,21 @@ function BlogSection() {
 
   return (
     <div>
-<div data-aos="fade-right">
-<div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
+        <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
+          <div data-aos="fade-right">
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">blogs</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           We believe in a holistic approach to wellness, integrating mind, body, and spirit through traditional yogic practices.
           </p>
+          </div>
           <Button 
           size='lg'
           onClick={() => navigate(`/contact`)}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Contact Us <FaArrowRight className="" />
           </Button>
-        </div>
       </div>
       </div>
 
@@ -70,7 +71,7 @@ function BlogSection() {
        <div className="container mx-auto md:px-20 md:py-20 px-6 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
         {blogs.slice(0, isMobile  ? 3 : blogs.length).map((post:any, index) => (
-          <div data-aos="zoom-in">
+          
           <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-green-500  pb-20 relative">
             
             <img 
@@ -92,18 +93,19 @@ function BlogSection() {
                 Read More
               </button>
           </div>
-          </div>
+        
         ))}
       </div>
       {isMobile && blogs.length > 3 && (
         <div className="flex justify-center mt-6 md:hidden"> {/* md:hidden ensures this is only shown on mobile */}
-          <button
-            onClick={loadMoreStyles}
-            className="px-4 py-2 bg-white text-green-600 rounded-3xl border border-green-500"
-          >
-            View All
-          </button>
+           <Button  
+         variant="ghost"
+         onClick={loadMoreStyles}
+         className="bg-white border border-[#64BA75] text-[#64BA75] px-8 py-6 rounded-full flex items-center font-galano text-md">
+          View All <MdArrowForward className="ml-2" />
+        </Button>
         </div>
+        
       )}
        </div>
 

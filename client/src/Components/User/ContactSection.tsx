@@ -6,19 +6,7 @@ import { Button } from '@nextui-org/react';
 
 
 function ContactSection() {
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('https://restcountries.com/v3.1/all');
-        const data = await response.json();
-        console.log(data); // Now you can see the response data
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData(); // Call the async function
-  }, []);
+ 
 
 
 

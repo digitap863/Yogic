@@ -104,23 +104,25 @@ function CourseSection() {
   
   return (
     <div>
-      <div data-aos="fade-right">
       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
+            <div data-aos="fade-right">
+
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano">COURSES</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
             At Yogic, we believe in the transformative power of yoga to enhance
             your well-being. Our dedicated instructors create a welcoming space
             where you can explore and deepen your practice.
           </p>
+        </div>
+
           <Button 
           size='lg'
           onClick={() => navigate(`/contact`)}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Contact Us <FaArrowRight className="" />
           </Button>
-        </div>
       </div>
       </div>
 

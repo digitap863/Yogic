@@ -1,10 +1,11 @@
 "use client";
 import { IoIosLogOut, IoMdPie } from 'react-icons/io'
 import { MdOutlineWork } from 'react-icons/md';
-import { FaArrowCircleLeft, FaNewspaper, FaRegArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft,FaChalkboardTeacher , FaNewspaper, FaPlus  } from "react-icons/fa";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BsBusFront } from 'react-icons/bs';
+import { MdLibraryBooks } from "react-icons/md";
 const sidebarData = [
     {
         label: "Dashboard",
@@ -13,7 +14,7 @@ const sidebarData = [
     },
     {
         label: "Add Blog",
-        icon: <FaNewspaper size={25} />,
+        icon: <FaPlus size={25} />,
         link: "/admin/blog"
     },
     {
@@ -23,22 +24,22 @@ const sidebarData = [
     },
     {
         label: "Add Course",
-        icon: <FaNewspaper size={25} />,
+        icon: <FaPlus  size={25} />,
         link: "/admin/course"
     },
     {
         label: "Course Listing",
-        icon: <FaNewspaper size={25} />,
+        icon: <MdLibraryBooks  size={25} />,
         link: "/admin/courselist"
     },
     {
         label: "Add Teacher",
-        icon: <FaNewspaper size={25} />,
+        icon: <FaPlus  size={25} />,
         link: "/admin/teacher"
     },
     {
         label: "Teacher Listing",
-        icon: <FaNewspaper size={25} />,
+        icon: <FaChalkboardTeacher  size={25} />,
         link: "/admin/teacherlist"
     }
 
@@ -94,7 +95,7 @@ const Sidebar = () => {
                                 to={items.link}
                                 className={(navclass) =>
                                     navclass.isActive
-                                        ? "flex items-center p-2 text-gray-900 rounded-lg bg-gray-400 dark:text-white   group"
+                                        ? "flex items-center p-2 text-gray-900 rounded-lg bg-gradient-to-r from-blue-300 to-green-300 dark:text-white   group"
                                         : "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                                 }
                             >

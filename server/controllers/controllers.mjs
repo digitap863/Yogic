@@ -109,7 +109,7 @@ const createBlog = async (req, res) => {
 
 const getBlog = async (req, res) => {
     try {
-        const blogs = await BlogModel.find({})
+        const blogs = await BlogModel.find({}).sort({ createdAt: -1 });
         return res.status(200).send({ data: blogs, success: true })
     } catch (error) {
         console.log(error.message)
@@ -322,7 +322,7 @@ const createCourse = async (req, res) => {
   const getCourses = async (req, res) => {
     try {
         console.log("i am here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        const Courses = await CourseModel.find()
+        const Courses = await CourseModel.find({}).sort({ createdAt: -1 });
         console.log(Courses,"CoursesCoursesCoursesCoursesCoursesCoursesCourses")
         return res.status(200).send({ data: Courses, success: true })
     } catch (error) {
@@ -500,7 +500,7 @@ const createTeacher = async (req, res) => {
  const getTeachers = async (req, res) => {
     try {
         console.log("i am here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-      const teachers = await TeacherModel.find();
+      const teachers = await TeacherModel.find({}).sort({ createdAt: -1 });;
       console.log(teachers,"teachersteachersteachersteachers")
       return res.status(200).send({ data: teachers, success: true })
     } catch (error) {

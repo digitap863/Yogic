@@ -1,19 +1,18 @@
+import { Button } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import Rectangle from '../../assets/images/Rectangle 8.png'; // Ensure this path is correct
 import { FaArrowRight } from 'react-icons/fa';
-import logo from '../../assets/images/IMG_2842.png'
-import Contact from './Contact';
-import { getdata } from '../../api/req';
-import { url } from '../../api/url';
-import 'swiper/css'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
+import { MdArrowForward } from 'react-icons/md';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { Button } from '@nextui-org/react';
-import { MdArrowForward } from 'react-icons/md';
+import { getdata } from '../../api/req';
+import { url } from '../../api/url';
+import logo from '../../assets/images/IMG_2842.png';
+import Contact from './Contact';
 
 
 
@@ -72,33 +71,10 @@ function BlogPageSection() {
       .filter((key) => key.startsWith('content'))
       .map((contentKey, index) => {
         const content = blog[contentKey];
-        // return (
-        //   <div
-        //     key={index}
-        //     className={`flex flex-col ${
-        //       index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-        //     } items-center mb-12 space-y-6 md:space-y-0 md:space-x-12 py-4`}
-        //   >
-        //     {/* Image */}
-        //     <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
-        //       <img
-        //         src={`${url}/uploads/${content.image}`}
-        //         alt={content.heading}
-        //         className="w-full h-full object-cover aspect-video"
-        //       />
-        //     </div>
-
-        //     {/* Text */}
-        //     <div className="md:w-1/2 w-full">
-        //       <h2 className="md:text-3xl text-sm font-semibold mb-4 break-words">{content.heading}</h2>
-        //       <p className="text-sm md:text-base text-gray-600 break-words mr-4">{content.Description}</p>
-        //     </div>
-        //   </div>
-        // );
         if (index === 0) {
           // Special layout for the first content
           return (
-            <div key={index} className="flex flex-col items-left mb-12">
+            <div key={index} className="flex flex-col items-left mb-12 px-10">
               {/* Full-width Image */}
               <div className='flex items-center rounded-2xl justify-center shadow-lg w-full overflow-hidden mb-4 '>
                 <img
@@ -114,28 +90,59 @@ function BlogPageSection() {
               <p className="text-sm md:text-base text-gray-600 text-left">{content.Description}</p>
             </div>
           );
-        } else {
+        } 
+        else if (index === 3) {
+          return (
+            <div
+              key={index}
+              className={`flex flex-col ${
+                index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+              } items-center mb-12 space-y-6 md:space-y-0 md:space-x-12 py-4 px-2`}
+            >
+              {/* Image */}
+              <div className="md:hidden w-full rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src={`${url}/uploads/${content.image}`}
+                  alt={content.heading}
+                  className="w-full h-full object-cover aspect-[22/12]"
+                />
+              </div>
+          
+              {/* Text */}
+              <div className="md:w-full w-full">
+                <h2 className="md:text-3xl text-2xl font-semibold mb-4 break-words">
+                  {content.heading}
+                </h2>
+                <p className="text-sm md:text-base text-gray-600 break-words mr-4">
+                  {content.Description}
+                </p>
+              </div>
+            </div>
+          );
+
+        }
+        else {
         
         return (
           <div
             key={index}
             className={`flex flex-col ${
               index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-            } items-center mb-12 space-y-6 md:space-y-0 md:space-x-12 py-4 px-2`}
+            } items-center mb-12 space-y-6 md:space-y-0 md:space-x-10 py-4 px-2`}
           >
             {/* Image */}
             <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={`${url}/uploads/${content.image}`}
                 alt={content.heading}
-                className="w-full h-full object-cover aspect-[22/12]"
+                className="w-full h-full object-cover aspect-[22/12] pl-10"
               />
             </div>
 
             {/* Text */}
             <div className="md:w-1/2 w-full ">
               <h2 className="md:text-3xl text-2xl  font-semibold mb-4 break-words">{content.heading}</h2>
-              <p className="text-sm md:text-base text-gray-600 break-words mr-4">{content.Description}</p>
+              <p className="text-sm md:text-base text-gray-600 break-words mr-4 ">{content.Description}</p>
             </div>
           </div>
         );

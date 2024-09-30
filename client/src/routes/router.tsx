@@ -27,6 +27,7 @@ const CourseForm = lazy(() => import("../Pages/Admin/AdminCourse"));
 const CourseList = lazy(() => import("../Pages/Admin/CourseList"));
 const TeacherForm = lazy(() => import("../Pages/Admin/AdminTeacher"));
 const TeacherList = lazy(() => import("../Pages/Admin/TeacherList"));
+const NotFound = lazy (()=> import("../Pages/User/ErrorPage"))
 
 
 
@@ -49,12 +50,14 @@ export const MainRouter = () => {
 
   const location = useLocation()
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className= "flex items-center justify-center min-h-screen">
+                              <div className="spinner">
+                              </div>    
+                          </div>}>
       <AnimatePresence mode='wait'>
       <Routes location={location} key={location.pathname}>
         {/* User routes */}
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<AboutUs />} />
         <Route path="/yoga" element={<Yoga />} />
         <Route path="/meditation" element={<Meditation />} />
@@ -79,8 +82,9 @@ export const MainRouter = () => {
           <Route path="/admin/courselist" element={<CourseList />} />
           <Route path="/admin/teacher" element={<TeacherForm />} />
           <Route path="/admin/teacherlist" element={<TeacherList />} />
-
         </Route>
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </AnimatePresence>
     </Suspense>

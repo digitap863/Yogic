@@ -25,14 +25,14 @@ function Banner() {
     hover: {
       y: -10,  // Move the button upwards slightly on hover
       transition: {
-        duration: 0.5,
+        duration: 0.3,
       },
     },
     exit: {
       y: -300,  // Move the button upwards more when navigating away
-      opacity: 0.5,
+      opacity: 0.7,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
       },
     },
   };
