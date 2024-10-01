@@ -76,7 +76,7 @@ function ContactSection() {
 
     {/* Right Column */}
     <div className="md:w-1/2 w-full px-6 md:px-12 text-center md:text-left bg-white">
-      <h2 className="text-lg font-normal text-gray-800 mb-6 font-galano">
+      <h2 className="text-lg font-normal text-gray-600 mb-6 font-galano">
         Please fill out the form below, and we’ll get in touch with you shortly.
       </h2>
       <form className="space-y-4">

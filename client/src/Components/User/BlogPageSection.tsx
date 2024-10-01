@@ -163,6 +163,7 @@ function BlogPageSection() {
    
   };
 
+
   console.log(blog,"blogblogblogblog")
   return (
     <div>
@@ -174,7 +175,7 @@ function BlogPageSection() {
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-2">
                 <div onClick={() => navigate(`/`)}
             className="flex items-center space-x-3">
-                    <img src={logo} alt="Logo" className="aspect-square" />
+                    <img src={logo} alt="Logo" className="aspect-square cursor-pointer" />
                     </div>
                 <button
                     className="block md:hidden p-2 w-10 h-10 text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -222,13 +223,14 @@ function BlogPageSection() {
                     {blog?.summary}
                 </p>
                 <div className="flex justify-center items-center">
-                    <button
+                    <Button
+                    size='lg'
                     onClick={() => navigate(`/blog/${id}`)}
-                    className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium hover:bg-green-700 transition-colors"
+                    className="bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm"
                     >
                     view Course
-                    <FaArrowRight className="ml-2" />
-                    </button>
+                    <FaArrowRight className="" />
+                    </Button>
                 </div>
                 </div>
             </div>
@@ -309,7 +311,9 @@ function BlogPageSection() {
       <div className="flex justify-between items-center mt-8">
         <Button  
          variant="ghost"
-        onClick={() => navigate('/courses')}
+        onClick={() =>{ navigate('/courses')
+          window.scrollTo(0, 0);
+        }}
          className="bg-white border border-[#64BA75] text-[#64BA75] px-6 py-6 rounded-full flex items-center font-galano text-md">
           View All Courses <MdArrowForward className="ml-2" />
         </Button>

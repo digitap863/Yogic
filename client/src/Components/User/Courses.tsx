@@ -71,7 +71,7 @@ function CourseSection() {
             <SwiperSlide key={index}>
               <div 
               onClick = {() =>handleCourseClick(course._id)}
-              className=" bg-gray-100 rounded-3xl relative overflow-hidden ">
+              className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer ">
                 <img
                   src={`${url}/uploads/${course.cardImage}`}
                   alt={course.heading}
@@ -96,7 +96,9 @@ function CourseSection() {
       <div className="flex justify-between items-center mt-8">
         <Button  
          variant="ghost"
-        onClick={() => navigate('/courses')}
+        onClick={() => {
+          window.scrollTo(0, 0);
+          navigate('/courses')}}
          className="bg-white border border-[#64BA75] text-[#64BA75] px-6 py-6 rounded-full flex items-center font-galano text-md">
           View All Courses <MdArrowForward className="ml-2" />
         </Button>

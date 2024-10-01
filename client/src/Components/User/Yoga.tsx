@@ -5,10 +5,12 @@ import Pose2 from '../../assets/images/sitting-yoga-mat.png'
 import Pose3 from '../../assets/images/standing-yoga-pose.png'
 import Pose4 from '../../assets/images/woman-yoga.png';
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Yoga = () => {
+  const navigate = useNavigate()
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto  py-12 px-4">
       {/* Left section with text */}
@@ -29,7 +31,10 @@ const Yoga = () => {
           Designed To Nurture Your Mind, Body, And Spirit. Join Our Community
           And Start Your Journey To Wellness Today.
         </p>
-        <button className="bg-[#64BA75] text-white px-6 py-2 rounded-full hover:bg-green-600 transition  hidden lg:block font-Epilogue">
+        <button 
+        onClick={()=>{navigate(`/about`)
+                     window.scrollTo(0, 0);}}
+        className="bg-[#64BA75] text-white px-6 py-2 rounded-full hover:bg-green-600 transition  hidden lg:block font-Epilogue">
           Learn More →
         </button>
       </div>
@@ -76,7 +81,10 @@ const Yoga = () => {
     Designed To Nurture Your Mind, Body, And Spirit. Join Our Community
     And Start Your Journey To Wellness Today.
   </p>
-  <button className="bg-[#64BA75] inline-flex items-center font-Epilogue text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+  <button 
+  onClick={()=>{navigate(`/about`)
+    window.scrollTo(0, 0);}}
+  className="bg-[#64BA75] inline-flex items-center font-Epilogue text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
     Learn More<FaArrowRight className="ml-2" />
   </button>
       </div>

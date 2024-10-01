@@ -43,7 +43,7 @@ const YogaSection = () => {
                         </p>
                         <Button 
                             size= 'sm'
-                            onClick={() => navigate(`/about`)}
+                            onClick={() => navigate(`/yoga`)}
                             className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
                             Learn More <FaArrowRight className="" />
                         </Button>
@@ -85,7 +85,7 @@ const YogaSection = () => {
                             </p>
                             <Button 
                             size='lg'
-                            onClick={() => navigate(`/about`)}
+                            onClick={() => navigate(`/yoga`)}
                             className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
                             Learn More <FaArrowRight className="" />
                         </Button>

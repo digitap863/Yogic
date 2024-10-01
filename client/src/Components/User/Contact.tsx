@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import {Button} from "@nextui-org/react";
 import { getdata } from "../../api/req";
@@ -9,6 +9,15 @@ function Contact() {
   const [selectedCountry, setSelectedCountry] = useState(""); // Holds the selected country
   const [courses , setCourse] = useState([])
   const [selectedCourse, setSelectedCourse] = useState(""); // Holds the selected country
+
+  const inputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    // Programmatically focus the input field
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
 
 
 
@@ -51,28 +60,30 @@ function Contact() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-gray-800 mb-4 sm:mb-6 font-galano">
             BOOK YOUR SESSION
           </h2>
-          <p className="text-gray-600 mb-6 sm:mb-8 md:text-xl sm:text-xl font-galano">
+          <p className="text-gray-600 mb-6 sm:mb-8 md:text-lg sm:text-lg font-galano">
             Join us on your yogic journey! Reserve your spot today and discover
             classes that help you unwind, strengthen, and find balance. Start
             your transformation now.
           </p>
-          <a
-            href="#"
-            className="inline-flex items-center px-6 sm:px-10 py-3 bg-[#64BA75] text-white rounded-full hover:bg-green-600 transition font-galano"
+          <Button
+           onClick={handleButtonClick}
+           size='lg'
+            className="inline-flex items-center px-6 sm:px-10 py-5 bg-[#64BA75] text-white rounded-full hover:bg-green-600 transition font-galano"
           >
             Contact us <FaArrowRight className="ml-2 " />
-          </a>
+          </Button>
         </div>
 
         {/* Right Section */}
         <div className="md:w-1/2 w-full mt-10 md:mt-0 text-left md:text-left bg-white">
-          <h2 className=" text-sm md:text-xl font-normal text-gray-800 mb-4 sm:mb-6 font-galano">
+          <h2 className=" text-sm md:text-lg font-normal text-gray-800 mb-4 sm:mb-6 font-galano">
             Book your session in just a few clicks and start your yoga journey today!
           </h2>
           <form className="space-y-4 w-full">
             <div>
               <input
                 type="text"
+                ref={inputRef}
                 placeholder="Name"
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  font-galano"
               />

@@ -109,7 +109,7 @@ const TestimonialSlider = () => {
          
           <div className=" text-2xl cursor-pointer mr-4 slidePrev-btn">&lt;</div>
 
-          <div className=" flex space-x-2 swiper-pagination "> • • • </div>
+          <div className=" flex space-x-2  ">• • • •</div>
 
           <div className=" text-2xl cursor-pointer ml-4 slideNext-btn">&gt;</div>
           </div>

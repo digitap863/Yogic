@@ -172,7 +172,7 @@ function CourseSection() {
               <div 
               key={index} 
               onClick = {() =>handleCourseClick(style._id)}
-              className="relative rounded-[50px] overflow-hidden shadow-md">
+              className="relative rounded-[50px] overflow-hidden shadow-md cursor-pointer">
                 <img
                   src={`${url}/uploads/${style.cardImage}`}
                   alt={style.heading}
