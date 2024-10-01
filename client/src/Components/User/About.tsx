@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import { Disclosure } from "@headlessui/react";
+import { Button } from '@nextui-org/react';
+import React, { useEffect, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-import girl from '../../assets/images/Mask group.png'
-import girl1 from '../../assets/images/Mask group1.png'
-import girl2 from '../../assets/images/Mask group2.png'
-import {  Disclosure } from "@headlessui/react";
-import { IoIosArrowBack, IoIosArrowForward, IoMdArrowDropright } from "react-icons/io";
-import yoga_girl from '../../assets/images/yoga.png';
-import CourseSection from '../User/Courses';
-import TestimonialSlider from '../User/Testimonial';
-import Contact from '../User/Contact';
-import Layout from './Layout';
-import 'swiper/css'
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { A11y, Navigation, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { FaArrowRight } from 'react-icons/fa';
-import { Button } from '@nextui-org/react';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
-import Navbar from './Navbar';
+import girl from '../../assets/images/Mask group.png';
+import girl1 from '../../assets/images/Mask group1.png';
+import girl2 from '../../assets/images/Mask group2.png';
 import YogicAbout from '../../assets/images/YogicAbout.png';
+import Contact from '../User/Contact';
+import CourseSection from '../User/Courses';
+import TestimonialSlider from '../User/Testimonial';
+import Layout from './Layout';
+import Navbar from './Navbar';
 
 
 
@@ -106,9 +105,12 @@ const yogaData = [
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() => {
+            navigate('/contact');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>
@@ -126,11 +128,11 @@ const yogaData = [
       <CourseSection />
       
     <section className="max-w-7xl mx-auto px-6 py-12">
-      <h2 className="text-3xl font-bold text-left mb-12 pl-4">Benefits of Yoga and Meditation</h2>
+      <h2 className="text-3xl font-bold text-left mb-12 pl-4 font-galano">Benefits of Yoga and Meditation</h2>
       {/* Yoga Section */}
       <div className="flex flex-col-reverse lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
       <div className="lg:w-1/2 space-y-4">
-      <h3 className="text-2xl font-bold pt-4">YOGA:</h3>
+      <h3 className="text-2xl font-bold pt-4 font-galano">YOGA:</h3>
       <ul className="space-y-2">
         {yogaData.map((faq, index) => (
           <Disclosure key={index} as="div">
@@ -144,9 +146,9 @@ const yogaData = [
                   >
                     {open ? '➤' : '➤'}
                   </span>
-                  <span className="font-semibold text-left text-lg">{faq.question}</span>
+                  <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
                 </Disclosure.Button>
-                <Disclosure.Panel className="pl-7 text-gray-600">
+                <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
                   {faq.answer}
                 </Disclosure.Panel>
               </>
@@ -195,9 +197,9 @@ const yogaData = [
                   >
                     {open ? '➤' : '➤'}
                   </span>
-                  <span className="font-semibold text-left text-lg">{faq.question}</span>
+                  <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
                 </Disclosure.Button>
-                <Disclosure.Panel className="pl-7 text-gray-600">
+                <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
                   {faq.answer}
                 </Disclosure.Panel>
               </>

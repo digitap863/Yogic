@@ -1,20 +1,15 @@
+import { Button } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Layout from "./Layout";
-import girl from "../../assets/images/YogicCourses.png";
-import girl1 from "../../assets/images/Courses1.png";
-import girl2 from "../../assets/images/Courses2.png";
-import girl3 from "../../assets/images/Courses3.png";
-import girl4 from "../../assets/images/Courses4.png";
-import girl5 from "../../assets/images/Courses5.png";
-import girl6 from "../../assets/images/Courses6.png";
-import girl7 from "../../assets/images/Courses8.png";
 import { FaArrowRight } from "react-icons/fa";
 import { MdWbSunny } from "react-icons/md";
-import Contact from "./Contact";
+import { useNavigate } from "react-router-dom";
 import { getdata } from "../../api/req";
 import { url } from "../../api/url";
-import { Button } from "@nextui-org/react";
+import girl1 from "../../assets/images/Courses1.png";
+import girl7 from "../../assets/images/Courses8.png";
+import girl from "../../assets/images/YogicCourses.png";
+import Contact from "./Contact";
+import Layout from "./Layout";
 import Navbar from "./Navbar";
 
 function CourseSection() {
@@ -121,9 +116,12 @@ function CourseSection() {
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() => {
+            navigate('/contact');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>
@@ -219,7 +217,7 @@ function CourseSection() {
                                 <span className="mx-2 text-green-500">
                                     <MdWbSunny className="inline-block" />
                                 </span>
-                                <span className="mx-4 text-green-600">
+                                <span className="mx-4 text-green-600 font-Montserrat">
                                     Mindful Movement with Yogic
                                 </span>
                             </React.Fragment>

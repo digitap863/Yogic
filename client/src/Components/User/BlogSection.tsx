@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
- import Contact from './Contact';
-import { getdata } from '../../api/req';
-import { url } from '../../api/url';
 import { Button } from '@nextui-org/react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { MdArrowForward } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+import { getdata } from '../../api/req';
+import { url } from '../../api/url';
+import girl from '../../assets/images/Yogicblogs.png';
+import Contact from './Contact';
 import Navbar from './Navbar';
-import girl from '../../assets/images/Yogicblogs.png'
 
 function BlogSection() {
   const [blogs, setBlogs] = useState([]);
@@ -66,9 +66,12 @@ function BlogSection() {
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() => {
+            navigate('/contact');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>

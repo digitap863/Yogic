@@ -1,11 +1,10 @@
 
 
-import React, { useState } from 'react';
-import girl from '../../assets/images/yogic.png';
-import logo from '../../assets/images/IMG_2842.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Button } from "@nextui-org/react";
+import React from 'react';
 import { FaArrowRight } from "react-icons/fa";
-import {Button} from "@nextui-org/react";
+import { useNavigate } from 'react-router-dom';
+import girl from '../../assets/images/yogic.png';
 import Navbar from './Navbar';
 
 
@@ -14,15 +13,15 @@ import Navbar from './Navbar';
 
 
 function Banner() {
+
+  
   const navigate = useNavigate()
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
+ 
   return (
     <>
       {/* Banner section with Navbar inside */}
       <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[120vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>
@@ -36,9 +35,11 @@ function Banner() {
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() =>{ navigate(`/contact`)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>

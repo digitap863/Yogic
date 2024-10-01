@@ -1,29 +1,29 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Layout from './Layout';
-import girl from '../../assets/images/Meditation1.png'
-import boy from '../../assets/images/Meditation2.png'
-import girl1 from '../../assets/images/Meditation4.png'
-import girl2 from '../../assets/images/Meditation5.png'
-import girl3 from '../../assets/images/Meditation6.png'
-import girl4 from '../../assets/images/Meditation7.png'
-import girl5 from '../../assets/images/Meditation8.png'
-import girl6 from '../../assets/images/Meditation9.png'
-import girl7 from '../../assets/images/Meditation10.png'
-import girl8 from '../../assets/images/Meditation11.png'
-import girl9 from '../../assets/images/Meditation12.png'
-import girl10 from '../../assets/images/Meditation13.png'
-import girl11 from '../../assets/images/Meditation3.png'
+import girl from '../../assets/images/Meditation1.png';
+import girl7 from '../../assets/images/Meditation10.png';
+import girl8 from '../../assets/images/Meditation11.png';
+import girl9 from '../../assets/images/Meditation12.png';
+import girl10 from '../../assets/images/Meditation13.png';
+import girl0 from '../../assets/images/Meditation14.png';
+import boy from '../../assets/images/Meditation2.png';
+import girl11 from '../../assets/images/Meditation3.png';
+import girl1 from '../../assets/images/Meditation4.png';
+import girl2 from '../../assets/images/Meditation5.png';
+import girl3 from '../../assets/images/Meditation6.png';
+import girl4 from '../../assets/images/Meditation7.png';
+import girl5 from '../../assets/images/Meditation8.png';
+import girl6 from '../../assets/images/Meditation9.png';
 import swami3 from '../../assets/images/swami3.png';
-import girl0 from '../../assets/images/Meditation14.png'
-import yoga from '../../assets/images/YogicMeditation.png'
+import yoga from '../../assets/images/YogicMeditation.png';
+import Layout from './Layout';
 
+import { Button } from '@nextui-org/react';
+import { FaArrowRight } from 'react-icons/fa';
+import { MdArrowForward } from 'react-icons/md';
+import Contact from './Contact';
 import Layout1 from './Layout1';
 import Layout2 from './Layout2';
-import Contact from './Contact';
-import { Button } from '@nextui-org/react';
-import { MdArrowForward } from 'react-icons/md';
-import { FaArrowRight } from 'react-icons/fa';
 import Navbar from './Navbar';
 
 function Meditations() {
@@ -121,9 +121,12 @@ function Meditations() {
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() => {
+            navigate('/contact');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>

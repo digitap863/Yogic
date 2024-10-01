@@ -9,7 +9,7 @@ function Layout({ image, heading, description, ctaText, ctaLink }) {
         icon: <MdWbSunny className="inline-block text-green-500 mx-2" />,
         text: 'Mindful Movement with Yogic',
     });
-    console.log(image,"##########$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$#########")
+   
 
   return (
     <div>
@@ -75,7 +75,7 @@ function Layout({ image, heading, description, ctaText, ctaLink }) {
                                 <span className="mx-2 text-green-500">
                                     <MdWbSunny className="inline-block" />
                                 </span>
-                                <span className="mx-4 text-green-600">
+                                <span className="mx-4 text-green-600 font-Montserrat">
                                     Mindful Movement with Yogic
                                 </span>
                             </React.Fragment>

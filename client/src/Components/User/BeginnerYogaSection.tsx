@@ -1,19 +1,15 @@
+import { Button } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import Layout from './Layout';
-import girl from '../../assets/images/BeginnerYoga.png'
-import girl1 from '../../assets/images/BeginnerYoga2.png'
-import girl2 from '../../assets/images/BeginnerYoga3.png'
-import girl3 from '../../assets/images/BeginnerYoga4.png'
-import boy from '../../assets/images/boy.png'
-import FAQ from './Faq';
-import Contact from './Contact';
 import { FaArrowRight } from 'react-icons/fa';
-import logo from '../../assets/images/IMG_2842.png'
-import { GoDotFill } from "react-icons/go";
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
-import { Button } from '@nextui-org/react';
+import girl from '../../assets/images/BeginnerYoga.png';
+import boy from '../../assets/images/boy.png';
+import logo from '../../assets/images/IMG_2842.png';
+import Contact from './Contact';
+import FAQ from './Faq';
+import Layout from './Layout';
 
 
 function BeginnerYogaSection() {
@@ -156,7 +152,10 @@ function BeginnerYogaSection() {
                 <div className="flex justify-center items-center">
                     <Button
                     size ='lg'
-                    onClick={() => navigate(`/contact`)}
+                    onClick={() => {
+                      navigate('/contact');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium transition-colors"
                     >
                     Contact Us

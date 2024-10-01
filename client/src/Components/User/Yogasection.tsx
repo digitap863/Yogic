@@ -1,10 +1,10 @@
+import { Button } from "@nextui-org/react";
 import React from 'react';
-import yogagirl from '../../assets/images/pikaso_embed.png';
-import yogagirl2 from '../../assets/images/pikaso_edit.png';
-import { MdWbSunny } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
-import {Button} from "@nextui-org/react";
+import { MdWbSunny } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import yogagirl2 from '../../assets/images/pikaso_edit.png';
+import yogagirl from '../../assets/images/pikaso_embed.png';
 
 
 const YogaSection = () => {
@@ -45,7 +45,7 @@ const YogaSection = () => {
                             size= 'sm'
                             onClick={() => navigate(`/yoga`)}
                             className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-                            Learn More <FaArrowRight className="" />
+                            Contact Us <FaArrowRight className="" />
                         </Button>
                     </div>
 
@@ -87,7 +87,7 @@ const YogaSection = () => {
                             size='lg'
                             onClick={() => navigate(`/yoga`)}
                             className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-                            Learn More <FaArrowRight className="" />
+                            Contact Us <FaArrowRight className="" />
                         </Button>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ const YogaSection = () => {
                                 <span className="mx-2 text-green-500">
                                     <MdWbSunny className="inline-block" />
                                 </span>
-                                <span className="mx-4 text-green-600">
+                                <span className="mx-4 text-green-600 font-Montserrat">
                                     Mindful Movement with Yogic
                                 </span>
                             </React.Fragment>

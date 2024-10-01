@@ -1,29 +1,29 @@
+import { Button } from '@nextui-org/react';
 import React, { useState } from 'react';
+import { isMobile } from 'react-device-detect';
+import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import Layout from './Layout';
-import girl from '../../assets/images/Mask group77.png'
-import boy from '../../assets/images/Mask group78.png'
-import girl1 from '../../assets/images/Mask group79.png'
-import girl2 from '../../assets/images/Mask group80.png'
-import girl3 from '../../assets/images/Mask group81.png'
-import girl4 from '../../assets/images/Mask group82.png'
-import girl5 from '../../assets/images/Mask group83.png'
-import girl6 from '../../assets/images/Mask group84.png'
-import girl7 from '../../assets/images/girl_7.png'
-import girl8 from '../../assets/images/girl_8.png'
-import girl9 from '../../assets/images/girl_9.png'
-import girl10 from '../../assets/images/girl_10.png'
-import girl11 from '../../assets/images/girl_11.png'
+import girl from '../../assets/images/Mask group77.png';
+import boy from '../../assets/images/Mask group78.png';
+import girl1 from '../../assets/images/Mask group79.png';
+import girl2 from '../../assets/images/Mask group80.png';
+import girl3 from '../../assets/images/Mask group81.png';
+import girl4 from '../../assets/images/Mask group82.png';
+import girl5 from '../../assets/images/Mask group83.png';
+import girl6 from '../../assets/images/Mask group84.png';
+import girl0 from '../../assets/images/Mask groupp.png';
+import yoga from '../../assets/images/Yogicyoga.png';
+import girl10 from '../../assets/images/girl_10.png';
+import girl11 from '../../assets/images/girl_11.png';
+import girl7 from '../../assets/images/girl_7.png';
+import girl8 from '../../assets/images/girl_8.png';
+import girl9 from '../../assets/images/girl_9.png';
 import swami2 from '../../assets/images/swami2.png';
-import girl0 from '../../assets/images/Mask groupp.png'
+import Contact from './Contact';
+import Layout from './Layout';
 import Layout1 from './Layout1';
 import Layout2 from './Layout2';
-import Contact from './Contact';
-import {isMobile} from 'react-device-detect'
-import { Button } from '@nextui-org/react';
-import { FaArrowRight } from 'react-icons/fa';
 import Navbar from './Navbar';
-import yoga from '../../assets/images/Yogicyoga.png';
 
 function YogaPart() {
   const navigate = useNavigate();
@@ -146,9 +146,12 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
           <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/about`)}
+          onClick={() => {
+            navigate('/contact');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Learn More <FaArrowRight className="" />
+            Contact Us <FaArrowRight className="" />
           </Button>
           </div>
         </div>
