@@ -6,7 +6,7 @@ import logo from '../../assets/images/IMG_2842.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import {Button} from "@nextui-org/react";
-import {motion} from 'framer-motion'
+
 
 
 
@@ -47,14 +47,9 @@ function Banner() {
   return (
     <>
       {/* Banner section with Navbar inside */}
-      <motion.div 
+      <div 
       className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       
-      initial="hidden"
-      animate="visible"
-      exit={{}}
-      variants={pageVariants}
-      transition={{ duration: 0.8 }}
       >
         {/* Navbar */}
         <nav className="w-full absolute top-0 left-0 bg-transparent px-2 z-10">
@@ -110,21 +105,16 @@ function Banner() {
      data-aos-duration="1500">
           <img src={girl} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
           </div>
-          <motion.div
-            variants={buttonVariants}
-            initial="initial"
-            whileHover="hover"
-            exit="exit"
-          >
+          <div>
           <Button 
           size='lg'
           onClick={() => navigate(`/about`)}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Learn More <FaArrowRight className="" />
           </Button>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }

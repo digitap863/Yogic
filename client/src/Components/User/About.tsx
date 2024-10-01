@@ -17,7 +17,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { FaArrowRight } from 'react-icons/fa';
 import { Button } from '@nextui-org/react';
-import {motion} from 'framer-motion'
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
 
@@ -26,17 +25,6 @@ import { url } from '../../api/url';
 
 function About() {
   const navigate = useNavigate();
-
-   // Animation variant for fading in and out
-   const fadeInOut = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { duration: 1, ease: "easeInOut" }, // Controls the fade timing
-    },
-    exit: { opacity: 0, transition: { duration: 0.8 } },
-  };
-
   const [data,setData] = useState([])
   const getCourse = async () => {
         const response = await getdata("/teachers")
@@ -109,21 +97,19 @@ const yogaData = [
     <>
     
      <div  className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
-        {/* <div className="absolute inset-0"></div> */}
-        <div 
-        className="relative z-10 text-center">
-          <div data-aos="fade-down">
+     <div data-aos="fade-down">
+        <div className="relative z-10 text-center">
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">ABOUT US</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           At Yogic, we believe in the transformative power of yoga to enhance your well-being. Our dedicated instructors create a welcoming space where you can explore and deepen your practice.
           </p>
-          </div>
           <Button 
           size='lg'
           onClick={() => navigate(`/contact`)}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Contact Us <FaArrowRight className="" />
           </Button>
+          </div>
         </div>
       </div>
       {/* </div> */}

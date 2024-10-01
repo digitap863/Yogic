@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import girl4 from '../../assets/images/Courses4.png'
-import girl5 from '../../assets/images/Courses5.png'
 import TestimonialSlider from './Testimonial';
 import Contact from './Contact'
 import { getdata } from '../../api/req';
@@ -19,24 +17,6 @@ function GallerySection() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [loadFullYoga, setLoadFullYoga] = useState(false);
   const [loadFullMeditation, setLoadFullMeditation] = useState(false);
-
-
-
-  const yogaImages = [
-    girl4,
-    girl4,
-    girl4,
-    girl4,
-
-  ];
-
-  const meditationImages = [
-    girl5,
-    girl5,
-    girl5,
-    girl5,
-
-  ];
 
   
   useEffect(() => {
@@ -108,14 +88,12 @@ function GallerySection() {
   return (
     <div>
        <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
-        {/* <div className="absolute inset-0"></div> */}
+       <div data-aos="fade-down">
         <div className="relative z-10 text-center">
-      <div data-aos="fade-down">
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">GALLERY</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           We believe in a holistic approach to wellness, integrating mind, body, and spirit through traditional yogic practices.
           </p>
-          </div>
           <Button 
           size='lg'
           onClick={() => navigate(`/contact`)}
@@ -123,6 +101,7 @@ function GallerySection() {
             Contact Us <FaArrowRight className="" />
           </Button>
     
+      </div>
       </div>
       </div>
 

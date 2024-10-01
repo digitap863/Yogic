@@ -1,6 +1,5 @@
 import React, { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import {AnimatePresence} from 'framer-motion'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -54,7 +53,7 @@ export const MainRouter = () => {
                               <div className="spinner">
                               </div>    
                           </div>}>
-      <AnimatePresence mode='wait'>
+      
       <Routes location={location} key={location.pathname}>
         {/* User routes */}
         <Route path="/" element={<Home />} />
@@ -86,7 +85,6 @@ export const MainRouter = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      </AnimatePresence>
     </Suspense>
   );
 };

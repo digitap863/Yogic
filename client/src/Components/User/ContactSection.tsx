@@ -30,8 +30,10 @@ function ContactSection() {
         {/* Address Section */}
         <div className="mb-8">
           <div className="flex items-center">
+          <div data-aos="flip-up">
             <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <GrMapLocation className="text-white text-3xl" />
+            </div>
             </div>
             <div>
               <h2 className="text-lg font-semibold text-gray-800 text-left font-galano">Address</h2>
@@ -46,8 +48,10 @@ function ContactSection() {
         {/* Email Section */}
         <div className="mb-8">
           <div className="flex items-center">
+          <div data-aos="flip-down">
             <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <IoMailOutline className="text-white text-3xl" />
+            </div>
             </div>
             <div>
               <h2 className="text-lg font-semibold text-gray-800 text-left font-galano">Email Address</h2>
@@ -59,8 +63,10 @@ function ContactSection() {
         {/* Contact Section */}
         <div className="mb-8">
           <div className="flex items-center">
+          <div data-aos="flip-up">
             <div className="bg-[#64BA75] rounded-full p-4 mr-10">
               <IoCallOutline className="text-white text-3xl" />
+            </div>
             </div>
             <div>
               <h2 className="text-lg font-semibold text-gray-800 text-left font-galano">Contact Us</h2>
@@ -79,32 +85,41 @@ function ContactSection() {
       </h2>
       <form className="space-y-4">
         <div>
+          <div data-aos="fade-right">
           <input
             type="text"
             placeholder="Name"
             className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
+          </div>
         </div>
         <div>
+          <div data-aos="fade-left">
           <input
             type="email"
             placeholder="E-mail"
             className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
+          </div>
         </div>
         <div>
+          <div data-aos="fade-right">
           <input
             type="text"
             placeholder="Phone Number"
             className="w-full px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
+          </div>
         </div>
         <div>
+        <div data-aos="fade-left">
           <textarea
             placeholder="Your Message"
             className="w-full h-28 px-4 py-3  rounded-2xl bg-gray-100 text-gray-700 focus:outline-none"
           />
+          </div>
         </div>
+        <div data-aos="fade-up">
         <div className="flex justify-center">
         <Button 
           size='lg'
@@ -112,6 +127,7 @@ function ContactSection() {
           className='bg-[#64BA75] inline-flex items-center px-10 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
             Submit <FaArrowRight className="mb-0.5" />
           </Button>
+        </div>
         </div>
        
       </form>
