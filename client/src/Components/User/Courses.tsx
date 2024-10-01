@@ -71,12 +71,15 @@ function CourseSection() {
             <SwiperSlide key={index}>
               <div 
               onClick = {() =>handleCourseClick(course._id)}
-              className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer ">
+              className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer hover:scale-105 duration-300 ">
+            <div data-aos="flip-left">
+
                 <img
                   src={`${url}/uploads/${course.cardImage}`}
                   alt={course.heading}
                   className="aspect-[13/12] object-cover"
                 />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#a0ffac] via-transparent to-transparent opacit rounded-3xl "></div>
                 <div className="absolute bottom-4 left-4 right-4 text-black p-3">
                   <h3 className="font-semibold text-2xl mb-2 pr-10 font-Montserrat uppercase line-clamp-2">{course.heading}</h3>
@@ -84,6 +87,7 @@ function CourseSection() {
                 </div>
               </div>
             </SwiperSlide>
+       
           ))}
         </Swiper>
         

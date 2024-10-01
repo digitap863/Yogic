@@ -43,13 +43,17 @@ function Home() {
         <CourseSection />
         <Yoga />
         <FAQSection faqData={faqData} />
+        
         <div className=" flex flex-col items-center bg-white pb-10 justify-center">
+            
+            <div data-aos="zoom-in">
             <div className="w-full px-4 mx-auto flex pb-10  ">
             <img
               src={swami} 
               alt="Swami Vivekananda"
               className=" object-cover rounded-lg shadow-lg aspect mx-auto"
             />
+            </div>
             </div>
         </div>
         <TestimonialSlider />

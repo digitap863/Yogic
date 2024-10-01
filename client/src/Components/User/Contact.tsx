@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import {Button} from "@nextui-org/react";
 import { getdata } from "../../api/req";
+import { useNavigate } from "react-router-dom";
 
 
 function Contact() {
+  const navigate = useNavigate()
   const [countries, setCountries] = useState([]); // Holds the list of country names
   const [selectedCountry, setSelectedCountry] = useState(""); // Holds the selected country
   const [courses , setCourse] = useState([])
@@ -57,13 +59,15 @@ function Contact() {
             classes that help you unwind, strengthen, and find balance. Start
             your transformation now.
           </p>
+          <div data-aos="fade-up">
           <Button
-           onClick={()=>{Navigate(`/contact`)}}
+           onClick={()=>navigate(`/contact`)}
            size='lg'
             className="inline-flex items-center px-6 sm:px-10 py-5 bg-[#64BA75] text-white rounded-full hover:bg-green-600 transition font-galano"
           >
             Contact us <FaArrowRight className="ml-2 " />
           </Button>
+          </div>
         </div>
 
         {/* Right Section */}
@@ -73,20 +77,24 @@ function Contact() {
           </h2>
           <form className="space-y-4 w-full">
             <div>
+            <div data-aos="fade-right">
               <input
                 type="text"
                 placeholder="Name"
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  font-galano"
               />
+              </div>
             </div>
             <div>
+               <div data-aos="fade-left">
               <input
                 type="email"
                 placeholder="E-mail"
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none font-galano"
               />
+              </div>
             </div>
-            <div>
+            <div data-aos="fade-right">
             <select
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-500 focus:outline-none pr-10 font-galano" 
                 value={selectedCourse}
@@ -101,13 +109,16 @@ function Contact() {
               </select>
             </div>
             <div>
+               <div data-aos="fade-left">
               <input
                 type="text"
                 placeholder="Pick a day"
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none font-galano"
               />
+              </div>
             </div>
             <div>
+            <div data-aos="fade-right">     
             <select
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-500 focus:outline-none pr-10 font-galano"
                 value={selectedCountry}
@@ -120,14 +131,17 @@ function Contact() {
                   </option>
                 ))}
               </select>
+              </div>
             </div>
             <div className="flex justify-center pt-4">
+            <div data-aos="fade-up">
               <Button
                size='lg'
                 className="inline-flex items-center px-8 py-6 sm:px-8 bg-white text-[#64BA75] rounded-full hover:bg-[#64BA75] hover:text-white transition  border-2 border-[#64BA75] font-Epilogue"
               >
                 Book a Class <FaArrowRight  />
               </Button>
+              </div>
             </div>
           </form>
         </div>

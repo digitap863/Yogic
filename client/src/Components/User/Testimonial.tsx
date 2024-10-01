@@ -51,7 +51,7 @@ const TestimonialSlider = () => {
       <div className="container mx-auto px-10 ">
       <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={30}
+          spaceBetween={10}
           slidesPerView={1}
           navigation={{
             prevEl: '.slidePrev-btn',
@@ -73,13 +73,20 @@ const TestimonialSlider = () => {
               spaceBetween: 50,
             },
             1280: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 60,
             },
+            1440:{
+              slidesPerView:4,
+              spaceBetween:50
+            }
           }}
         >
     {testimonials.map((testimonial, index) => (
       <SwiperSlide key={index} className="">
+        <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
         <div className="p-8 rounded-[50px] flex flex-col  bg-white w-80 h-auto">
           <div className="flex flex-row ">
           <img
@@ -101,6 +108,7 @@ const TestimonialSlider = () => {
          <p className="font-bold font-galano">{testimonial.course}</p>
          <img src={www} alt="" className="h-3/4" />
          </div>
+        </div>
         </div>
         </SwiperSlide>
     ))}

@@ -48,7 +48,7 @@ function Banner() {
     <>
       {/* Banner section with Navbar inside */}
       <motion.div 
-      className='xl:h-[110vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       
       initial="hidden"
       animate="visible"
@@ -105,7 +105,11 @@ function Banner() {
 
         {/* Banner content */}
         <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
           <img src={girl} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          </div>
           <motion.div
             variants={buttonVariants}
             initial="initial"

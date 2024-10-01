@@ -107,7 +107,7 @@ function CourseSection() {
       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
         {/* <div className="absolute inset-0"></div> */}
         <div className="relative z-10 text-center">
-            <div data-aos="fade-right">
+            <div data-aos="fade-down">
 
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano">COURSES</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">

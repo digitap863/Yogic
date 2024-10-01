@@ -36,6 +36,7 @@ function About() {
     },
     exit: { opacity: 0, transition: { duration: 0.8 } },
   };
+
   const [data,setData] = useState([])
   const getCourse = async () => {
         const response = await getdata("/teachers")
@@ -100,7 +101,6 @@ const yogaData = [
     { name: "Elisa Willson", image: yoga_girl },
     { name: "Elisa Willson", image: yoga_girl },
     { name: "Elisa Willson", image: yoga_girl },
-
   ];
 
   const title = "ABOUT US";
@@ -112,7 +112,7 @@ const yogaData = [
         {/* <div className="absolute inset-0"></div> */}
         <div 
         className="relative z-10 text-center">
-          <div data-aos="fade-right">
+          <div data-aos="fade-down">
           <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">ABOUT US</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
           At Yogic, we believe in the transformative power of yoga to enhance your well-being. Our dedicated instructors create a welcoming space where you can explore and deepen your practice.
@@ -262,8 +262,6 @@ const yogaData = [
         ))}
       </Swiper>
       <div className="flex justify-end items-center mt-8 lg:pr-10 pr-4">
-        
-       
         <div className="flex space-x-4">
           <button  className="bg-white p-2 rounded-full  slidePrev-bttn">
             <IoIosArrowBack className="text-2xl text-green-500" />
@@ -287,12 +285,14 @@ const yogaData = [
 
 const YogaTeacherCard = ({ name, image ,type }) => (
     <div className="rounded-[50px]  overflow-hidden ">
+      <div data-aos="flip-right">
       <img src={`${url}/uploads/${image}`} alt={name} className="w-full h-64 object-cover aspect-square" />
      
 
       <div className="bg-green-100 p-4">
         <p className="text-gray-600 text-sm">{type}</p>
         <h3 className="text-xl font-semibold">{name}</h3>
+        </div>
       </div>
     </div>
   );
