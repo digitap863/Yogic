@@ -19,6 +19,9 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Button } from '@nextui-org/react';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
+import Navbar from './Navbar';
+import YogicAbout from '../../assets/images/YogicAbout.png';
+
 
 
 
@@ -83,37 +86,34 @@ const yogaData = [
     },
   ];
 
-  const yogaTeachers = [
-    { name: "Elisa Willson", image: yoga_girl },
-    { name: "Elisa Willson", image: yoga_girl },
-    { name: "Elisa Willson", image: yoga_girl },
-    { name: "Elisa Willson", image: yoga_girl },
-    { name: "Elisa Willson", image: yoga_girl },
-  ];
-
-  const title = "ABOUT US";
+ 
 
   return (
     <>
     
-     <div  className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
-     <div data-aos="fade-down">
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">ABOUT US</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
-          At Yogic, we believe in the transformative power of yoga to enhance your well-being. Our dedicated instructors create a welcoming space where you can explore and deepen your practice.
-          </p>
+    <div 
+      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      >
+        {/* Navbar */}
+        <Navbar/>
+        {/* Banner content */}
+        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+          <img src={YogicAbout} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          </div>
+          <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/contact`)}
-          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
-            Contact Us <FaArrowRight className="" />
+          onClick={() => navigate(`/about`)}
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
+            Learn More <FaArrowRight className="" />
           </Button>
           </div>
         </div>
       </div>
-      {/* </div> */}
-      
+           
 
       <Layout
       image= {girl}
@@ -283,33 +283,5 @@ const YogaTeacherCard = ({ name, image ,type }) => (
     </div>
   );
 
-
-  const ScrambleText = ({ text }) => {
-    const [scrambledText, setScrambledText] = useState(text.split("").map(() => ""));
-  
-    useEffect(() => {
-      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      let intervalId;
-      const scramble = (originalText, index) => {
-        if (index < originalText.length) {
-          const newText = scrambledText.map((letter, i) => 
-            i < index ? originalText[i] : characters[Math.floor(Math.random() * characters.length)]
-          );
-          setScrambledText(newText);
-          intervalId = setTimeout(() => scramble(originalText, index + 1), 100);
-        }
-      };
-  
-      scramble(text, 0);
-  
-      return () => clearTimeout(intervalId);
-    }, [text]);
-  
-    return (
-      <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">
-        {scrambledText.join("")}
-      </h1>
-    );
-  };
 
 export default About

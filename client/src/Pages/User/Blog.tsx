@@ -6,7 +6,7 @@ import BlogSection from '../../Components/User/BlogSection'
 function Blog() {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <BlogSection />
       <Footer/>
     </div>

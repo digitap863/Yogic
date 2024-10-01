@@ -69,6 +69,7 @@ function BeginnerYogaSection() {
             } items-center mb-12 space-y-6 md:space-y-0 md:space-x-12 py-4 px-2`}
           >
             {/* Image */}
+            
             <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
               <img
                 src={`${url}/uploads/${content.image}`}
@@ -87,6 +88,10 @@ function BeginnerYogaSection() {
       });
   };
 
+
+
+
+  console.log(course,"???????????????")
   return (
     <div>
                  
@@ -143,7 +148,7 @@ function BeginnerYogaSection() {
 
             {/* Banner Content */}
             <div className="relative z-10 flex items-center justify-center h-[60vh] text-center">
-                <div>
+            <div data-aos="fade-down">
                 <h1 className="text-5xl font-bold text-black mb-6 line-clamp-2 pt-1 uppercase">{course.heading}</h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 line-clamp-2">
                     {course.description}
@@ -164,7 +169,6 @@ function BeginnerYogaSection() {
 
 {/* image and text */}
       <Layout 
-      //if courseType = YogaCourse i want to show image of boy ,if courseType = MeditationCourse i want to show image of girl
       image={course.courseType === 'YogaCourse' ? girl : course.courseType === 'MeditationCourse' ? boy : girl}
         heading={`Welcome to the<br/>${course.heading}`}
         description={`${course.description}`}

@@ -6,7 +6,7 @@ import About from '../../Components/User/About'
 function AboutUs() {
   return (
     <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <About />
         <Footer/>
       

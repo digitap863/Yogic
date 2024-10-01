@@ -6,7 +6,7 @@ import ContactSection from '../../Components/User/ContactSection'
 function Contact() {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <ContactSection />
         <Footer/>
       

@@ -16,12 +16,15 @@ import girl10 from '../../assets/images/Meditation13.png'
 import girl11 from '../../assets/images/Meditation3.png'
 import swami3 from '../../assets/images/swami3.png';
 import girl0 from '../../assets/images/Meditation14.png'
+import yoga from '../../assets/images/YogicMeditation.png'
+
 import Layout1 from './Layout1';
 import Layout2 from './Layout2';
 import Contact from './Contact';
 import { Button } from '@nextui-org/react';
 import { MdArrowForward } from 'react-icons/md';
 import { FaArrowRight } from 'react-icons/fa';
+import Navbar from './Navbar';
 
 function Meditations() {
     const navigate = useNavigate();
@@ -103,22 +106,27 @@ function Meditations() {
   
     return (
       <div>
-       <div className="relative w-full h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex items-center justify-center">
-        {/* <div className="absolute inset-0"></div> */}
-        <div data-aos="fade-down">
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-semibold text-black mb-6 font-galano uppercase">meditation</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 font-galano">
-          We embrace a holistic approach to wellness, uniting mind, body, and spirit through the timeless practices of meditation.
-          </p>
+      <div 
+      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      >
+        {/* Navbar */}
+        <Navbar/>
+        {/* Banner content */}
+        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1500">
+          <img src={yoga} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          </div>
+          <div>
           <Button 
           size='lg'
-          onClick={() => navigate(`/contact`)}
-          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
-            Contact Us <FaArrowRight className="" />
+          onClick={() => navigate(`/about`)}
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
+            Learn More <FaArrowRight className="" />
           </Button>
-      </div>
-      </div>
+          </div>
+        </div>
       </div>
         
         <Layout

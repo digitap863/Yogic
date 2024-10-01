@@ -68,6 +68,7 @@ function CourseSection() {
    
         >
           {data.map((course:any, index) => (
+            
             <SwiperSlide key={index}>
               <div 
               onClick = {() =>handleCourseClick(course._id)}

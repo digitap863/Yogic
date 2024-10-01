@@ -43,8 +43,8 @@ function Contact() {
     fetchCourses();
   }, []);
   
-  console.log(countries,"countriescountriescountries")
-  console.log(courses,"coursescoursescoursescourses")
+  // console.log(countries,"countriescountriescountries")
+  // console.log(courses,"coursescoursescoursescourses")
 
   return (
     <div className=" bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-8 ">
