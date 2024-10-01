@@ -70,7 +70,7 @@ function BlogSection() {
        <div className="container mx-auto md:px-20 md:py-20 px-6 py-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
         {blogs.slice(0, isMobile  ? 3 : blogs.length).map((post:any, index) => (
-          
+            <div data-aos="zoom-in">          
           <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-green-500  pb-20 relative">
             
             <img 
@@ -91,6 +91,7 @@ function BlogSection() {
               className="text-[#64BA75] absolute bottom-5 left-1/2 translate-x-[-50%] border border-[#64BA75] rounded-3xl px-8 py-2 text-sm hover:bg-[#64BA75] hover:text-white transition duration-300">
                 Read More
               </button>
+          </div>
           </div>
         
         ))}

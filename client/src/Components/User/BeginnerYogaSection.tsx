@@ -13,6 +13,7 @@ import logo from '../../assets/images/IMG_2842.png'
 import { GoDotFill } from "react-icons/go";
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
+import { Button } from '@nextui-org/react';
 
 
 function BeginnerYogaSection() {
@@ -143,18 +144,19 @@ function BeginnerYogaSection() {
             {/* Banner Content */}
             <div className="relative z-10 flex items-center justify-center h-[60vh] text-center">
                 <div>
-                <h1 className="text-5xl font-bold text-black mb-6 line-clamp-2 pt-1">{course.heading}</h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 line-clamp-3">
+                <h1 className="text-5xl font-bold text-black mb-6 line-clamp-2 pt-1 uppercase">{course.heading}</h1>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 line-clamp-2">
                     {course.description}
                 </p>
                 <div className="flex justify-center items-center">
-                    <button
+                    <Button
+                    size ='lg'
                     onClick={() => navigate(`/contact`)}
-                    className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors"
+                    className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium transition-colors"
                     >
                     Contact Us
                     <FaArrowRight className="ml-2" />
-                    </button>
+                    </Button>
                 </div>
                 </div>
             </div>

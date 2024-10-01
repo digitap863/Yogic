@@ -281,31 +281,34 @@ function Meditations() {
       )}
       </div>
   </div>
-      <div className="my-20 max-w-7xl mx-auto flex justify-center">
-    <img
-    src={swami3}
-    alt="Swami Vivekananda"
-    className="w-full h-auto object-cover rounded-lg shadow-lg m-1"
-    />
+
+    <div className="my-20 max-w-7xl mx-auto flex justify-center">
+      <img
+        src={swami3}
+        alt="Swami Vivekananda"
+        className="w-full h-auto object-cover rounded-lg shadow-lg m-1"
+      />
     </div>
 
       
   
       <div className="bg-gradient-to-r from-green-100 to-green-200 py-20 px-10">
+      <div data-aos="fade-up">
       <h2 className="text-3xl font-bold mb-6 text-center">WHAT WE OFFER</h2>
+      </div>
   
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
           {/* Left side: Image Section */}
           <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
           <div data-aos="fade-right">
-
               <img src={girl0} alt="Yoga Image 1" />
-             
             </div>
           </div>
   
           {/* Right side: Text Content */}
           <div className="md:w-1/2">
+          <div data-aos="fade-left">
+
           <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10">
             At YogicBlis, we guide you to joy and purpose through various meditation techniques and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
             </p>
@@ -356,6 +359,7 @@ function Meditations() {
                 Life coaching programs.
               </li>
             </ul>
+          </div>
           </div>
         </div>
       </div>
