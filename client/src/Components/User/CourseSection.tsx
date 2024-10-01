@@ -130,15 +130,15 @@ function CourseSection() {
         image={girl1}
         heading="Courses we offer for Yoga and Meditation"
         description="Discover the transformative power of yoga and meditation in this comprehensive course designed for all levels. Whether you’re a beginner or an experienced practitioner, you’ll learn to harmonize mind, body, and spirit through a blend of gentle yoga postures, breathwork, and meditation techniques."
-        ctaText="View Courses"
-        ctaLink="/courses"
+        ctaText=""
+        ctaLink=""
       />
 
       <div className="flex flex-col items-center pt-8">
         <div className="flex flex-row md:space-x-4  mb-4">
           <button
             onClick={() => setSelectedClass("yoga")}
-            className={`m-1 lg:px-8 px-7 py-4 rounded-full font-galano  ${
+            className={`m-1 lg:px-14 px-7  py-4 rounded-full font-galano  ${
               selectedClass === "yoga"
                 ? "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                 : "bg-white text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"

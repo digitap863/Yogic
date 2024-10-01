@@ -6,6 +6,7 @@ import Pose3 from '../../assets/images/standing-yoga-pose.png'
 import Pose4 from '../../assets/images/woman-yoga.png';
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { Button } from '@nextui-org/react';
 
 
 
@@ -31,12 +32,13 @@ const Yoga = () => {
           Designed To Nurture Your Mind, Body, And Spirit. Join Our Community
           And Start Your Journey To Wellness Today.
         </p>
-        <button 
+        <Button 
+        size='lg'
         onClick={()=>{navigate(`/about`)
                      window.scrollTo(0, 0);}}
         className="bg-[#64BA75] text-white px-6 py-2 rounded-full hover:bg-green-600 transition  hidden lg:block font-Epilogue">
           Learn More →
-        </button>
+        </Button>
       </div>
 
       {/* Right section with images */}
@@ -81,12 +83,13 @@ const Yoga = () => {
     Designed To Nurture Your Mind, Body, And Spirit. Join Our Community
     And Start Your Journey To Wellness Today.
   </p>
-  <button 
+  <Button 
+  size ='md'
   onClick={()=>{navigate(`/about`)
     window.scrollTo(0, 0);}}
   className="bg-[#64BA75] inline-flex items-center font-Epilogue text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
     Learn More<FaArrowRight className="ml-2" />
-  </button>
+  </Button>
       </div>
 
      

@@ -10,14 +10,6 @@ function Contact() {
   const [courses , setCourse] = useState([])
   const [selectedCourse, setSelectedCourse] = useState(""); // Holds the selected country
 
-  const inputRef = useRef(null);
-
-  const handleButtonClick = () => {
-    // Programmatically focus the input field
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
 
 
 
@@ -66,7 +58,7 @@ function Contact() {
             your transformation now.
           </p>
           <Button
-           onClick={handleButtonClick}
+           onClick={()=>{Navigate(`/contact`)}}
            size='lg'
             className="inline-flex items-center px-6 sm:px-10 py-5 bg-[#64BA75] text-white rounded-full hover:bg-green-600 transition font-galano"
           >
@@ -83,7 +75,6 @@ function Contact() {
             <div>
               <input
                 type="text"
-                ref={inputRef}
                 placeholder="Name"
                 className="w-full px-4 py-3 sm:py-4 rounded-2xl bg-gray-100 text-gray-700 focus:outline-none  font-galano"
               />

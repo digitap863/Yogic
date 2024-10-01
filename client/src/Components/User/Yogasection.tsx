@@ -44,7 +44,7 @@ const YogaSection = () => {
                         <Button 
                             size= 'sm'
                             onClick={() => navigate(`/yoga`)}
-                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
+                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
                             Learn More <FaArrowRight className="" />
                         </Button>
                     </div>
@@ -86,7 +86,7 @@ const YogaSection = () => {
                             <Button 
                             size='lg'
                             onClick={() => navigate(`/yoga`)}
-                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm'>
+                            className='bg-[#64BA75] inline-flex items-center px-8 py-5 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
                             Learn More <FaArrowRight className="" />
                         </Button>
                         </div>
