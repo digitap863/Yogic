@@ -109,7 +109,7 @@ function Banner() {
           <Button 
           size='lg'
           onClick={() => navigate(`/about`)}
-          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm'>
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
             Learn More <FaArrowRight className="" />
           </Button>
           </div>
