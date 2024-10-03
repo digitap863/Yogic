@@ -21,7 +21,7 @@ function Banner() {
     <>
       {/* Banner section with Navbar inside */}
       <div 
-      className='xl:h-[120vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[130vh] md:h-[100vh] h-[70vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>
