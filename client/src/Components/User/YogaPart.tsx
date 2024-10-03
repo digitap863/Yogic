@@ -170,7 +170,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
                 <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
                     {/* Mobile View */}
                     <div className="block md:hidden text-left">
-                        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-6 font-galano">
                         The Essential Role of Yoga in Modern Life
                         </h2>
                         <img
@@ -178,7 +178,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
                             alt="girl"
                             className="rounded-lg mb-6"
                         />
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-gray-600 mb-6 font-galano">
                         In today’s fast-paced world, yoga is more important than ever. Amidst the constant demands of modern life—whether it's the pressure of work, the distractions of digital media, or the stress of daily responsibilities—yoga offers a vital sanctuary for restoring balance and well-being. Its practice provides a holistic approach to health, addressing not just physical fitness but also mental and emotional resilience. Through yoga, individuals can cultivate mindfulness, enhance flexibility, and build strength, all while learning techniques to manage stress and anxiety. The principles of yoga encourage a deeper connection with oneself, fostering a sense of inner peace and clarity that can help navigate the complexities of contemporary living. In essence, yoga offers a much-needed respite from the chaos, promoting a healthier, more centered lifestyle in a world that often feels overwhelming.
                         </p>
                     </div>
@@ -186,10 +186,10 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
                     {/* Desktop View */}
                     <div className="hidden md:flex md:flex-row items-center justify-between  pl-10">                        
                         <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-2 self-start">
-                            <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                            <h2 className="text-4xl font-bold text-gray-800 mb-6 font-galano">
                             The Essential Role of Yoga in Modern Life
                             </h2>
-                            <p className="text-gray-600 mb-6 pl-2 ">
+                            <p className="text-gray-600 mb-6 pl-2 font-galano ">
                             In today’s fast-paced world, yoga is more important than ever. Amidst the constant demands of modern life—whether it's the pressure of work, the distractions of digital media, or the stress of daily responsibilities—yoga offers a vital sanctuary for restoring balance and well-being. Its practice provides a holistic approach to health, addressing not just physical fitness but also mental and emotional resilience. Through yoga, individuals can cultivate mindfulness, enhance flexibility, and build strength, all while learning techniques to manage stress and anxiety. The principles of yoga encourage a deeper connection with oneself, fostering a sense of inner peace and clarity that can help navigate the complexities of contemporary living. In essence, yoga offers a much-needed respite from the chaos, promoting a healthier, more centered lifestyle in a world that often feels overwhelming.
                             </p>
                         </div>
@@ -210,7 +210,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       </section>
 
     <div className="container mx-auto md:px-20 px-6 md:py-8">
-    <p className='font-bold text-4xl md:pl-20 uppercase '>Benefits of Yoga</p>
+    <p className='font-bold text-4xl md:pl-20 uppercase font-galano '>Benefits of Yoga</p>
     </div>
 
       <Layout1
@@ -327,7 +327,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
 
     <div className="bg-gradient-to-r from-green-100 to-green-200 py-20 px-10">
     <div data-aos="fade-up">
-    <h2 className="text-3xl font-bold mb-6 text-center">WHAT WE OFFER</h2>
+    <h2 className="text-3xl font-bold mb-6 text-center font-galano">WHAT WE OFFER</h2>
     </div>
 
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -341,11 +341,11 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         {/* Right side: Text Content */}
         <div className="md:w-1/2">
         <div data-aos="fade-left">
-          <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10">
+          <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10 font-galano">
             At YogicBliss, we guide you to joy and purpose through diverse yoga styles and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
           </p>
 
-          <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10">
+          <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10 font-galano">
             <li className="flex items-start">
               <span className="text-green-500 mr-2">➤</span>
               Practical answers to questions about why we are here, how to live more joyous lives, understanding our purpose, and how to improve our lives.

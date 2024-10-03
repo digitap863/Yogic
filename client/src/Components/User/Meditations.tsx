@@ -145,7 +145,7 @@ function Meditations() {
                   <div className="flex flex-col md:flex-row items-left justify-between px-6 md:px-16 bg-white">
                       {/* Mobile View */}
                       <div className="block md:hidden text-left">
-                          <h2 className=" font-galano text-2xl font-bold text-gray-800 mb-6">
+                          <h2 className=" font-galano text-2xl font-bold text-gray-800 mb-6 ">
                           Why meditation is important in today’s world? 
                           </h2>
                           <img
@@ -305,7 +305,7 @@ function Meditations() {
   
       <div className="bg-gradient-to-r from-green-100 to-green-200 py-20 px-10">
       <div data-aos="fade-up">
-      <h2 className="text-3xl font-bold mb-6 text-center">WHAT WE OFFER</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center font-galano">WHAT WE OFFER</h2>
       </div>
   
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -320,11 +320,11 @@ function Meditations() {
           <div className="md:w-1/2">
           <div data-aos="fade-left">
 
-          <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10">
+          <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10 font-galano">
             At YogicBlis, we guide you to joy and purpose through various meditation techniques and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
             </p>
   
-            <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10">
+            <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10 font-galano">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">➤</span>
                 Practical answers to questions about why we are here, how to live more joyous lives, understanding our purpose, and how to improve our lives.
