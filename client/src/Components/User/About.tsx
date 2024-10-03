@@ -96,7 +96,7 @@ const yogaData = [
         {/* Navbar */}
         <Navbar/>
         {/* Banner content */}
-        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div className='flex flex-col items-center justify-center h-full md:pt-0 lg:mt-0 mt-20'>
         <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">

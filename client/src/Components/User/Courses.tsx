@@ -70,9 +70,8 @@ function CourseSection() {
             <SwiperSlide key={index}>
               <div 
               onClick = {() =>handleCourseClick(course._id)}
-              className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer hover:scale-105 duration-300 ">
+              className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer hover:scale-105 duration-300 w-full max-w-[400px] mx-auto ">
             <div data-aos="flip-left">
-
                 <img
                   src={`${url}/uploads/${course.cardImage}`}
                   alt={course.heading}
