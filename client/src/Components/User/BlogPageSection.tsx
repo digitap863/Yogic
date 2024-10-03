@@ -228,10 +228,10 @@ function BlogPageSection() {
                 <div className="flex justify-center items-center">
                     <Button
                     size='lg'
-                    onClick={() => navigate(`/blog/${id}`)}
+                    onClick={() => navigate(`/contact`)}
                     className="bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm"
                     >
-                    view Course
+                    Contact Us
                     <FaArrowRight className="" />
                     </Button>
                 </div>
@@ -247,11 +247,7 @@ function BlogPageSection() {
         </div>
       </div>
 
-    <Contact />
-
-
-
-    {/* Related Blogs */}
+       {/* Related Blogs */}
     <div className="container mx-auto   px-4 py-8 max-w-7xl">
       <h2 className="text-4xl font-semibold mb-8 text-black text-left font-galano ">Related Blogs</h2>
       {/* Course Cards Section */}
@@ -332,6 +328,12 @@ function BlogPageSection() {
       </div>
       </div>
 
+
+    <Contact />
+
+
+
+   
     </div>
 
 
