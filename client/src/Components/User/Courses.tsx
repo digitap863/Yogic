@@ -18,23 +18,21 @@ import { useNavigate } from 'react-router-dom';
 
 function CourseSection() {
 
-  const navigate = useNavigate();
-  const [data,setData] = useState([])
-  const getCourse = async () => {
-        const response = await getdata("/courses")
-        console.log(response,"**************************************")
-        setData(response.data.data)
-    }
-    useEffect(() => {
-        getCourse()
-    }, []);
-    const handleCourseClick = (courseId) => {
-      navigate(`/course/${courseId}`); 
-    };
+      const navigate = useNavigate();
+      const [data,setData] = useState([])
+      const getCourse = async () => {
+            const response = await getdata("/courses")
+            console.log(response,"**************************************")
+            setData(response.data.data)
+        }
+        useEffect(() => {
+            getCourse()
+        }, []);
+        const handleCourseClick = (courseId) => {
+          navigate(`/course/${courseId}`); 
+        };
 
-    console.log(data,"datadatadatadatadata")
-
-
+        console.log(data,"datadatadatadatadata")
 
   return (
     <div className="container mx-auto   px-4 py-8 max-w-7xl">
