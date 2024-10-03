@@ -35,11 +35,11 @@ function Banner() {
           <div>
           <Button 
           size='lg'
-          onClick={() =>{ navigate(`/contact`)
+          onClick={() =>{ navigate(`/about`)
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
-            Contact Us <FaArrowRight className="" />
+            Learn More  <FaArrowRight className="" />
           </Button>
           </div>
         </div>

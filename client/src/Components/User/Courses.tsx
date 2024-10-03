@@ -22,7 +22,6 @@ function CourseSection() {
       const [data,setData] = useState([])
       const getCourse = async () => {
             const response = await getdata("/courses")
-            console.log(response,"**************************************")
             setData(response.data.data)
         }
         useEffect(() => {
@@ -32,7 +31,6 @@ function CourseSection() {
           navigate(`/course/${courseId}`); 
         };
 
-        console.log(data,"datadatadatadatadata")
 
   return (
     <div className="container mx-auto   px-4 py-8 max-w-7xl">
@@ -45,6 +43,12 @@ function CourseSection() {
             modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}  // You can adjust this for responsiveness
+          loop= {true}
+          autoplay={true}
+          navigation={{
+            prevEl: '.slidePrev-btnn',
+            nextEl: '.slideNext-btnn'
+          }}
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -59,10 +63,8 @@ function CourseSection() {
               spaceBetween: 50,
             },
           }}
-          navigation={{
-            prevEl: '.slidePrev-btn',
-            nextEl: '.slideNext-btn'
-          }}
+          
+          
    
         >
           {data.map((course:any, index) => (
@@ -78,7 +80,7 @@ function CourseSection() {
                   className="aspect-[13/12] object-cover"
                 />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#a0ffac] via-transparent to-transparent opacit rounded-3xl "></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#caf5db] via-transparent to-transparent opacit rounded-3xl "></div>
                 <div className="absolute bottom-4 left-4 right-4 text-black p-3">
                   <h3 className="font-semibold text-2xl mb-2 pr-10 font-Montserrat uppercase line-clamp-2">{course.heading}</h3>
                   <p className="text-sm font-Montserrat  line-clamp-2">{course.description}</p>
@@ -106,10 +108,10 @@ function CourseSection() {
         </Button>
        
         <div className="flex space-x-4">
-          <button  className="bg-white p-2 rounded-full  slidePrev-btn">
+          <button  className="bg-white p-2 rounded-full  slidePrev-btnn">
             <IoIosArrowBack className="text-2xl text-green-500" />
           </button>
-          <button className="bg-white p-2 rounded-full  slideNext-btn">
+          <button className="bg-white p-2 rounded-full  slideNext-btnn">
             <IoIosArrowForward className="text-2xl text-green-500" />
           </button>
         </div>

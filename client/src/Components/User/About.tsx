@@ -121,7 +121,7 @@ const yogaData = [
       image= {girl}
       heading="Yogicbliss: Your Path to Inner Harmony"
       description="In today’s hectic world, achieving tranquility and focus can feel like an elusive goal. At Yogicbliss, we see meditation not just as a practice, but as a powerful tool for cultivating a harmonious and mindful life. Whether you're just beginning your meditation journey or seeking to enhance your existing practice, our resources are crafted to support you every step of the way. Through guided sessions and expert insights, we empower you to unlock the peace within. Embrace a life of balance, clarity, and deeper connection with Yogicbliss."
-      ctaText="Learn More"
+      ctaText="View Courses"
       ctaLink="/courses"
     />
 
