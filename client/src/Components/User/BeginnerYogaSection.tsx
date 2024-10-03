@@ -145,8 +145,8 @@ function BeginnerYogaSection() {
             {/* Banner Content */}
             <div className="relative z-10 flex items-center justify-center h-[60vh] text-center">
             <div data-aos="fade-down">
-                <h1 className="text-5xl font-bold text-black mb-6 line-clamp-2 pt-1 uppercase">{course.heading}</h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 line-clamp-2">
+                <h1 className="text-5xl font-semibold text-black mb-6 line-clamp-2 pt-1 uppercase font-galano">{course.heading}</h1>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 line-clamp-2 font-galano">
                     {course.description}
                 </p>
                 <div className="flex justify-center items-center">
@@ -156,7 +156,7 @@ function BeginnerYogaSection() {
                       navigate('/contact');
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-medium transition-colors"
+                    className="flex items-center justify-center text-white bg-[#64BA75] py-4 px-8 rounded-full text-lg font-normal transition-colors"
                     >
                     Contact Us
                     <FaArrowRight className="ml-2" />

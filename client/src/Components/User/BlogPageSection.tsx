@@ -221,8 +221,8 @@ function BlogPageSection() {
             <div className="relative z-10 flex items-center justify-center h-[50vh] text-center">
                 {/* <div> */}
                 <div data-aos="fade-down">
-                <h1 className="md:text-5xl text-2xl font-bold text-black mb-6 break-words">{blog?.title}</h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 break-words line-clamp-2">
+                <h1 className="md:text-5xl text-2xl font-bold text-black mb-6 break-words font-galano uppercase">{blog?.title}</h1>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8 break-words line-clamp-2 font-galano">
                     {blog?.summary}
                 </p>
                 <div className="flex justify-center items-center">
