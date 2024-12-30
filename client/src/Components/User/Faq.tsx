@@ -16,26 +16,32 @@ const FAQ: React.FC<FAQProps> = ({ faqData }) => {
         </h2>
         <div className="flex flex-col space-y-4 items-center justify-center w-full bg-white">
           {faqData.map((faq, index) => (
-            <Disclosure key={index} as="div" className=" max-w-lg" >
+            <Disclosure key={index} as="div" className=" max-w-xl" >
               {({ open }) => (
                 <>
                 <div className="items-center justify-center">
                   <Disclosure.Button
-                    className={` bg-white  justify-center flex items-center w-full py-4 text-center text-lg font-semibold text-black focus:outline-none ${
+                    className={` bg-white  justify-center flex items-start w-full py-4 text-center text-lg font-semibold text-black focus:outline-none ${
                       open ? "text-gray-900 " : ""
                     }`}
                   >
+                    <div className="pt-1 ">
                     <IoMdArrowDropright
                       className={`${
                         open ? "rotate-90 transform" : ""
                       } w-5 h-5 text-black transition-transform duration-300`}
-                    /> &nbsp;
+                    />
+                    </div>
+
+                     &nbsp;
                     <span className="font-galano">{faq.question}</span>
                   </Disclosure.Button>
                   </div>
+
                   <Disclosure.Panel className="text-center pb-2 text-gray-600 font-galano">
                     {faq.answer}
                   </Disclosure.Panel>
+
                 </>
               )}
             </Disclosure>

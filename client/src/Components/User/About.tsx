@@ -2,13 +2,13 @@ import { Disclosure } from "@headlessui/react";
 import { Button } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+// import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { A11y, Navigation, Scrollbar } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+// import { A11y, Navigation, Scrollbar } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
 import girl from '../../assets/images/Mask group.png';
@@ -18,6 +18,7 @@ import YogicAbout from '../../assets/images/YogicAbout.png';
 import Contact from '../User/Contact';
 import CourseSection from '../User/Courses';
 import TestimonialSlider from '../User/Testimonial';
+import Profiles from '../User/Profiles';
 import Layout from './Layout';
 import Navbar from './Navbar';
 
@@ -93,13 +94,13 @@ const yogaData = [
     <div 
       className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
-        {/* Navbar */}
+     
         <Navbar/>
         {/* Banner content */}
         <div className='flex flex-col items-center justify-center h-full md:pt-0 lg:mt-0 mt-20'>
         <div data-aos="fade-down"
-     data-aos-easing="linear"
-     data-aos-duration="1500">
+            data-aos-easing="linear"
+            data-aos-duration="1500">
           <img src={YogicAbout} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
           </div>
           <div>
@@ -212,7 +213,9 @@ const yogaData = [
       </div> 
     </section>
 
-    <section className="container mx-auto bg-white pb-20 px-8">
+
+{/* expert yoga guides - section  */}
+    {/* <section className="container mx-auto bg-white pb-20 px-8">
       <h2 className="text-4xl font-bold mb-12 text-center">MEET OUR EXPERT YOGA GUIDE</h2>
       <Swiper
         modules={[ Navigation,Scrollbar, A11y]}
@@ -259,10 +262,8 @@ const yogaData = [
           </button>
         </div>
       </div>
-
-  
-  
-    </section>
+    </section> */}
+    <Profiles />
 
     <TestimonialSlider />
     <Contact />
@@ -275,8 +276,6 @@ const YogaTeacherCard = ({ name, image ,type }) => (
     <div className="rounded-[50px]  overflow-hidden ">
       <div data-aos="flip-right">
       <img src={`${url}/uploads/${image}`} alt={name} className="w-full h-64 object-cover aspect-square" />
-     
-
       <div className="bg-green-100 p-4">
         <p className="text-gray-600 text-sm">{type}</p>
         <h3 className="text-xl font-semibold">{name}</h3>
