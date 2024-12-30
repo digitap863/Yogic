@@ -33,7 +33,7 @@ function CourseSection() {
 
 
   return (
-    <div className="container mx-auto   px-4 py-8 max-w-7xl">
+    <div className="container mx-auto   px-4 py-8 max-w-7xl overflow-hidden">
       <h2 className="text-4xl font-semibold mb-8 text-black text-left font-galano ">OUR COURSES</h2>
 
       {/* Course Cards Section */}

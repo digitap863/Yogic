@@ -7,7 +7,7 @@ import yogagirls from '../../assets/images/yogagirls.png'
 function Profiles() {
     const [activeTab, setActiveTab] = useState<'yoga' | 'meditation'>('yoga')
   return (
-       <div>
+       <div className='overflow-hidden '>
           <div className="container mx-auto max-w-7xl py-8  ">
 
             <div>

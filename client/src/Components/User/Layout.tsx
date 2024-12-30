@@ -13,7 +13,7 @@ function Layout({ image, heading, description, ctaText, ctaLink }) {
 
   return (
     <div>
-        <section className="bg-white md:pl-20 pt-20 pb-4 pr-4">
+        <section className="bg-white md:pl-20 pt-20 pb-4 pr-4 overflow-hidden">
             <div className="container mx-auto bg-white">
                 <div className="flex flex-col md:flex-row items-center justify-between pl-6 md:px-16 bg-white">
                     {/* mobile View */}

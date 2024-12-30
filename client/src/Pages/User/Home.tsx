@@ -51,7 +51,7 @@ function Home() {
   ];
 
   return (
-    <div>
+    <div  className='overflow-hidden'>
         {/* <Navbar /> */}
         <Banner/>
         <YogaSection />

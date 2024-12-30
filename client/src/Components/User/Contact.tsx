@@ -47,7 +47,7 @@ function Contact() {
   // console.log(courses,"coursescoursescoursescourses")
 
   return (
-    <div className=" bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-8 ">
+    <div className=" bg-white flex md:justify-center md:items-center w-full px-6 sm:px-12 py-8 overflow-hidden ">
       <div className="flex flex-col md:flex-row md:items-center bg-white py-10 max-w-6xl">
         {/* Left Section */}
         <div className="md:w-1/2  md:text-left  bg-white md:mr-20 md:px-12 self-start">

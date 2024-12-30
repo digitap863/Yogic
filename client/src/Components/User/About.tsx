@@ -2,13 +2,10 @@ import { Disclosure } from "@headlessui/react";
 import { Button } from '@nextui-org/react';
 import React, { useEffect, useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-// import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import { A11y, Navigation, Scrollbar } from 'swiper/modules';
-// import { Swiper, SwiperSlide } from 'swiper/react';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
 import girl from '../../assets/images/Mask group.png';
@@ -92,7 +89,7 @@ const yogaData = [
     <>
     
     <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative overflow-hidden'
       >
      
         <Navbar/>
@@ -115,6 +112,7 @@ const yogaData = [
           </Button>
           </div>
         </div>
+
       </div>
            
 
@@ -128,7 +126,7 @@ const yogaData = [
 
       <CourseSection />
       
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section className="max-w-7xl mx-auto px-6 py-12 overflow-hidden">
       <h2 className="text-3xl font-bold text-left mb-12 pl-4 font-galano">Benefits of Yoga and Meditation</h2>
       {/* Yoga Section */}
       <div className="flex flex-col-reverse lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
@@ -215,6 +213,7 @@ const yogaData = [
 
 
 {/* expert yoga guides - section  */}
+
     {/* <section className="container mx-auto bg-white pb-20 px-8">
       <h2 className="text-4xl font-bold mb-12 text-center">MEET OUR EXPERT YOGA GUIDE</h2>
       <Swiper
@@ -263,6 +262,8 @@ const yogaData = [
         </div>
       </div>
     </section> */}
+
+
     <Profiles />
 
     <TestimonialSlider />

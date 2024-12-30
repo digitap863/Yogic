@@ -105,7 +105,7 @@ function Meditations() {
   
   
     return (
-      <div>
+      <div  className='overflow-hidden'>
       <div 
       className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >

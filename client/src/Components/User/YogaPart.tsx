@@ -130,7 +130,7 @@ function YogaPart() {
   ];
 console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
   return (
-    <div>
+    <div className='overflow-hidden'>
        <div 
       className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
@@ -165,7 +165,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       ctaLink="/courses"
       />
 
-      <section className="bg-white py-20">
+      <section className="bg-white py-20 ">
             <div className="container mx-auto bg-white">
                 <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
                     {/* Mobile View */}
@@ -234,7 +234,8 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
              </Button>
         )}
       </div>
-<div className='hidden md:block  '>
+
+    <div className='hidden md:block  '>
     <Layout1
       image={girl3}
       benefits={yogaBenefits3}
@@ -271,7 +272,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         </div>
       )}
 
-<div className="container mx-auto flex justify-center">
+    <div className="container mx-auto flex justify-center">
     <div className="bg-white pt-10  md:mx-20 px-6 md:px-16">
       <h1 className="text-3xl font-bold mb-6 font-galano ">TYPES OF YOGA</h1>
       <p className="mb-6 font-galano font-normal text-base text-gray-500">
