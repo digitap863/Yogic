@@ -173,7 +173,9 @@ function CourseSection() {
               // <div data-aos="flip-left">
               <div 
               key={index} 
-              onClick = {() =>handleCourseClick(style._id)}
+              onClick = {() =>{
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+                handleCourseClick(style._id)}}
               className="relative rounded-[50px] overflow-hidden shadow-md cursor-pointer">
                
                 <img

@@ -143,27 +143,29 @@ function Profiles() {
                   <h2 className="text-3xl font-bold mb-6 text-center font-galano">WHAT WE OFFER</h2>
                   </div>
 
-                  <div className="mt-6 flex justify-center gap-4 pb-10">
+                  <div className="flex flex-col items-center">
+                <div className="flex flex-col  md:flex-row md:space-x-4 md:mb-10 mb-4">
                     <button
-                    className={`w-32 px-6 py-3 rounded-full transition-colors duration-200 ${
+                    className={`m-1 lg:px-14 px-7 py-4 rounded-full font-galano transition-colors duration-200 ${
                         activeTab === 'yoga'
-                        ? 'bg-[#64BA75] text-white hover:bg-[#64BA75]'
-                        : 'bg-transparent hover:bg-green-200 text-[#64BA75] border-[#64BA75] border '
+                        ?  "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
+                        : "bg-transparent text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
                     }`}
                     onClick={() => setActiveTab('yoga')}
                     >
                     Yoga
                     </button>
                     <button
-                    className={`w-32 px-4 py-2 rounded-full transition-colors duration-200 ${
+                    className={`m-1 lg:px-8 px-3 py-4 rounded-full font-galano transition-colors duration-200 ${
                         activeTab === 'meditation'
-                        ? 'bg-[#64BA75] text-white hover:bg-[#64BA75]'
-                        : 'bg-transparent hover:bg-green-200 text-[#64BA75] border-[#64BA75] border '
+                        ?  "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
+                        : "bg-transparent text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
                     }`}
                     onClick={() => setActiveTab('meditation')}
                     >
                     Meditation
                     </button>
+                </div>
                 </div>
                 
 
@@ -331,7 +333,7 @@ interface YogaSectionProps {
   
   function YogaSection({ number,title,details }: YogaSectionProps) {
     return (
-      <div className="flex flex-col md:flex-row gap-4 items- font-galano">
+      <div className="flex flex-row gap-4 items- font-galano">
 
         <div className='md:w-[1%] flex flex-col justify-start items-start '>
             <div className='items-start'> 
@@ -340,10 +342,10 @@ interface YogaSectionProps {
         </div>
         <div className="md:w-[99%]">
           <div className="flex items-center gap-0">
-            <div className="w-6 h-6 rounded-full text-gray-700 flex items-center justify-center text-base font-medium">
+            <div className="w-6 h-6 rounded-full text-gray-700 flex items-center justify-center text-base font-medium ">
               {number}.
             </div>
-            <h3 className="text-base font-semibold text-gray-700">{title}:</h3>
+            <h3 className="text-base font-semibold text-gray-700 whitespace-nowrap">{title}:</h3>
           </div>
           {/* <p className="text-gray-600 mb-4">{description}</p> */}
           <ul className="space-y-0">
