@@ -146,7 +146,7 @@ function Profiles() {
                   <div className="flex flex-col items-center">
                 <div className="flex flex-col  md:flex-row md:space-x-4 md:mb-10 mb-4">
                     <button
-                    className={`m-1 lg:px-14 px-7 py-4 rounded-full font-galano transition-colors duration-200 ${
+                    className={`m-1 lg:px-14 px-14 py-4 rounded-full font-galano transition-colors duration-200 ${
                         activeTab === 'yoga'
                         ?  "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                         : "bg-transparent text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -156,7 +156,7 @@ function Profiles() {
                     Yoga
                     </button>
                     <button
-                    className={`m-1 lg:px-8 px-3 py-4 rounded-full font-galano transition-colors duration-200 ${
+                    className={`m-1 lg:px-8 px-14 py-4 rounded-full font-galano transition-colors duration-200 ${
                         activeTab === 'meditation'
                         ?  "bg-[#64BA75] text-white border border-green-500 hover:text-white hover:bg-[#64BA75]"
                         : "bg-transparent text-[#64BA75] border border-green-500 hover:text-[#64BA75] hover:bg-white"
@@ -218,6 +218,33 @@ function Profiles() {
                                 "Yoga for Stress Relief: A calming practice that integrates gentle stretches, breathwork, and meditation.",
                                 "Restorative Yoga: Uses props to support the body in gentle poses.",
                                 "Yoga Therapy: Tailored sessions for specific conditions or injuries."
+                            ]}
+                            />
+
+                            <YogaSection
+                            number={5}
+                            title="Customizable Plans"
+                            details={[
+                                "Personalized yoga programs based on individual goals (e.g., weight loss, flexibility, relaxation).",
+                            ]}
+                            />
+
+                            <YogaSection
+                            number={6}
+                            title="Workshops and Events"
+                            details={[
+                                "Inversions & Arm Balances Workshop: A workshop focused on learning challenging poses with proper alignment.",
+                                "Pranayama: Breath exercises for cold and sinus related problems, blood pressure related problems and for calmness",
+                                "Trataka: Very effective activity for improved eyesight and mind relaxation.",
+                                "Bandhas: Yogic bandhas for energy restoration and energy center activation."
+                            ]}
+                            />
+
+                            <YogaSection
+                            number={7}
+                            title="Online & On-Demand Classes"
+                            details={[
+                              
                             ]}
                             />
                         </div>
@@ -345,7 +372,7 @@ interface YogaSectionProps {
             <div className="w-6 h-6 rounded-full text-gray-700 flex items-center justify-center text-base font-medium ">
               {number}.
             </div>
-            <h3 className="text-base font-semibold text-gray-700 whitespace-nowrap">{title}:</h3>
+            <h3 className="text-base font-semibold text-gray-700 whitespace-nowrap">{title} {number=== 7 ? '' :':'}</h3>
           </div>
           {/* <p className="text-gray-600 mb-4">{description}</p> */}
           <ul className="space-y-0">
