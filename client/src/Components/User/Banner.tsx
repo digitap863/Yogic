@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 import React from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import girl from '../../assets/images/yogic.png';
+import girl from '../../assets/images/yogicImg.png';
 import Navbar from './Navbar';
 
 
@@ -21,7 +21,7 @@ function Banner() {
     <>
       {/* Banner section with Navbar inside */}
       <div 
-      className='xl:h-[130vh] md:h-[100vh] h-[70vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[100vh] md:h-[90vh] h-[70vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>
@@ -30,7 +30,7 @@ function Banner() {
         <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">
-          <img src={girl} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <img src={girl} alt="banner image" className=' w-[70%] mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 
