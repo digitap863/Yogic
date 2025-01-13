@@ -12,7 +12,7 @@ import girl4 from '../../assets/images/Mask group82.png';
 import girl5 from '../../assets/images/Mask group83.png';
 import girl6 from '../../assets/images/Mask group84.png';
 import girl0 from '../../assets/images/Mask groupp.png';
-import yoga from '../../assets/images/Yogicyoga.png';
+import yoga from '../../assets/images/YogicyogaImg.png';
 import girl10 from '../../assets/images/girl_10.png';
 import girl11 from '../../assets/images/girl_11.png';
 import girl7 from '../../assets/images/girl_7.png';
@@ -132,7 +132,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
   return (
     <div className='overflow-hidden'>
        <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[100vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>
@@ -141,7 +141,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         <div data-aos="fade-down"
               data-aos-easing="linear"
               data-aos-duration="1500">
-          <img src={yoga} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <img src={yoga} alt="banner image" className=' xl:w-[100%] md:w-[80%]  mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 

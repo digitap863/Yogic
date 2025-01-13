@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate,useLocation } from 'react-router-dom';
-import logo from '../../assets/images/IMG_2842.png'
+import logo from '../../assets/images/logo.png'
 
 
 const Navbar: React.FC = () => {
@@ -20,8 +20,8 @@ const Navbar: React.FC = () => {
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
             <div 
             onClick={() => navigate(`/`)}
-            className="flex items-center space-x-3">
-              <img src={logo} alt="Logo" className="aspect-square cursor-pointer" />
+            className="flex items-center space-x-3 py-6">
+              <img src={logo} alt="Logo" className="h-full md:w-[70%] w-[50%] cursor-pointer" />
             </div>
             <button
                     className="block md:hidden mr-10 p-2 w-10 h-10 text-gray-500  hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"

@@ -7,7 +7,7 @@ import { getdata } from "../../api/req";
 import { url } from "../../api/url";
 import girl1 from "../../assets/images/Courses1.png";
 import girl7 from "../../assets/images/Courses8.png";
-import girl from "../../assets/images/YogicCourses.png";
+import girl from "../../assets/images/YogicCoursesImg.png";
 import Contact from "./Contact";
 import Layout from "./Layout";
 import Navbar from "./Navbar";
@@ -102,7 +102,7 @@ function CourseSection() {
   return (
     <div>
        <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[100vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>

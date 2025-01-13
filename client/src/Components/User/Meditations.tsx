@@ -15,7 +15,7 @@ import girl4 from '../../assets/images/Meditation7.png';
 import girl5 from '../../assets/images/Meditation8.png';
 import girl6 from '../../assets/images/Meditation9.png';
 import swami3 from '../../assets/images/swami3.png';
-import yoga from '../../assets/images/YogicMeditation.png';
+import yoga from '../../assets/images/YogicMeditationImg.png';
 import Layout from './Layout';
 
 import { Button } from '@nextui-org/react';
@@ -107,7 +107,7 @@ function Meditations() {
     return (
       <div  className='overflow-hidden'>
       <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
+      className='xl:h-[100vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative'
       >
         {/* Navbar */}
         <Navbar/>
@@ -116,7 +116,7 @@ function Meditations() {
         <div data-aos="fade-down"
               data-aos-easing="linear"
               data-aos-duration="1500">
-          <img src={yoga} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <img src={yoga} alt="banner image" className='  xl:w-[100%] md:w-[80%] mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 

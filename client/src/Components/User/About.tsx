@@ -11,7 +11,7 @@ import { url } from '../../api/url';
 import girl from '../../assets/images/Mask group.png';
 import girl1 from '../../assets/images/Mask group1.png';
 import girl2 from '../../assets/images/Mask group2.png';
-import YogicAbout from '../../assets/images/YogicAbout.png';
+import YogicAbout from '../../assets/images/YogicAboutImg.png';
 import Contact from '../User/Contact';
 import CourseSection from '../User/Courses';
 import TestimonialSlider from '../User/Testimonial';
@@ -89,7 +89,7 @@ const yogaData = [
     <>
     
     <div 
-      className='xl:h-[125vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative overflow-hidden'
+      className='xl:h-[100vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative overflow-hidden'
       >
      
         <Navbar/>
@@ -98,7 +98,7 @@ const yogaData = [
         <div data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500">
-          <img src={YogicAbout} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <img src={YogicAbout} alt="banner image" className=' xl:w-[100%] md:w-[80%] mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 
