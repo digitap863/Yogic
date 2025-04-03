@@ -48,7 +48,7 @@ const TestimonialSlider = () => {
   return (
     <div className="py-12 bg-gradient-to-r from-green-100 to-blue-100">
       <h2 className="text-4xl font-semibold text-center mb-8 font-galano">WHAT OUR CLIENT SAY</h2>
-      <div className="container mx-auto px-10 ">
+      <div className="container mx-auto px-2">
       <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={10}
@@ -76,10 +76,16 @@ const TestimonialSlider = () => {
               slidesPerView: 3,
               spaceBetween: 60,
             },
-            1440:{
-              slidesPerView:4,
-              spaceBetween:50
-            }
+           // Large screens
+            1440: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+            // Extra large screens
+            1600: {
+              slidesPerView: 4,
+              spaceBetween: 60,
+            },
           }}
         >
     {testimonials.map((testimonial, index) => (
