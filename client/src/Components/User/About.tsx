@@ -124,92 +124,7 @@ const yogaData = [
       ctaLink="/courses"
     />
 
-      <CourseSection />
-      
-    <section className="max-w-7xl mx-auto px-6 py-12 overflow-hidden">
-      <h2 className="text-3xl font-bold text-left mb-12 pl-4 font-galano">Benefits of Yoga and Meditation</h2>
-      {/* Yoga Section */}
-      <div className="flex flex-col-reverse lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
-      <div className="lg:w-1/2 space-y-4">
-      <h3 className="text-2xl font-bold pt-4 font-galano">YOGA:</h3>
-      <ul className="space-y-2">
-        {yogaData.map((faq, index) => (
-          <Disclosure key={index} as="div">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex items-start space-x-2 w-full py-2 text-left">
-                <span
-                    className={`${
-                      open ? 'rotate-90 transform' : ''
-                    } mt-1 w-5 h-5 text-green-500 transition-transform duration-300`}
-                  >
-                    {open ? '➤' : '➤'}
-                  </span>
-                  <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
-                </Disclosure.Button>
-                <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
-                  {faq.answer}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-        ))}
-      </ul>
-    </div>
-        <div className="  flex justify-center ">  
-          <div>
-          <div data-aos="fade-left">
-            <img
-              className=" w-auto h-auto object-cover "
-              src={girl1}
-              alt="Yoga Pose 3"
-            />
-            </div>
-            </div>
-        </div>
-      </div>
-     {/* meditation section */}
-     <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
-     <div className="  lg:w-1/2 flex justify-center">  
-     <div data-aos="fade-right">
-
-            <img
-              className=" w-auto h-auto object-cover"
-              src={girl2}
-              alt="Yoga Pose 3"
-            />
-            </div>
-        </div>
-      <div className="lg:w-1/2 space-y-4">
-      <h3 className="text-2xl font-bold">MEDITATION :</h3>
-      
-      <ul className="space-y-2">
-        {meditationData.map((faq, index) => (
-          <Disclosure key={index} as="div">
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex items-start space-x-2 w-full py-2 text-left">
-                <span
-                    className={`${
-                      open ? 'rotate-90 transform' : ''
-                    } mt-1 w-5 h-5 text-green-500 transition-transform duration-300`}
-                  >
-                    {open ? '➤' : '➤'}
-                  </span>
-                  <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
-                </Disclosure.Button>
-                <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
-                  {faq.answer}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-        ))}
-      </ul>
-    </div>
-       
-      </div> 
-    </section>
+     
 
 
 {/* expert yoga guides - section  */}
@@ -265,6 +180,93 @@ const yogaData = [
 
 
     <Profiles />
+
+    <CourseSection />
+      
+      <section className="max-w-7xl mx-auto px-6 py-12 overflow-hidden">
+        <h2 className="text-3xl font-bold text-left mb-12 pl-4 font-galano">Benefits of Yoga and Meditation</h2>
+        {/* Yoga Section */}
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
+        <div className="lg:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold pt-4 font-galano">YOGA:</h3>
+        <ul className="space-y-2">
+          {yogaData.map((faq, index) => (
+            <Disclosure key={index} as="div">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex items-start space-x-2 w-full py-2 text-left">
+                  <span
+                      className={`${
+                        open ? 'rotate-90 transform' : ''
+                      } mt-1 w-5 h-5 text-green-500 transition-transform duration-300`}
+                    >
+                      {open ? '➤' : '➤'}
+                    </span>
+                    <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
+                    {faq.answer}
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          ))}
+        </ul>
+      </div>
+          <div className="  flex justify-center ">  
+            <div>
+            <div data-aos="fade-left">
+              <img
+                className=" w-auto h-auto object-cover "
+                src={girl1}
+                alt="Yoga Pose 3"
+              />
+              </div>
+              </div>
+          </div>
+        </div>
+       {/* meditation section */}
+       <div className="flex flex-col lg:flex-row justify-between items-start space-y-6 lg:space-y-0 mb-12 p-16 border border-gray-300 rounded-3xl">
+       <div className="  lg:w-1/2 flex justify-center">  
+       <div data-aos="fade-right">
+  
+              <img
+                className=" w-auto h-auto object-cover"
+                src={girl2}
+                alt="Yoga Pose 3"
+              />
+              </div>
+          </div>
+        <div className="lg:w-1/2 space-y-4">
+        <h3 className="text-2xl font-bold">MEDITATION :</h3>
+        
+        <ul className="space-y-2">
+          {meditationData.map((faq, index) => (
+            <Disclosure key={index} as="div">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex items-start space-x-2 w-full py-2 text-left">
+                  <span
+                      className={`${
+                        open ? 'rotate-90 transform' : ''
+                      } mt-1 w-5 h-5 text-green-500 transition-transform duration-300`}
+                    >
+                      {open ? '➤' : '➤'}
+                    </span>
+                    <span className="font-medium text-left text-lg font-galano">{faq.question}</span>
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="pl-7 text-gray-600 font-galano">
+                    {faq.answer}
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
+          ))}
+        </ul>
+      </div>
+         
+        </div> 
+      </section>
 
     <TestimonialSlider />
     <Contact />

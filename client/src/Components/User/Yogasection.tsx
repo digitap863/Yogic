@@ -21,7 +21,7 @@ const YogaSection = () => {
                     {/* Mobile View */}
                     <div className="block md:hidden text-left">
                         <h2 className="text-3xl font-semibold text-gray-800 mb-6 font-galano">
-                            Our Passion for Yoga, Your Path to Wellness
+                            Passion for Yoga, and Meditation, Path to Wellness
                         </h2>
                         <img
                             src={yogagirl}
@@ -73,7 +73,7 @@ const YogaSection = () => {
 
                         <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-18 self-start">
                             <h2 className="text-4xl font-semibold text-gray-800 mb-6 font-galano">
-                                Our Passion for Yoga, Your Path to Wellness
+                                Passion for Yoga, and Meditation, Path to Wellness
                             </h2>
                             <p className="text-gray-600 mb-6 pr-6 font-galano">
                                 At Yogic, we believe in the transformative power of yoga to

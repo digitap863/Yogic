@@ -73,7 +73,7 @@ function Contact() {
         {/* Right Section */}
         <div className="md:w-1/2 w-full mt-10 md:mt-0 text-left md:text-left bg-white">
           <h2 className=" text-sm md:text-lg font-normal text-gray-800 mb-4 sm:mb-6 font-galano">
-            Book your session in just a few clicks and start your yoga journey today!
+            Book your session in just a few clicks and start your wellness journey today!
           </h2>
           <form className="space-y-4 w-full">
             <div>

@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/react";
 import React from 'react';
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import girl from '../../assets/images/yogicImg.png';
+import girl from '../../assets/images/yogicc.png';
 import Navbar from './Navbar';
 
 

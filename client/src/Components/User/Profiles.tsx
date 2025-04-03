@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import yogagirl from '../../assets/images/yogagirl.png'
+import reshma from '../../assets/images/reshma.png'
 import girl from '../../assets/images/Mask group.png';
 import yogagirls from '../../assets/images/yogagirls.png'
 
@@ -16,7 +17,7 @@ function Profiles() {
               <div className="md:w-1/3 mb-6 md:mb-0 bg-white flex justify-center ">
                 <div className="rounded-3xl overflow-hidden">
                 <div data-aos="fade-right">
-                  <img src={yogagirl} alt="Yoga practice" className="max-w-full h-auto object-cover" />
+                  <img src={reshma} alt="Yoga practice" className="max-w-full h-auto object-cover" />
                  </div>
                 </div>
               </div>
@@ -123,9 +124,13 @@ function Profiles() {
                 </div>
               </div>
               {/* Text section taking 2/3 width */}
-              <div className="md:w-2/3 md:pl-0 items-start md:pt-10 ">
+              <div className="md:w-2/3 md:pl-0 items-start md:pt-0 ">
                       <div className=''>
-                        <p className="text-gray-800  font-galano pt-4 pr-4"><span className=' text-black font-semibold '>Lata Meghani Rawat </span>- Yoga instructor-influencer-fitness enthusiast She is 43 year old fitness enthusiast with years of yoga practice and 2 years of coaching experience. Along with being a mother, she has been working alongside dozens of clients, spreading the message of ultimate peace through the means of yoga -she is a certified dietician and nutritionist -she has completed 500 hours advanced yoga alliance with expertise in specific practices such as shat kriyaa, mudras and bandha
+                      <h3 className="font-bold  text-xl font-Montserrat">Lata Meghani Rawat -</h3>
+                      <p className="text-gray-600 font-light md:pr-72  font-galano ">Yoga instructor-influencer-fitness enthusiast</p>
+                        <p className="text-gray-800  font-galano pt-4 pr-4">Lata is a dedicated 43-year-old yoga teacher with a decade of training and two years of teaching experience. As a mother of a 15-year-old son, she combines her nurturing nature with her passion for yoga to guide others toward a balanced and mindful lifestyle. Lata’s journey reflects her commitment to the transformative power of yoga, both in her personal life and in her teaching.
+She has completed 500 hours advanced yoga alliance with expertise in specific practices.  It includes 200 hours of Yoga teacher training, including practice and study of Hatha Yoga, Scriptural study, Philosophy, Ethics and Lifestyle, Yoga Anatomy and Physiology, Teaching methodology and Mind Relaxation techniques.  Further completion of 300 hours of advanced yoga training, Scriptural Study, Philosophy, Ethics and Lifestyle, Practicum, Yoga Anatomy and Physiology, Advanced meditation technique, Shat Kriyas, Mudras and Bandhas. 
+In addition to the above, she has got certification of Diet and Nutrition from Bodhi School of Yoga, which enables her to assess clients’ dietary habits, health conditions and nutritional needs based on age, gender, activity level, blood group and goals (such as weight management, or muscle gain.  She offers guidance and education on healthy eating habits, portion control, reading food labels and understanding the impact of different nutrients on the body.
                             <br/>
                         </p>
                       </div>

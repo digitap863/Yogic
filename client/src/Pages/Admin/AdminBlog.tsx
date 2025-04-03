@@ -30,17 +30,17 @@ const BlogForm = () => {
     content4Image: null,
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e:any) => {
     const { name, files } = e.target;
     setImages({ ...images, [name]: files[0] });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
 
     const blogData = new FormData();
@@ -61,7 +61,7 @@ const BlogForm = () => {
     blogData.append('content3Description', formData.content3Description);
 
     blogData.append('content4Heading', formData.content4Heading);
-    blogData.append('content4Image', images.content4Image);
+    blogData.append('content4Image', images?.content4Image);
     blogData.append('content4Description', formData.content4Description);
 
     try {
