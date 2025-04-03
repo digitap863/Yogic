@@ -3,6 +3,8 @@ import yogagirl from '../../assets/images/yogagirl.png'
 import reshma from '../../assets/images/reshma.png'
 import girl from '../../assets/images/Mask group.png';
 import yogagirls from '../../assets/images/yogagirls.png'
+import yogaguru from '../../assets/images/yogaguru.png'
+import yogains from '../../assets/images/yogains.png'
 
 
 function Profiles() {
@@ -90,7 +92,7 @@ function Profiles() {
               <div className="md:w-1/3 mb-6 md:mb-0 bg-white flex justify-center ">
                 <div className="rounded-3xl overflow-hidden">
                 <div data-aos="fade-right">
-                  <img src={yogagirl} alt="Yoga practice" className="max-w-full h-auto object-cover" />
+                  <img src={yogaguru} alt="Yoga practice" className="max-w-full h-auto object-cover" />
                  </div>
                 </div>
               </div>
@@ -119,14 +121,14 @@ function Profiles() {
               <div className="md:w-1/3 mb-6 md:mb-0 bg-white flex justify-center ">
                 <div className="rounded-3xl overflow-hidden">
                 <div data-aos="fade-right">
-                  <img src={yogagirl} alt="Yoga practice" className="max-w-full h-auto object-cover" />
+                  <img src={yogains} alt="Yoga practice" className="max-w-full h-auto object-cover" />
                  </div>
                 </div>
               </div>
               {/* Text section taking 2/3 width */}
               <div className="md:w-2/3 md:pl-0 items-start md:pt-0 ">
                       <div className=''>
-                      <h3 className="font-bold  text-xl font-Montserrat">Lata Meghani Rawat -</h3>
+                      <h3 className="font-bold  text-xl font-Montserrat">Lata Meghani Rawat</h3>
                       <p className="text-gray-600 font-light md:pr-72  font-galano ">Yoga instructor-influencer-fitness enthusiast</p>
                         <p className="text-gray-800  font-galano pt-4 pr-4">Lata is a dedicated 43-year-old yoga teacher with a decade of training and two years of teaching experience. As a mother of a 15-year-old son, she combines her nurturing nature with her passion for yoga to guide others toward a balanced and mindful lifestyle. Lata’s journey reflects her commitment to the transformative power of yoga, both in her personal life and in her teaching.
 She has completed 500 hours advanced yoga alliance with expertise in specific practices.  It includes 200 hours of Yoga teacher training, including practice and study of Hatha Yoga, Scriptural study, Philosophy, Ethics and Lifestyle, Yoga Anatomy and Physiology, Teaching methodology and Mind Relaxation techniques.  Further completion of 300 hours of advanced yoga training, Scriptural Study, Philosophy, Ethics and Lifestyle, Practicum, Yoga Anatomy and Physiology, Advanced meditation technique, Shat Kriyas, Mudras and Bandhas. 
