@@ -55,7 +55,7 @@ function Contact() {
             BOOK YOUR SESSION
           </h2>
           <p className="text-gray-600 mb-6 sm:mb-8 md:text-lg sm:text-lg font-galano">
-            Join us on your yogic journey! Reserve your spot today and discover
+            Join us on your SoulRise Living journey! Reserve your spot today and discover
             classes that help you unwind, strengthen, and find balance. Start
             your transformation now.
           </p>

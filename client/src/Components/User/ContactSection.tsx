@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { FaArrowRight } from 'react-icons/fa';
-import { IoLocationOutline, IoMailOutline, IoCallOutline } from 'react-icons/io5';
-import { GrMapLocation } from "react-icons/gr";
 import { Button } from '@nextui-org/react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../../assets/images/IMG_2842.png'
+import React, { useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
+import { GrMapLocation } from "react-icons/gr";
+import { IoCallOutline, IoMailOutline } from 'react-icons/io5';
+import { useLocation, useNavigate } from 'react-router-dom';
+import girl from '../../assets/images/YogicContactImg.png';
 import Navbar from './Navbar';
-import girl from '../../assets/images/YogicContactImg.png'
 
 
 
@@ -59,7 +58,7 @@ function ContactSection() {
                       </div>
                       <div>
                         <h2 className="text-lg font-semibold text-gray-800 text-left font-galano">Address</h2>
-                        <p className="text-gray-600 text-left font-galano">YogicBliss Yoga Studio</p>
+                        <p className="text-gray-600 text-left font-galano">SoulRise Living Yoga Studio</p>
                         <p className="text-gray-600 text-left font-galano">123 Harmony Lane</p>
                         <p className="text-gray-600 text-left font-galano">Wellness City, YG 45678</p>
                         <p className="text-gray-600 text-left font-galano">Country</p>
@@ -77,7 +76,7 @@ function ContactSection() {
                       </div>
                       <div>
                         <h2 className="text-lg font-semibold text-gray-800 text-left font-galano">Email Address</h2>
-                        <p className="text-gray-600 text-left font-galano">yogicbliss123@gmail.com</p>
+                        <p className="text-gray-600 text-left font-galano">SoulRise Living123@gmail.com</p>
                       </div>
                     </div>
                   </div>

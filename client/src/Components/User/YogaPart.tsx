@@ -159,8 +159,8 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
       
       <Layout
       image= {girl}
-      heading="Transform Mind, Body, Soul with Yogicblis"
-      description="Begin your journey towards inner peace with us, and discover how even small moments of mindfulness can lead to significant changes in your daily life. At Yogicblis, we provide a variety of classes tailored to every experience level, whether you're a beginner stepping onto the mat for the first time or an advanced practitioner seeking to enhance your practice. Our approach combines time-honored yogic traditions with contemporary methods, guiding you to develop physical strength, mental clarity, and spiritual growth."
+      heading="Transform Mind, Body, Soul with SoulRise Living"
+      description="Begin your journey towards inner peace with us, and discover how even small moments of mindfulness can lead to significant changes in your daily life. At SoulRise Living, we provide a variety of classes tailored to every experience level, whether you're a beginner stepping onto the mat for the first time or an advanced practitioner seeking to enhance your practice. Our approach combines time-honored SoulRise Living traditions with contemporary methods, guiding you to develop physical strength, mental clarity, and spiritual growth."
       ctaText="View Courses"
       ctaLink="/courses"
       />
@@ -343,7 +343,7 @@ console.log(yogaStyles.length,"yogaStylesyogaStylesyogaStylesyogaStyles")
         <div className="md:w-1/2">
         <div data-aos="fade-left">
           <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10 font-galano">
-            At YogicBliss, we guide you to joy and purpose through diverse yoga styles and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
+            At SoulRise Living, we guide you to joy and purpose through diverse yoga styles and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
           </p>
 
           <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10 font-galano">

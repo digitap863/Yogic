@@ -14,8 +14,8 @@ import girl2 from '../../assets/images/Mask group2.png';
 import YogicAbout from '../../assets/images/YogicAboutImg.png';
 import Contact from '../User/Contact';
 import CourseSection from '../User/Courses';
-import TestimonialSlider from '../User/Testimonial';
 import Profiles from '../User/Profiles';
+import TestimonialSlider from '../User/Testimonial';
 import Layout from './Layout';
 import Navbar from './Navbar';
 
@@ -118,8 +118,8 @@ const yogaData = [
 
       <Layout
       image= {girl}
-      heading="Yogicbliss: Your Path to Inner Harmony"
-      description="In today’s hectic world, achieving tranquility and focus can feel like an elusive goal. At Yogicbliss, we see meditation not just as a practice, but as a powerful tool for cultivating a harmonious and mindful life. Whether you're just beginning your meditation journey or seeking to enhance your existing practice, our resources are crafted to support you every step of the way. Through guided sessions and expert insights, we empower you to unlock the peace within. Embrace a life of balance, clarity, and deeper connection with Yogicbliss."
+      heading="SoulRise Living: Your Path to Inner Harmony"
+      description="In today’s hectic world, achieving tranquility and focus can feel like an elusive goal. At SoulRise Living, we see meditation not just as a practice, but as a powerful tool for cultivating a harmonious and mindful life. Whether you're just beginning your meditation journey or seeking to enhance your existing practice, our resources are crafted to support you every step of the way. Through guided sessions and expert insights, we empower you to unlock the peace within. Embrace a life of balance, clarity, and deeper connection with SoulRise Living."
       ctaText="View Courses"
       ctaLink="/courses"
     />

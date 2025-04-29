@@ -117,7 +117,7 @@ const Footer = () => {
 
         {/* Footer bottom */}
         <div className="mt-8 text-center">
-          <p>&copy; 2024 Yogic | All Rights Reserved</p>
+          <p>&copy; 2024 SoulRise Living | All Rights Reserved</p>
         </div>
       </div>
     </footer>

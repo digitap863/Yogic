@@ -243,7 +243,7 @@ In addition to the above, she has got certification of Diet and Nutrition from B
                                 "Inversions & Arm Balances Workshop: A workshop focused on learning challenging poses with proper alignment.",
                                 "Pranayama: Breath exercises for cold and sinus related problems, blood pressure related problems and for calmness",
                                 "Trataka: Very effective activity for improved eyesight and mind relaxation.",
-                                "Bandhas: Yogic bandhas for energy restoration and energy center activation."
+                                "Bandhas: SoulRise Living bandhas for energy restoration and energy center activation."
                             ]}
                             />
 

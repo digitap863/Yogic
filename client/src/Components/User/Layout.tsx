@@ -7,7 +7,7 @@ import { MdWbSunny } from "react-icons/md";
 function Layout({ image, heading, description, ctaText, ctaLink }) {
     const items = Array(10).fill({
         icon: <MdWbSunny className="inline-block text-green-500 mx-2" />,
-        text: 'Mindful Movement with Yogic',
+        text: 'Mindful Movement with SoulRise Living',
     });
    
 
@@ -76,7 +76,7 @@ function Layout({ image, heading, description, ctaText, ctaLink }) {
                                     <MdWbSunny className="inline-block" />
                                 </span>
                                 <span className="mx-4 text-green-600 font-Montserrat">
-                                    Mindful Movement with Yogic
+                                    Mindful Movement with SoulRise Living
                                 </span>
                             </React.Fragment>
                         ))}

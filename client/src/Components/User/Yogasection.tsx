@@ -10,7 +10,7 @@ import yogagirl from '../../assets/images/pikaso_embed.png';
 const YogaSection = () => {
     const items = Array(10).fill({
         icon: <MdWbSunny className="inline-block text-green-500 mx-2" />,
-        text: 'Mindful Movement with Yogic',
+        text: 'Mindful Movement with SoulRise Living',
     });
     const navigate = useNavigate()
 
@@ -34,7 +34,7 @@ const YogaSection = () => {
                             className="rounded-lg mb-6"
                         />
                         <p className="text-gray-600 mb-6 font-galano">
-                            At Yogic, we believe in the transformative power of yoga to
+                            At SoulRise Living, we believe in the transformative power of yoga to
                             enhance your well-being. Our dedicated instructors create a
                             welcoming space where you can explore and deepen your practice.
                             Whether you're a beginner or seasoned yogi, we’re here to support
@@ -76,7 +76,7 @@ const YogaSection = () => {
                                 Passion for Yoga, and Meditation, Path to Wellness
                             </h2>
                             <p className="text-gray-600 mb-6 pr-6 font-galano">
-                                At Yogic, we believe in the transformative power of yoga to
+                                At SoulRise Living, we believe in the transformative power of yoga to
                                 enhance your well-being. Our dedicated instructors create a
                                 welcoming space where you can explore and deepen your practice.
                                 Whether you're a beginner or seasoned yogi, we’re here to support
@@ -106,7 +106,7 @@ const YogaSection = () => {
                                     <MdWbSunny className="inline-block" />
                                 </span>
                                 <span className="mx-4 text-green-600 font-Montserrat">
-                                    Mindful Movement with Yogic
+                                    Mindful Movement with SoulRise Living
                                 </span>
                             </React.Fragment>
                         ))}

@@ -134,7 +134,7 @@ function Meditations() {
         
         <Layout
         image= {girl}
-        heading="Awaken Your True Self with YogicBlis Meditation"
+        heading="Awaken Your True Self with SoulRise Living Meditation"
         description="Meditation, in its most advanced form, is a journey into the depths of human consciousness, transcending simple relaxation techniques to become a powerful tool for self-discovery and inner transformation. It serves as a gateway to profound insights into the nature of the mind and existence, fostering a deep sense of inner peace, heightened awareness, and spiritual growth. By harmonizing the mind, body, and spirit, meditation opens up new realms of understanding and connection, leading to a more balanced, purposeful, and enriched experience of life."
         ctaText="View Courses"
         ctaLink="/courses"
@@ -321,7 +321,7 @@ function Meditations() {
           <div data-aos="fade-left">
 
           <p className="md:text-lg text-base text-gray-700 mb-6 md:pr-20 md:mr-10 font-galano">
-            At YogicBlis, we guide you to joy and purpose through various meditation techniques and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
+            At SoulRise Living, we guide you to joy and purpose through various meditation techniques and mindfulness practices. Our online sessions, breathwork, and spiritual coaching support your journey towards holistic well-being.
             </p>
   
             <ul className="md:text-lg text-base text-gray-700 space-y-2 md:pr-20 md:mr-10 font-galano">
