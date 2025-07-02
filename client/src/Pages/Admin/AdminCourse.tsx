@@ -143,7 +143,7 @@ const CourseForm = () => {
                         />
                         </div>
 
-                        {[1, 2, 3, 4].map((index) => (
+                        {[1, 2].map((index) => (
                           <div key={index} className="mb-4 border border-gray-300 p-4 rounded-lg bg-gray-50">
                             <h3 className="text-lg font-semibold text-gray-800 mb-2 text-center">About Course  {index}</h3>
                             <div className="mb-3">
