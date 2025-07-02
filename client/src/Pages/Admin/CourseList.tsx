@@ -180,22 +180,22 @@ const CourseEditModal = ({ course, onSave, onClose }) => {
           heading: course.content2.heading,
           Description: course.content2.Description,
         },
-        content3: {
-          heading: course.content3.heading,
-          Description: course.content3.Description,
-        },
-        content4: {
-          heading: course.content4.heading,
-          Description: course.content4.Description,
-        },
+        // content3: {
+        //   heading: course.content3.heading,
+        //   Description: course.content3.Description,
+        // },
+        // content4: {
+        //   heading: course.content4.heading,
+        //   Description: course.content4.Description,
+        // },
       });
   
     const [images, setImages] = useState({
       cardImage: null,
       content1Image: null,
       content2Image: null,
-      content3Image: null,
-      content4Image: null,
+      // content3Image: null,
+      // content4Image: null,
     });
   
     useEffect(() => {
@@ -204,8 +204,8 @@ const CourseEditModal = ({ course, onSave, onClose }) => {
           cardImage: `${url}/uploads/${course.cardImage}`,
           content1Image: `${url}/uploads/${course.content1.image}`,
           content2Image: `${url}/uploads/${course.content2.image}`,
-          content3Image: `${url}/uploads/${course.content3.image}`,
-          content4Image: `${url}/uploads/${course.content4.image}`,
+          // content3Image: `${url}/uploads/${course.content3.image}`,
+          // content4Image: `${url}/uploads/${course.content4.image}`,
         });
       }, [course]);
     // Handle form field changes

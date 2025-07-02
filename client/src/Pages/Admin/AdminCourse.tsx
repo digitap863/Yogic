@@ -15,18 +15,18 @@ const CourseForm = () => {
     content1Description: '',
     content2Heading: '',
     content2Description: '',
-    content3Heading: '',
-    content3Description: '',
-    content4Heading: '',
-    content4Description: '',
+    // content3Heading: '',
+    // content3Description: '',
+    // content4Heading: '',
+    // content4Description: '',
   });
 
   const [images, setImages] = useState({
     cardImage: null,
     content1Image: null,
     content2Image: null,
-    content3Image: null,
-    content4Image: null,
+    // content3Image: null,
+    // content4Image: null,
   });
 
 
@@ -57,13 +57,13 @@ const CourseForm = () => {
     courseData.append('content2Image', images.content2Image);
     courseData.append('content2Description', formData.content2Description);
 
-    courseData.append('content3Heading', formData.content3Heading);
-    courseData.append('content3Image', images.content3Image);
-    courseData.append('content3Description', formData.content3Description);
+    // courseData.append('content3Heading', formData.content3Heading);
+    // courseData.append('content3Image', images.content3Image);
+    // courseData.append('content3Description', formData.content3Description);
 
-    courseData.append('content4Heading', formData.content4Heading);
-    courseData.append('content4Image', images.content4Image);
-    courseData.append('content4Description', formData.content4Description);
+    // courseData.append('content4Heading', formData.content4Heading);
+    // courseData.append('content4Image', images.content4Image);
+    // courseData.append('content4Description', formData.content4Description);
 
     
 

@@ -276,8 +276,8 @@ const createCourse = async (req, res) => {
         content1Description,
         content2Heading,
         content2Description,
-        content3Heading,
-        content3Description,
+        // content3Heading,
+        // content3Description,
         content4Heading,
         content4Description
 } = req.body;
@@ -298,16 +298,16 @@ const createCourse = async (req, res) => {
             image: req.files.content2Image[0].filename,
             Description: content2Description,
         },
-        content3: {
-            heading: content3Heading,
-            image: req.files.content3Image[0].filename,
-            Description: content3Description,
-        },
-        content4: {
-            heading: content4Heading,
-            image: req.files.content4Image[0].filename,
-            Description: content4Description,
-        }
+        // content3: {
+        //     heading: content3Heading,
+        //     image: req.files.content3Image[0].filename,
+        //     Description: content3Description,
+        // },
+        // content4: {
+        //     heading: content4Heading,
+        //     image: req.files.content4Image[0].filename,
+        //     Description: content4Description,
+        // }
 
       });
   
@@ -350,7 +350,8 @@ const deleteCourse = async (req, res) => {
         if (!data) {
             return res.status(404).send({ message: "data not found" });
         }
-        const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image, data.content3.image, data.content4.image];
+        // const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image, data.content3.image, data.content4.image];
+        const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image];
 
         // Directory path where images are stored
         const directoryPath = path.join(__dirname, '../uploads');
@@ -403,10 +404,10 @@ const updateCourse = async (req, res) => {
       'content1.Description': content1Description, 
       'content2.heading': content2Heading, 
       'content2.Description': content2Description, 
-      'content3.heading': content3Heading, 
-      'content3.Description': content3Description, 
-      'content4.heading': content4Heading, 
-      'content4.Description': content4Description 
+    //   'content3.heading': content3Heading, 
+    //   'content3.Description': content3Description, 
+    //   'content4.heading': content4Heading, 
+    //   'content4.Description': content4Description 
         } = req.body;
     
         // Prepare the updated data object
@@ -424,16 +425,16 @@ const updateCourse = async (req, res) => {
             Description: content2Description,
             image: existingBlog.content2.image
           },
-          content3: {
-            heading: content3Heading,
-            Description: content3Description,
-            image: existingBlog.content3.image
-          },
-          content4: {
-            heading: content4Heading,
-            Description: content4Description,
-            image: existingBlog.content4.image
-          },
+        //   content3: {
+        //     heading: content3Heading,
+        //     Description: content3Description,
+        //     image: existingBlog.content3.image
+        //   },
+        //   content4: {
+        //     heading: content4Heading,
+        //     Description: content4Description,
+        //     image: existingBlog.content4.image
+        //   },
           cardImage: existingBlog.cardImage
         };
     
@@ -446,12 +447,12 @@ const updateCourse = async (req, res) => {
           if (req.files?.content2Image) {
             updatedData.content2.image = req.files.content2Image[0].filename;
           }
-          if (req.files?.content3Image) {
-            updatedData.content3.image = req.files.content3Image[0].filename;
-          }
-          if (req.files?.content4Image) {
-            updatedData.content4.image = req.files.content4Image[0].filename;
-          }
+        //   if (req.files?.content3Image) {
+        //     updatedData.content3.image = req.files.content3Image[0].filename;
+        //   }
+        //   if (req.files?.content4Image) {
+        //     updatedData.content4.image = req.files.content4Image[0].filename;
+        //   }
   
             
         // Find the blog by ID and update it

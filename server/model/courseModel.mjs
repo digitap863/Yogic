@@ -46,34 +46,34 @@ const courseSchema = new mongoose.Schema({
           required:true
       }
   },
-  content3: {
-      heading:{
-          type:String,
-          required:true
-      },
-      image:{
-          type:String,
-          required:true
-      },
-      Description:{
-          type:String,
-          required:true
-      }
-  },
-  content4: {
-      heading:{
-          type:String,
-          required:true
-      },
-      image:{
-          type:String,
-          required:true
-      },
-      Description:{
-          type:String,
-          required:true
-      }
-  }
+//   content3: {
+//       heading:{
+//           type:String,
+//           required:true
+//       },
+//       image:{
+//           type:String,
+//           required:true
+//       },
+//       Description:{
+//           type:String,
+//           required:true
+//       }
+//   },
+//   content4: {
+//       heading:{
+//           type:String,
+//           required:true
+//       },
+//       image:{
+//           type:String,
+//           required:true
+//       },
+//       Description:{
+//           type:String,
+//           required:true
+//       }
+//   }
 }, { timestamps: true });
 
 export const CourseModel = mongoose.model("Course", courseSchema);
