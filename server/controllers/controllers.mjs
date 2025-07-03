@@ -276,11 +276,9 @@ const createCourse = async (req, res) => {
         content1Description,
         content2Heading,
         content2Description,
-        // content3Heading,
-        // content3Description,
-        content4Heading,
-        content4Description
 } = req.body;
+
+console.log(courseType,heading,description,content1Heading,content1Description,content2Heading,content2Description,"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   
   
       const newCourse = new CourseModel({
@@ -298,17 +296,6 @@ const createCourse = async (req, res) => {
             image: req.files.content2Image[0].filename,
             Description: content2Description,
         },
-        // content3: {
-        //     heading: content3Heading,
-        //     image: req.files.content3Image[0].filename,
-        //     Description: content3Description,
-        // },
-        // content4: {
-        //     heading: content4Heading,
-        //     image: req.files.content4Image[0].filename,
-        //     Description: content4Description,
-        // }
-
       });
   
       await newCourse.save();

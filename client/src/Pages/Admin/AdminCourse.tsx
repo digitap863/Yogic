@@ -56,19 +56,13 @@ const CourseForm = () => {
     courseData.append('content2Heading', formData.content2Heading);
     courseData.append('content2Image', images.content2Image);
     courseData.append('content2Description', formData.content2Description);
-
-    // courseData.append('content3Heading', formData.content3Heading);
-    // courseData.append('content3Image', images.content3Image);
-    // courseData.append('content3Description', formData.content3Description);
-
-    // courseData.append('content4Heading', formData.content4Heading);
-    // courseData.append('content4Image', images.content4Image);
-    // courseData.append('content4Description', formData.content4Description);
-
     
 
     try {
-        console.log(courseData,"?????????????????????????????????????????????????????????????????")
+         console.log("FormData contents:");
+          for (let pair of courseData.entries()) {
+            console.log(`${pair[0]}:`, pair[1]);
+          }
         const response = await postForm('/add-course', courseData);
         if (response.data.success) {
           toast.success(response.data.message);
@@ -78,7 +72,7 @@ const CourseForm = () => {
           toast.error(response.data.message);
         }
     } catch (error) {
-      toast.error('An error occurred while  adding Course.');
+      toast.error('An error occurred while  adding Course.', error);
       console.error('There was an error submitting the course!', error);
     }
   };
