@@ -295,7 +295,7 @@ const CourseEditModal = ({ course, onSave, onClose }) => {
               <input type="file" name="cardImage" onChange={handleFileChange} className="w-full border p-2" />
             </div>
     
-            {[1, 2, 3, 4].map((index) => (
+            {[1, 2].map((index) => (
               <div key={index} className="mb-4">
                 <h3>Content {index}</h3>
                 <label>Heading</label>
