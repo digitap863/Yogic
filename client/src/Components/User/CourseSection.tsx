@@ -179,7 +179,7 @@ function CourseSection() {
               className="relative rounded-[50px] overflow-hidden shadow-md cursor-pointer">
                
                 <img
-                  src={`${url}/uploads/${style.cardImage}`}
+                  src={`${style.cardImage}`}
                   alt={style.heading}
                   className="w-full h-full object-cover aspect-square"
                 />

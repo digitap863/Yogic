@@ -98,7 +98,11 @@ const CourseList = () => {
                                     <tr key={i}>
                                         <td className="border px-4 py-2">{i + 1}</td>
                                         <td className="border px-4 py-2 max-w-md flex justify-center">
-                                            <img src={`${url}/uploads/${items?.cardImage}`} alt="" className='w-28 aspect-square object-cover ' />
+                                            <img src={ items?.cardImage.startsWith('https://')
+                                                  ? items?.cardImage
+                                                  : `${url}/uploads/${items?.cardImage}`
+                                                  }
+                                            alt="image" className='w-28 aspect-square object-cover ' />
                                         </td>
                                         <td className="border px-4 py-2 max-w-md">
                                             {items?.courseType}
@@ -201,9 +205,10 @@ const CourseEditModal = ({ course, onSave, onClose }) => {
     useEffect(() => {
       // Set the initial image URLs
       setImages({
-          cardImage: `${url}/uploads/${course.cardImage}`,
-          content1Image: `${url}/uploads/${course.content1.image}`,
-          content2Image: `${url}/uploads/${course.content2.image}`,
+        
+          cardImage: `${course.cardImage}`,
+          content1Image: `${course.content1.image}`,
+          content2Image: `${course.content2.image}`,
           // content3Image: `${url}/uploads/${course.content3.image}`,
           // content4Image: `${url}/uploads/${course.content4.image}`,
         });

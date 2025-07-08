@@ -149,7 +149,7 @@ function GallerySection() {
           .map((style: any, index) => (
             <img
               key={index}
-              src={`${url}/uploads/${style.cardImage}`}
+              src={`${style.cardImage}`}
               alt={`${
                 loadFullYoga ? 'Yoga' : loadFullMeditation ? 'Meditation' : 'Style'
               } ${index + 1}`}

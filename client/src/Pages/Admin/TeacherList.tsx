@@ -59,7 +59,10 @@ const TeacherList = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
                       {teachers.map((teacher:any) => (
                         <div key={teacher._id} className="bg-white max-w-[230px] px-6 justify-center pt-6 rounded-lg shadow-md ">
-                          <img src={`${url}/uploads/${teacher.Image}`} alt={teacher.Name} className="w-full h-[60%] object-cover rounded-md mb-4 aspect-square"/>
+                          <img  src={ teacher.Image.startsWith('https://')
+                                ? teacher.Image
+                                : `${url}/uploads/${teacher.Image}`
+                                }  alt={teacher.Name} className="w-full h-[60%] object-cover rounded-md mb-4 aspect-square"/>
                           <div className="flex items-center justify-between ">
                               <div>
                                 <h3 className="text-xl font-semibold">{teacher.Name}</h3>

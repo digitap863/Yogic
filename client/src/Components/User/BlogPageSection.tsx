@@ -79,7 +79,10 @@ function BlogPageSection() {
               <div data-aos="zoom-in-up">
               <div className='flex items-center rounded-2xl justify-center shadow-lg w-full overflow-hidden mb-4 '>
                 <img
-                  src={`${url}/uploads/${content.image}`}
+                  src={ content?.image.startsWith('https://')
+                      ? content?.image
+                      : `${url}/uploads/${content?.image}`
+                  }
                   alt={content.heading}
                   className="w-[100%] h-[60vh] object-cover items-center " // Adjust height as needed
                 />
@@ -103,7 +106,10 @@ function BlogPageSection() {
               {/* Image */}
               <div className="md:hidden w-full rounded-2xl overflow-hidden ">
                 <img
-                  src={`${url}/uploads/${content.image}`}
+                  src={ content?.image.startsWith('https://')
+                      ? content?.image
+                      : `${url}/uploads/${content?.image}`
+                  }
                   alt={content.heading}
                   className="w-full h-full object-cover aspect-[22/12]"
                 />
@@ -135,7 +141,10 @@ function BlogPageSection() {
             {/* Image */}
             <div className="md:w-1/2 rounded-xl overflow-hidden">
               <img
-                src={`${url}/uploads/${content.image}`}
+                src={ content?.image.startsWith('https://')
+                      ? content?.image
+                      : `${url}/uploads/${content?.image}`
+                  }
                 alt={content.heading}
                 className="w-full h-full object-cover aspect-[22/12] pl-10"
               />
@@ -169,7 +178,17 @@ function BlogPageSection() {
   console.log(blog,"blogblogblogblog")
   return (
     <div>
-        <div className="relative w-full h-[80vh] bg-cover bg-center" style={{ backgroundImage: `url(${url}/uploads/${blog.cardImg})` }}>
+      {/* banner */}
+        <div
+            className="relative w-full h-[80vh] bg-cover bg-center"
+            style={{
+            backgroundImage: `url(${
+            blog?.cardImg?.startsWith('https://')
+              ? blog.cardImg
+              : `${url}/uploads/${blog?.cardImg}`
+            })`
+            }}
+            >
             {/* Overlay to control the gradient and transparency */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] opacity-80"></div>
 
@@ -239,7 +258,7 @@ function BlogPageSection() {
             </div>
         </div>
 
-
+      {/* middle section */}
         <div className="container mx-auto px-4 py-12 flex items-center justify-center">
         <div className='max-w-7xl'>
           {/* Loop through each section */}
@@ -277,23 +296,26 @@ function BlogPageSection() {
           }}
    
         >
-          {blogs.slice(0, isMobile  ? 3 : blogs.length).map((post:any, index) => (
+          {blogs.slice(0, isMobile  ? 3 : blogs.length).map((blog:any, index) => (
             <SwiperSlide key={index}>
                <div key={index} className="bg-white rounded-3xl overflow-hidden shadow-md border border-green-500  pb-20 mb-4 relative">
             <img 
-             src={`${url}/uploads/${post.cardImg}`}
-              alt={post.title} 
+              src={ blog?.cardImg.startsWith('https://')
+                ? blog?.cardImg
+                : `${url}/uploads/${blog?.cardImg}`
+                }
+              alt={blog.title} 
               className="w-full aspect-[18/12] rounded-3xl object-cover"
             />
             <div className="px-4 pt-4 relative ">
-              <h3 className="font-bold text-xl mb-2 line-clamp-1">{post.title}</h3>
-              <p className="text-gray-600 text-sm  line-clamp-1">{post.summary}</p>
+              <h3 className="font-bold text-xl mb-2 line-clamp-1">{blog.title}</h3>
+              <p className="text-gray-600 text-sm  line-clamp-1">{blog.summary}</p>
               <div className='flex justify-center mt-auto'>
              
               </div>
             </div>
             <button 
-               onClick={() => handleReadMore(post._id)} 
+               onClick={() => handleReadMore(blog._id)} 
               className="text-[#64BA75] absolute bottom-5 left-1/2 translate-x-[-50%] border border-[#64BA75] rounded-3xl px-8 py-2 text-sm hover:bg-[#64BA75] hover:text-white transition duration-300">
                 Read More
               </button>

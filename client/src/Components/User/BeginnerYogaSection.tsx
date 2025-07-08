@@ -49,7 +49,7 @@ function BeginnerYogaSection() {
     fetchCourseDetails();  // Call the function to fetch blog details
   }, [id]);
   console.log(course,"--------------------------------------responseresponseresponse")
-  console.log(`${url}/uploads/${course.cardImage}`)
+  console.log(`${course.cardImage}`)
 
   const getContentSections = () => {
     return Object.keys(course)
@@ -68,7 +68,7 @@ function BeginnerYogaSection() {
             
             <div className="md:w-1/2 rounded-2xl overflow-hidden shadow-lg">
               <img
-                src={`${url}/uploads/${content.image}`}
+                src={`${content.image}`}
                 alt={content.heading}
                 className="w-full h-full object-cover aspect-[22/12]"
               />
@@ -92,7 +92,7 @@ function BeginnerYogaSection() {
     <div>
                  
 
-        <div className="relative w-full h-[80vh] bg-cover bg-center" style={{ backgroundImage: `url(${url}/uploads/${course.cardImage})` }}>
+        <div className="relative w-full h-[80vh] bg-cover bg-center" style={{ backgroundImage: `url(${course.cardImage})` }}>
             {/* Overlay to control the gradient and transparency */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] opacity-80"></div>
 

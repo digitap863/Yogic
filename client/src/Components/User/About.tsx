@@ -278,7 +278,7 @@ const yogaData = [
 const YogaTeacherCard = ({ name, image ,type }) => (
     <div className="rounded-[50px]  overflow-hidden ">
       <div data-aos="flip-right">
-      <img src={`${url}/uploads/${image}`} alt={name} className="w-full h-64 object-cover aspect-square" />
+      <img src={`${image}`} alt={name} className="w-full h-64 object-cover aspect-square" />
       <div className="bg-green-100 p-4">
         <p className="text-gray-600 text-sm">{type}</p>
         <h3 className="text-xl font-semibold">{name}</h3>

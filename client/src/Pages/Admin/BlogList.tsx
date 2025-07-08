@@ -97,7 +97,12 @@ const BlogList = () => {
                                     <tr key={i}>
                                         <td className="border px-4 py-2">{i + 1}</td>
                                         <td className="border px-4 py-2 max-w-md flex justify-center">
-                                            <img src={`${url}/uploads/${blog?.cardImg}`} alt="" className='w-28 aspect-square object-cover ' />
+                                            <img
+                                              src={ blog?.cardImg.startsWith('https://')
+                                                  ? blog?.cardImg
+                                                  : `${url}/uploads/${blog?.cardImg}`
+                                                  }
+                                              alt="" className='w-28 aspect-square object-cover ' />
                                         </td>
                                         <td className="border px-4 py-2 max-w-md">
                                             {blog?.title}
@@ -200,11 +205,11 @@ const BlogEditModal = ({ blog, onSave, onClose }) => {
   useEffect(() => {
     // Set the initial image URLs
     setImages({
-        cardImg: `${url}/uploads/${blog.cardImg}`,
-        content1Image: `${url}/uploads/${blog.content1.image}`,
-        content2Image: `${url}/uploads/${blog.content2.image}`,
-        content3Image: `${url}/uploads/${blog.content3.image}`,
-        content4Image: `${url}/uploads/${blog.content4.image}`,
+        cardImg: `${blog.cardImg}`,
+        content1Image: `${blog.content1.image}`,
+        content2Image: `${blog.content2.image}`,
+        content3Image: `${blog.content3.image}`,
+        content4Image: `${blog.content4.image}`,
       });
     }, [blog]);
   // Handle form field changes

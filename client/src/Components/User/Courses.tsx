@@ -75,7 +75,7 @@ function CourseSection() {
               className=" bg-gray-100 rounded-3xl relative overflow-hidden cursor-pointer hover:scale-105 duration-300 w-full max-w-[400px] mx-auto ">
             <div data-aos="flip-left">
                 <img
-                  src={`${url}/uploads/${course.cardImage}`}
+                  src={`${course.cardImage}`}
                   alt={course.heading}
                   className="aspect-[13/12] object-cover"
                 />

@@ -7,7 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { CourseModel } from "../model/courseModel.mjs";
 import { TeacherModel } from "../model/TeacherModel.mjs";
-
+import { uploadToCloudinary } from "../helpers/multer.mjs";
 
 // Convert import.meta.url to a filename
 const __filename = fileURLToPath(import.meta.url);
@@ -73,29 +73,51 @@ const createBlog = async (req, res) => {
             content4Description
         } = req.body;
 
+    const cardImage = req.files.cardImage[0];
+    const cardImageUrl = await uploadToCloudinary(cardImage);
+
+    const content1Image = req.files.content1Image[0];
+    const content1ImageUrl = await uploadToCloudinary(content1Image);
+
+    const content2Image = req.files.content2Image[0];
+    const content2ImageUrl = await uploadToCloudinary(content2Image);
+
+     const content3Image = req.files.content3Image[0];
+    const content3ImageUrl = await uploadToCloudinary(content3Image);
+
+     const content4Image = req.files.content4Image[0];
+    const content4ImageUrl = await uploadToCloudinary(content4Image);
+
+    console.log(cardImageUrl,content1ImageUrl,content2ImageUrl ,content3ImageUrl ,content4ImageUrl,"*********************************************************")
+       if (!cardImageUrl && !content1ImageUrl && !content2ImageUrl && !content3ImageUrl && !content4ImageUrl ) {
+      return res.status(500).json({ message: 'Failed to upload image to Cloudinary' });
+    }
+  
+
+
         // Build the blog object to save in the database
         const newBlog = new BlogModel({
             title,
             summary,
-            cardImg: req.files.cardImg[0].filename, // Filename of the uploaded card image
+            cardImg: cardImageUrl, // Filename of the uploaded card image
             content1: {
                 heading: content1Heading,
-                image: req.files.content1Image[0].filename,
+                image: content1ImageUrl,
                 Description: content1Description,
             },
             content2: {
                 heading: content2Heading,
-                image: req.files.content2Image[0].filename,
+                image: content2ImageUrl,
                 Description: content2Description,
             },
             content3: {
                 heading: content3Heading,
-                image: req.files.content3Image[0].filename,
+                image: content3ImageUrl,
                 Description: content3Description,
             },
             content4: {
                 heading: content4Heading,
-                image: req.files.content4Image[0].filename,
+                image: content4ImageUrl,
                 Description: content4Description,
             }
         });
@@ -233,22 +255,29 @@ const updateBlog = async (req, res) => {
           cardImg: existingBlog.cardImg
         };
     
-        // Handle image uploads if any new images are uploaded
+
+        
         if (req.files?.cardImg) {
-          updatedData.cardImg = req.files.cardImg[0].filename;
-        }
-        if (req.files?.content1Image) {
-          updatedData.content1.image = req.files.content1Image[0].filename;
-        }
-        if (req.files?.content2Image) {
-          updatedData.content2.image = req.files.content2Image[0].filename;
-        }
-        if (req.files?.content3Image) {
-          updatedData.content3.image = req.files.content3Image[0].filename;
-        }
-        if (req.files?.content4Image) {
-          updatedData.content4.image = req.files.content4Image[0].filename;
-        }
+             const cardImg = req.files.cardImg[0];
+            updatedData.cardImg = await uploadToCloudinary(cardImg);
+          }
+          if (req.files?.content1Image) {
+            const content1Image = req.files.content1Image[0];
+            updatedData.content1.image = await uploadToCloudinary(content1Image);
+          }
+          if (req.files?.content2Image) {
+              const content2Image = req.files.content2Image[0];
+             updatedData.content2.image = await uploadToCloudinary(content2Image);
+          }
+           if (req.files?.content3Image) {
+              const content3Image = req.files.content3Image[0];
+             updatedData.content3.image = await uploadToCloudinary(content3Image);
+          }
+           if (req.files?.content4Image) {
+              const content4Image = req.files.content4Image[0];
+             updatedData.content4.image = await uploadToCloudinary(content4Image);
+          }
+
     
         // Find the blog by ID and update it
         console.log(id,"idididididididididididid")
@@ -280,20 +309,33 @@ const createCourse = async (req, res) => {
 
 console.log(courseType,heading,description,content1Heading,content1Description,content2Heading,content2Description,"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   
+    const cardImage = req.files.cardImage[0];
+    const cardImageUrl = await uploadToCloudinary(cardImage);
+
+    const content1Image = req.files.content1Image[0];
+    const content1ImageUrl = await uploadToCloudinary(content1Image);
+
+    const content2Image = req.files.content2Image[0];
+    const content2ImageUrl = await uploadToCloudinary(content2Image);
+
+    console.log(cardImageUrl,content1ImageUrl,content2ImageUrl ,"*********************************************************")
+       if (!cardImageUrl && !content1ImageUrl && !content2ImageUrl ) {
+      return res.status(500).json({ message: 'Failed to upload image to Cloudinary' });
+    }
   
       const newCourse = new CourseModel({
         courseType,
         heading,
         description,
-        cardImage : req.files.cardImage[0].filename, 
+        cardImage : cardImageUrl, 
         content1: {
             heading: content1Heading,
-            image: req.files.content1Image[0].filename,
+            image: content1ImageUrl,
             Description: content1Description,
         },
         content2: {
             heading: content2Heading,
-            image: req.files.content2Image[0].filename,
+            image: content2ImageUrl,
             Description: content2Description,
         },
       });
@@ -338,30 +380,6 @@ const deleteCourse = async (req, res) => {
             return res.status(404).send({ message: "data not found" });
         }
         // const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image, data.content3.image, data.content4.image];
-        const imagesToDelete = [data.cardImage, data.content1.image, data.content2.image];
-
-        // Directory path where images are stored
-        const directoryPath = path.join(__dirname, '../uploads');
-
-        // Helper function to check if file exists and delete it
-        const deleteIfExists = async (image) => {
-            if (image) {
-                const filePath = path.join(directoryPath, image);
-                if (fs.existsSync(filePath)) {
-                    try {
-                        const result = await deleteFile(filePath);
-                        console.log(result);
-                    } catch (err) {
-                        console.error(err);
-                    }
-                } else {
-                    console.log(`File not found: ${filePath}, skipping...`);
-                }
-            }
-        };
-
-        // Iterate through the images and delete if they exist
-        await Promise.all(imagesToDelete.map(deleteIfExists));
 
         await  CourseModel.findOneAndDelete({ _id: id })
         res.status(200).send({ success: true, message: "Deleted Successfully" });
@@ -384,17 +402,13 @@ const updateCourse = async (req, res) => {
 
         // Destructure the text fields from the request body
         const {
-            courseType,
-           heading,
-           description,
+        courseType,
+        heading,
+        description,
       'content1.heading': content1Heading, 
       'content1.Description': content1Description, 
       'content2.heading': content2Heading, 
       'content2.Description': content2Description, 
-    //   'content3.heading': content3Heading, 
-    //   'content3.Description': content3Description, 
-    //   'content4.heading': content4Heading, 
-    //   'content4.Description': content4Description 
         } = req.body;
     
         // Prepare the updated data object
@@ -412,35 +426,22 @@ const updateCourse = async (req, res) => {
             Description: content2Description,
             image: existingBlog.content2.image
           },
-        //   content3: {
-        //     heading: content3Heading,
-        //     Description: content3Description,
-        //     image: existingBlog.content3.image
-        //   },
-        //   content4: {
-        //     heading: content4Heading,
-        //     Description: content4Description,
-        //     image: existingBlog.content4.image
-        //   },
           cardImage: existingBlog.cardImage
         };
     
         if (req.files?.cardImage) {
-            updatedData.cardImage = req.files.cardImage[0].filename;
+             const cardImage = req.files.cardImage[0];
+            updatedData.cardImage = await uploadToCloudinary(cardImage);
           }
           if (req.files?.content1Image) {
-            updatedData.content1.image = req.files.content1Image[0].filename;
+            const content1Image = req.files.content1Image[0];
+            updatedData.content1.image = await uploadToCloudinary(content1Image);
           }
           if (req.files?.content2Image) {
-            updatedData.content2.image = req.files.content2Image[0].filename;
+              const content2Image = req.files.content2Image[0];
+             updatedData.content2.image = await uploadToCloudinary(content2Image);
           }
-        //   if (req.files?.content3Image) {
-        //     updatedData.content3.image = req.files.content3Image[0].filename;
-        //   }
-        //   if (req.files?.content4Image) {
-        //     updatedData.content4.image = req.files.content4Image[0].filename;
-        //   }
-  
+
             
         // Find the blog by ID and update it
         console.log(id,"idididididididididididid")
@@ -460,30 +461,40 @@ const updateCourse = async (req, res) => {
 };
 
 const createTeacher = async (req, res) => {
-    console.log(req.body)
-    console.log(req.files)
-    try {
-        const { Name, TeacherType} = req.body;
+  console.log(req.body);
+  console.log(req.files);
 
-            // Check if the file exists before trying to access it
+  try {
+    const { Name, TeacherType } = req.body;
+
+    // Check if the image file exists
     if (!req.files || !req.files.Image || req.files.Image.length === 0) {
-        return res.status(400).json({ message: 'No image uploaded' });
-      }
-  
-  
-        const teacher = new TeacherModel({
-        Name,
-        TeacherType,
-        Image : req.files.Image[0].filename, 
-      });
-  
-      await teacher.save();
-      res.status(201).json({ message: 'Teacher Added successfully!' ,success: true });
-    } catch (error) {
-        console.error('error in creating coures',error);
-      res.status(500).json({ message: 'Error creating Teacher', error });
+      return res.status(400).json({ message: 'No image uploaded' });
     }
-  };
+
+    // Upload image to Cloudinary
+    const imageFile = req.files.Image[0]; // multer with .array or .fields returns array
+    const imageUrl = await uploadToCloudinary(imageFile);
+
+    if (!imageUrl) {
+      return res.status(500).json({ message: 'Failed to upload image to Cloudinary' });
+    }
+
+    // Save the teacher data with Cloudinary image URL
+    const teacher = new TeacherModel({
+      Name,
+      TeacherType,
+      Image: imageUrl,
+    });
+
+    await teacher.save();
+
+    res.status(201).json({ message: 'Teacher Added successfully!', success: true });
+  } catch (error) {
+    console.error('Error in creating teacher:', error);
+    res.status(500).json({ message: 'Error creating Teacher', error });
+  }
+};
 
  const getTeachers = async (req, res) => {
     try {
@@ -503,30 +514,7 @@ const createTeacher = async (req, res) => {
         if (!data) {
             return res.status(404).send({ message: "Teacher not found" });
         }
-        const imagesToDelete = [data.Image];
 
-        // Directory path where images are stored
-        const directoryPath = path.join(__dirname, '../uploads');
-
-        // Helper function to check if file exists and delete it
-        const deleteIfExists = async (image) => {
-            if (image) {
-                const filePath = path.join(directoryPath, image);
-                if (fs.existsSync(filePath)) {
-                    try {
-                        const result = await deleteFile(filePath);
-                        console.log(result);
-                    } catch (err) {
-                        console.error(err);
-                    }
-                } else {
-                    console.log(`File not found: ${filePath}, skipping...`);
-                }
-            }
-        };
-
-        // Iterate through the images and delete if they exist
-        await Promise.all(imagesToDelete.map(deleteIfExists));
 
         await TeacherModel.findOneAndDelete({ _id: id });
 
