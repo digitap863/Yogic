@@ -98,11 +98,11 @@ function Profiles() {
               </div>
               {/* Text section taking 2/3 width */}
               <div className="md:w-2/3 md:pl-0 ">
-                      <div className=''>
-                        <p className="text-gray-800  font-galano pt-4 pr-4"><span className=' text-black font-semibold '>Dev OM</span>, a Himalayan yogi and spiritual guide from India is trained directly from Thich-Nhat-Hanh, Dalai Lama and Mother Teresa in mindfulness and spirituality. He has learned various therapies and has also received spiritual development in the ashrams of Maharshi Ramana and Osho. He has invented “Light Mindfulness”. He has directly trained 700+ meditation teachers worldwide to further spread the light of meditation and spirituality. <br/><br/> Meditation’ and ‘Circle of Light spiritual phenomena’ along with 50 + guided meditations and self-discovery tools to address all aspects of human consciousness and emotional problems. He is also an internationally acclaimed author of 12 spiritual and self-help books. His books –‘Beyond Karma’, ‘The Light’, ‘The Cosmic Energy & Chakras’ and ‘21 Meditations for Empowerment’ are best sellers and have shown the path to many seekers.
-                            Since two decades, Dev OM’s path as a Spiritual Guide & Mentor and as an Enhanced Life Coach has assisted thousands of people all over the world to discover their spiritual & life path. His modern and practical techniques involve recognizing one’s full and true potential of creative powers for personal growth and self-evolution. <br/>
-                        </p>
-                      </div>
+                  <div className=''>
+                    <p className="text-gray-800  font-galano pt-4 pr-4"><span className=' text-black font-semibold '>Dev OM</span>, a Himalayan yogi and spiritual guide from India is trained directly from Thich-Nhat-Hanh, Dalai Lama and Mother Teresa in mindfulness and spirituality. He has learned various therapies and has also received spiritual development in the ashrams of Maharshi Ramana and Osho. He has invented “Light Mindfulness”. He has directly trained 700+ meditation teachers worldwide to further spread the light of meditation and spirituality. <br/><br/> Meditation’ and ‘Circle of Light spiritual phenomena’ along with 50 + guided meditations and self-discovery tools to address all aspects of human consciousness and emotional problems. He is also an internationally acclaimed author of 12 spiritual and self-help books. His books –‘Beyond Karma’, ‘The Light’, ‘The Cosmic Energy & Chakras’ and ‘21 Meditations for Empowerment’ are best sellers and have shown the path to many seekers.
+                        Since two decades, Dev OM’s path as a Spiritual Guide & Mentor and as an Enhanced Life Coach has assisted thousands of people all over the world to discover their spiritual & life path. His modern and practical techniques involve recognizing one’s full and true potential of creative powers for personal growth and self-evolution. <br/>
+                    </p>
+                  </div>
               </div>
             </div>
 
