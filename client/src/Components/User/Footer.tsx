@@ -103,8 +103,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 font-galano">Social</h3>
             <div className="flex space-x-4">
-              <FaFacebookF className='hover:text-gray-200'size={24} />
-              <a href="#" className="hover:text-gray-200"><Instagram size={24} /></a>
+              <a target='_blank' href="https://www.facebook.com/share/16dFh6r65s/?mibextid=wwXIfr"><FaFacebookF className='hover:text-gray-200'size={24} /></a>
+              <a target='_blank' href="https://www.instagram.com/soulriseliving?igsh=MWJuN2ViNDdhODRnbA==" className="hover:text-gray-200"><Instagram size={24} /></a>
               <FaXTwitter className='hover:text-gray-200'size={24} />
               <FaYoutube className='hover:text-gray-200'size={24} />
 
