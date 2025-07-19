@@ -11,6 +11,8 @@ import { url } from '../../api/url';
 import girl from '../../assets/images/Mask group.png';
 import girl1 from '../../assets/images/Mask group1.png';
 import girl2 from '../../assets/images/Mask group2.png';
+import visionimg from '../../assets/images/visionimg.png';
+import misiongirl from '../../assets/images/misiongirl.png';
 import YogicAbout from '../../assets/images/YogicAboutImg.png';
 import Contact from '../User/Contact';
 import CourseSection from '../User/Courses';
@@ -83,12 +85,11 @@ const yogaData = [
     },
   ];
 
- 
-
   return (
     <>
     
-    <div 
+    {/* banner section */}
+      <div 
       className='xl:h-[100vh] md:h-[90vh] h-[60vh] bg-gradient-to-r from-[#E4F5FE] via-[#D0F2DD] to-[#E1F5FF] flex flex-col items-center justify-start relative overflow-hidden'
       >
      
@@ -123,6 +124,96 @@ const yogaData = [
       ctaText="View Courses"
       ctaLink="/courses"
     />
+
+    {/* vission */}
+    <section className="bg-white md:py-20 py-10" >
+      <div className="container mx-auto bg-white">
+        <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
+          {/* Mobile View */}
+          <div className="block md:hidden text-left">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 uppercase">
+              Our Vision
+            </h2>
+            <img src={visionimg} alt="girl" className="rounded-lg mb-6" />
+            <p className="text-gray-600 mb-6 font-galano">
+              At SoulRise Living, our vision is to awaken a more conscious, peaceful, and compassionate world—one soul at a time.<br/>
+We envision a future where every individual, from children to elders, is empowered with the tools of meditation, yoga, and soul-centered living—to live with purpose, presence, and inner harmony. A world where healing begins from within, and ripples outward into homes, communities, and generations.
+We dream of a time when emotional well-being is valued as much as physical health, when inner peace becomes a way of life, and where every human being remembers their light, their strength, and their connection to something greater.<br/><br/>
+<span className="text-gray-800 font-galano font-medium">We rise by returning to ourselves—and by rising together, we create a more loving world.</span><br/><br/>
+• At SoulRise, our vision is to create a global community where meditation, mindfulness and yoga practices are accessible to everyone, anywhere, at any time.<br/>
+• We strive to empower individuals to cultivate inner peace, emotional balance, and mental clarity through personalized, high-quality meditation & Yoga resources.<br/> 
+• By leveraging the power of technology, we aim to remove barriers to well-being, making it easy for people to integrate mindfulness into their daily lives and contribute to a more compassionate, peaceful world.<br/><br/>
+<span className="text-gray-800 font-galano font-medium"> “Together we create a better world”</span>
+            </p>
+          </div>
+
+          {/* Desktop View */}
+          <div className="hidden md:flex md:flex-row items-center justify-between  pl-10">
+            <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-2 self-start">
+              <h2 className="text-4xl font-bold text-gray-800 mb-16  font-galano">
+                Our Vision
+              </h2>
+              <img src={visionimg} alt="girl" className="rounded-lg w-auto h-auto" />
+
+             
+            </div>
+            <div className="md:w-1/2 flex flex-col space-y-6 pl-16 mx-6 pt-2">
+            <div data-aos="fade-left">
+              <p className="text-gray-600 mb-6 font-galano">
+              At SoulRise Living, our vision is to awaken a more conscious, peaceful, and compassionate world—one soul at a time.<br/>
+We envision a future where every individual, from children to elders, is empowered with the tools of meditation, yoga, and soul-centered living—to live with purpose, presence, and inner harmony. A world where healing begins from within, and ripples outward into homes, communities, and generations.
+We dream of a time when emotional well-being is valued as much as physical health, when inner peace becomes a way of life, and where every human being remembers their light, their strength, and their connection to something greater.<br/><br/>
+<span className="text-gray-800 font-galano font-medium">We rise by returning to ourselves—and by rising together, we create a more loving world.</span><br/><br/>
+• At SoulRise, our vision is to create a global community where meditation, mindfulness and yoga practices are accessible to everyone, anywhere, at any time.<br/>
+• We strive to empower individuals to cultivate inner peace, emotional balance, and mental clarity through personalized, high-quality meditation & Yoga resources.<br/> 
+• By leveraging the power of technology, we aim to remove barriers to well-being, making it easy for people to integrate mindfulness into their daily lives and contribute to a more compassionate, peaceful world.<br/><br/>
+<span className="text-gray-800 font-galano font-medium"> “Together we create a better world”</span>
+            </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* mission */}
+      <section className="bg-white md:py-16 py-10">
+            <div className="container mx-auto bg-white">
+              <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
+                {/* Mobile View */}
+                <div className="block md:hidden text-left">
+                  <h2 className="text-3xl font-bold text-gray-800 mb-6 ">
+                    Our Mission
+                  </h2>
+                  <img src={misiongirl} alt="girl" className="rounded-lg mb-6" />
+                  <p className="text-gray-600 mb-6 font-galano">
+                    At SoulRise Living, our mission is to inspire and empower individuals to live more mindful, meaningful lives through the transformative practices of yoga, meditation, and spiritual coaching. We offer a safe and supportive space for self-discovery, inner healing, and conscious living—where people of all backgrounds can deepen their awareness, reconnect with their inner calm, and explore holistic practices that nurture the body, mind, and soul.
+By fostering clarity, compassion, and connection, we aim to support both personal growth and collective well-being—contributing to a more peaceful and awakened world.
+                  </p>
+                </div>
+    
+                {/* Desktop View */}
+                <div className="hidden md:flex md:flex-row items-center justify-between  pl-10">
+                  <div className="md:w-1/2 px-12 md:mt-0 text-center md:text-left bg-white mr-2 self-start">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6  font-galano">
+                      Our Mission
+                    </h2>
+                    <p className="text-gray-600 mb-6 pl-2 pr-10 font-galano ">
+                     At SoulRise Living, our mission is to inspire and empower individuals to live more mindful, meaningful lives through the transformative practices of yoga, meditation, and spiritual coaching. We offer a safe and supportive space for self-discovery, inner healing, and conscious living—where people of all backgrounds can deepen their awareness, reconnect with their inner calm, and explore holistic practices that nurture the body, mind, and soul.
+By fostering clarity, compassion, and connection, we aim to support both personal growth and collective well-being—contributing to a more peaceful and awakened world.
+                    </p>
+                  </div>
+                  <div className="md:w-1/2 flex flex-col space-y-6 px-16 mx-6 pt-2">
+                  <div data-aos="fade-left">
+    
+                    <img src={misiongirl} alt="girl" className="rounded-lg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
      
 

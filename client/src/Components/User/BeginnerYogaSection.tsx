@@ -6,7 +6,7 @@ import { getdata } from '../../api/req';
 import { url } from '../../api/url';
 import girl from '../../assets/images/BeginnerYoga.png';
 import boy from '../../assets/images/boy.png';
-import logo from '../../assets/images/IMG_2842.png';
+import logo from '../../assets/images/logo.png';
 import Contact from './Contact';
 import FAQ from './Faq';
 import Layout from './Layout';
