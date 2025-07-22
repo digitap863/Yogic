@@ -13,7 +13,7 @@ import girl1 from '../../assets/images/Mask group1.png';
 import girl2 from '../../assets/images/Mask group2.png';
 import visionimg from '../../assets/images/visionimg.png';
 import misiongirl from '../../assets/images/misiongirl.png';
-import YogicAbout from '../../assets/images/YogicAboutImg.png';
+import YogicAbout from '../../assets/images/YogicAboutImg1.png';
 import Contact from '../User/Contact';
 import CourseSection from '../User/Courses';
 import Profiles from '../User/Profiles';
@@ -95,20 +95,20 @@ const yogaData = [
      
         <Navbar/>
         {/* Banner content */}
-        <div className='flex flex-col items-center justify-center h-full md:pt-0 lg:mt-0 mt-20'>
+        <div className='flex flex-col items-center justify-center h-full md:pt-0 lg:mt-0 mt-20 overflow-hidden gap-10'>
         <div data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1500">
-          <img src={YogicAbout} alt="banner image" className=' xl:w-[100%] md:w-[80%] mx-auto object-contain pb-0' />
+          <img src={YogicAbout} alt="banner image" className=' xl:w-[70%] md:w-[80%] mx-auto object-contain pb-0' />
           </div>
-          <div>
+          <div className="">
           <Button 
           size='lg'
           onClick={() => {
             navigate('/contact');
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200'>
+          className='bg-[#64BA75] inline-flex items-center px-8 py-4 rounded-[50px] text-white font-Epilogue text-sm hover:scale-105 duration-200 '>
             Contact Us <FaArrowRight className="" />
           </Button>
           </div>
@@ -126,7 +126,7 @@ const yogaData = [
     />
 
     {/* vission */}
-    <section className="bg-white md:py-20 py-10" >
+    <section className="bg-white md:py-20 py-10 overflow-hidden" >
       <div className="container mx-auto bg-white">
         <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
           {/* Mobile View */}
@@ -177,7 +177,7 @@ We dream of a time when emotional well-being is valued as much as physical healt
     </section>
 
     {/* mission */}
-      <section className="bg-white md:py-16 py-10">
+      <section className="bg-white md:py-16 py-10 overflow-hidden">
             <div className="container mx-auto bg-white">
               <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 bg-white">
                 {/* Mobile View */}

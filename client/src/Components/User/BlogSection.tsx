@@ -5,7 +5,7 @@ import { MdArrowForward } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
-import girl from '../../assets/images/YogicblogsImg.png';
+import girl from '../../assets/images/YogicblogsImg1.png';
 import Contact from './Contact';
 import Navbar from './Navbar';
 
@@ -57,11 +57,11 @@ function BlogSection() {
         {/* Navbar */}
         <Navbar/>
         {/* Banner content */}
-        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div className='flex flex-col gap-2 items-center justify-center h-full md:pt-0 mt-20'>
         <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">
-          <img src={girl} alt="banner image" className='xl:w-[100%] md:w-[80%]  mx-auto object-contain pb-0' />
+          <img src={girl} alt="banner image" className='xl:w-[76%] md:w-[80%]  mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 

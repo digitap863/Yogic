@@ -7,7 +7,7 @@ import { getdata } from "../../api/req";
 import { url } from "../../api/url";
 import girl1 from "../../assets/images/Courses1.png";
 import girl7 from "../../assets/images/Courses8.png";
-import girl from "../../assets/images/YogicCoursesImg.png";
+import girl from "../../assets/images/YogicCoursesImg1.png";
 import Contact from "./Contact";
 import Layout from "./Layout";
 import Navbar from "./Navbar";
@@ -107,11 +107,11 @@ function CourseSection() {
         {/* Navbar */}
         <Navbar/>
         {/* Banner content */}
-        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div className='flex flex-col gap-2 items-center justify-center h-full md:pt-0 mt-20'>
         <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">
-          <img src={girl} alt="banner image" className=' w-[80%] mx-auto object-contain pb-0' />
+          <img src={girl} alt="banner image" className=' w-[70%] mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 

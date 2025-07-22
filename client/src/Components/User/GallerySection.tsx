@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { getdata } from '../../api/req';
 import { url } from '../../api/url';
-import girl from '../../assets/images/YogicGalleryImg.png';
+import girl from '../../assets/images/YogicGalleryImg1.png';
 import Navbar from './Navbar';
 
 
@@ -95,11 +95,11 @@ function GallerySection() {
         {/* Navbar */}
         <Navbar/>
         {/* Banner content */}
-        <div className='flex flex-col items-center justify-center h-full md:pt-0 mt-20'>
+        <div className='flex flex-col gap-4 items-center justify-center h-full md:pt-0 mt-20'>
         <div data-aos="fade-down"
      data-aos-easing="linear"
      data-aos-duration="1500">
-          <img src={girl} alt="banner image" className=' xl:w-[100%] md:w-[80%] mx-auto object-contain pb-0' />
+          <img src={girl} alt="banner image" className=' xl:w-[70%] md:w-[70%] mx-auto object-contain pb-0' />
           </div>
           <div>
           <Button 
