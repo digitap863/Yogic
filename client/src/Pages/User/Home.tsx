@@ -8,9 +8,9 @@ import TestimonialSlider from '../../Components/User/Testimonial'
 import Contact from '../../Components/User/Contact'
 import Footer from '../../Components/User/Footer'
 import swami3 from '../../assets/images/swami3.png';
-import girl1 from '../../assets/images/Mask group1.png';
-import girl2 from '../../assets/images/Mask group2.png';
+import WhoWeAreSection from '../../Components/User/Home/WhoWeAreSection';
 import { Disclosure } from "@headlessui/react";
+import CoreValueSection from '../../Components/User/Home/CoreValueSection'
 
 
 
@@ -150,6 +150,8 @@ function Home() {
         {/* <Navbar /> */}
         <Banner/>
         <YogaSection />
+        <WhoWeAreSection />
+        <CoreValueSection />
         <CourseSection />
         <Yoga />
         {/* <section className="max-w-7xl mx-auto px-6 py-12 overflow-hidden">
